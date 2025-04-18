@@ -1,7 +1,6 @@
 import { useLanguage } from "../context/LanguageContext";
 import Card from "./Card";
 import bg from "../assets/bg-pg1.png";
-import arrow from "../assets/ArrowWhite.svg";
 import Arrow from "./Arrow";
 
 function HistoriaSection() {

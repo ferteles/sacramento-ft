@@ -1,4 +1,3 @@
-import { View } from "lucide-react";
 import Arrow from "../components/Arrow";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
