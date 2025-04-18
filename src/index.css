@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&family=Caudex:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.font-caudex {
+  font-family: "Caudex", serif;
+}
+
+.font-catamaran {
+  font-family: "Catamaran", serif;
+}
+
+@keyframes rotate-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+  transform-origin: 50% 50%;
+}
+.h1-title {
+  font-family: "Caudex", serif;
+  font-size: 1.875rem; /* text-3xl */
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 1.4;
+  width: 20rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-family: "Catamaran", serif;
+  font-size: 1rem; /* base (16px) */
+  line-height: 1.6;
+}
+@media (min-width: 1024px) {
+  .h1-title {
+    font-size: 2.35rem; /* ~44px, equivalente a text-5xl */
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  p {
+    font-size: 1.15rem; /* text-xl */
+    line-height: 1.8;
+  }
+}
