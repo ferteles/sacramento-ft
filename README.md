@@ -1,54 +1,116 @@
-# React + TypeScript + Vite
+# Sacramento do Chiado 🍷🇵🇹
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é o repositório oficial do website do restaurante **Sacramento do Chiado**, localizado no coração de Lisboa. O projeto apresenta uma experiência visual sofisticada, bilíngue e otimizada para apresentar a história, gastronomia e ambiente únicos do restaurante.
+![image](https://github.com/user-attachments/assets/e108a319-f228-4867-bd11-0368ce61ea88)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Acesse o site
 
-## Expanding the ESLint configuration
+📍 [https://sacramento.vercel.app](https://sacramento.vercel.app)  
+⚠️ *Link de deploy provisório. Substitua conforme necessário.*
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## ✨ Funcionalidades
+
+- 🌐 **Tradução Dinâmica** (PT/EN)
+- 📱 **Responsivo** para mobile, tablet e desktop
+- ↻ **Rotas Dinâmicas** com React Router
+- 🎨 **Design fiel ao Figma**
+- 📷 **Galerias de Imagem** e seções animadas
+- 🔀 **Carregamento assíncrono (lazy load)** das páginas
+
+---
+
+## 💠 Tecnologias Utilizadas
+
+- **React**
+- **React Router DOM**
+- **Tailwind CSS**
+- **TypeScript**
+- **Vite**
+- **Vercel** (Deploy)
+- **Figma** (Design base)
+- **Lucide-react** (ícones SVG)
+- **React Context API** (gerenciamento de idioma)
+
+---
+
+## 🧱 Estrutura de Pastas
+
+```bash
+.
+├── public/
+├── src/
+│   ├── assets/                # Imagens e SVGs
+│   ├── components/            # Componentes reutilizáveis (Card, Header, Footer, etc)
+│   ├── context/               # Contexto de idioma (LanguageContext)
+│   ├── pages/                 # Páginas do site
+│   ├── routes/                # Arquivo de rotas
+│   └── App.tsx                # Componente raiz
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Como rodar localmente
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/jp-beltran/sacramento.git
+cd sacramento
 ```
+
+2. Instale as dependências:
+
+```bash
+npm install
+```
+
+3. Rode o projeto localmente:
+
+```bash
+npm run dev
+```
+
+4. Acesse em: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🌍 Alternância de Idioma
+
+O site possui suporte dinâmico a dois idiomas:
+
+- 🇵🇹 **Português**
+- 🇺🇸 **Inglês**
+
+O estado do idioma é gerenciado via `React Context` e pode ser alternado no topo da página.
+
+---
+
+## 📊 Design
+
+O layout foi desenvolvido com base em um projeto do Figma. As imagens e elementos visuais respeitam o padrão visual proposto, utilizando fontes como:
+
+- **Caudex** (Títulos)
+- **Catamaran** (Texto corrido)
+
+---
+
+## 📷 Créditos de Imagens
+
+As imagens utilizadas no projeto são mockups temporários hospedados em URLs públicas (Figma export) e podem ser substituídas por assets finais conforme necessidade.
+
+---
+
+## 📩 Contato
+
+Caso tenha sugestões ou dúvidas, sinta-se à vontade para abrir uma **issue** ou enviar um e-mail para:
+
+📧 jpbcs2005@gmail.com
+
+---
+
+## 📍 Licença
+
+Este projeto está sob a licença MIT. Consulte o arquivo [`LICENSE`](LICENSE) para mais informações.
