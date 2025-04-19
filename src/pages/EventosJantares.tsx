@@ -12,28 +12,27 @@ function EventosJantares() {
 
   const t = {
     h1: isPT
-      ? "Cocktails e História: O Bar do Sacramento em Lisboa"
-      : "Cocktails & History: The Bar at Sacramento in Lisbon",
+      ? "Eventos Memoráveis num Palácio Histórico no Chiado"
+      : "Memorable Events in a Historic Palace in Chiado  ",
 
     p1: isPT
-      ? "No bar do Sacramento, a história de Lisboa encontra a mixologia moderna. Desfrute de cocktails exclusivos num ambiente que combina o charme do passado com a animação do presente. Localizado no coração do Chiado, o nosso bar é um refúgio para quem procura uma experiência única, onde cada cocktails é uma homenagem à rica herança cultural de Lisboa. Com uma equipa de Barmen talentosos, criamos cocktails que contam histórias, utilizando ingredientes locais e técnicas inovadoras para surpreender os nossos clientes."
-      : "At Sacramento's bar, Lisbon's history meets modern mixology. Enjoy signature cocktails in a setting that blends the charm of the past with the energy of the present. Located in the heart of Chiado, our bar is a haven for those seeking a unique experience, where each drink pays homage to Lisbon's rich cultural heritage. With a team of talented mixologists, we create cocktails that tell stories, using local ingredients and innovative techniques to delight our guests.",
+      ? "O Sacramento é o local ideal para eventos e jantares de grupo, onde a história de Lisboa se encontra com a gastronomia portuguesa. Com cinco salas interligadas, oferecemos um cenário único para celebrações inesquecíveis. Seja para uma reunião de negócios, uma comemoração especial ou uma confraternização entre amigos, o nosso espaço adapta-se às suas necessidades, proporcionando uma experiência personalizada e memorável. Localizado no coração do Chiado, o Sacramento combina a elegância de um palácio histórico com o conforto e e a sofisticação que o seu evento merece. Além disso, após o jantar, pode terminar a sua noite  no nosso clube com uma experiência completa com Dj e ambiente distinto "
+      : "Sacramento is the perfect venue for group events and dinners, where Lisbon's history meets Portuguese gastronomy. With five interconnected rooms, we offer a unique setting for unforgettable celebrations. Whether for a business meeting, a special celebration, or a gathering of friends, our space adapts to your needs, providing a personalized and memorable experience. Located in the heart of Chiado, Sacramento combines the elegance of a historic palace with the comfort and sophistication your event deserves. Additionally, our bar and the transformation of the space into a club after 11 PM offer a complete experience to extend the night in style.",
 
     h2Cocktails: isPT
-      ? "Cocktails que Contam a História de Lisboa"
-      : "Cocktails that Tell the Story of Lisbon",
+      ? "Menus que Honram a Tradição, com Toques Modernos"
+      : "Menus that Honor Tradition, with Modern Twists",
 
     p2Cocktails: isPT
-      ? "A nossa carta de cocktails é uma viagem pela história de Lisboa, com bebidas que celebram os sabores e tradições da cidade. Desde clássicos reinventados até criações exclusivas, cada cocktail é uma experiência única. Utilizamos ingredientes locais, como ginja, vinho do Porto e ervas aromáticas, para criar cocktails que refletem a essência de Portugal. Experimente o nosso cocktail xxxxxxxxxxxxl signature, inspirado na energia frenética da cidade de Lisboa, ou deixe-se surpreender por uma das nossas criações sazonais."
-      : "Our cocktail menu is a journey through Lisbon's history, with drinks that celebrate the city's flavors and traditions. From reinvented classics to exclusive creations, each cocktail is a unique experience. We use local ingredients, such as ginja, Port wine, and aromatic herbs, to create drinks that reflect the essence of Portugal. Try our xxxxxxxxx signature cocktail, inspired by Chiado's architecture, or be surprised by one of our seasonal creations.",
-
+      ? "Para os seus eventos, oferecemos menus personalizados que honram a tradição da gastronomia portuguesa, com um toque moderno. Desde buffets completos até menus de degustação, cada prato é cuidadosamente preparado para surpreender os seus convidados. Trabalhamos com ingredientes frescos e locais, garantindo uma experiência gastronómica de excelência. Seja para um jantar de negócios ou um jantar de gala, as nossas ementas são pensadas para agradar a todos os paladares. Além disso, o nosso bar oferece uma seleção de cocktails e bebidas premium, perfeitos para acompanhar qualquer ocasião."
+      : "For your events, we offer customized menus that honor the tradition of Portuguese gastronomy, with a modern twist. From full buffets to tasting menus, each dish is carefully prepared to delight your guests. We work with fresh, local ingredients, ensuring an excellent dining experience. Whether for a business lunch or a gala dinner, our menus are designed to please every palate. Additionally, our bar offers a selection of premium cocktails and drinks, perfect for any occasion.",
     h2Ambiente: isPT
-      ? "Um Bar com Alma Histórica e Vibração Contemporânea"
-      : "A Bar with Historic Soul and Contemporary Vibe",
+      ? "Celebrações com História e Alma"
+      : "Celebrations with History and Soul",
 
     p3Ambiente: isPT
-      ? "O ambiente do bar do Sacramento é uma fusão perfeita entre o charme histórico e a energia contemporânea. Com os seus arcos centenários e iluminação intimista, o espaço convida a momentos de descontração e convívio. À noite, o bar ganha vida com música ambiente e uma atmosfera vibrante, ideal para prolongar a noite em boa companhia. Seja para um cocktail após o jantar ou para uma noite animada, o nosso bar é o local perfeito para desfrutar a noite em Lisboa."
-      : "The ambiance at Sacramento's bar is a perfect blend of historic charm and contemporary energy. With its centuries-old arches and intimate lighting, the space invites moments of relaxation and socializing. At night, the bar comes alive with ambient music and a vibrant atmosphere, perfect for extending the night in good company. Whether for a post-dinner drink or a lively evening, our bar is the perfect spot to enjoy Lisbon.",
+      ? "O ambiente do Sacramento é perfeito para celebrações descontraídas e memoráveis. Com os seus arcos centenários e iluminação intimista, o espaço oferece uma atmosfera acolhedora e sofisticada. Às sextas e sábados, o ambiente ganha uma energia especial, com música ambiente e uma vibe festiva que transforma qualquer evento numa experiência única. A partir das 23h, o restaurante transforma-se em um clube, com DJ sets e uma atmosfera animada, ideal para prolongar a noite em grande estilo. Seja para uma reunião formal ou uma festa animada, o nosso espaço adapta-se ao seu estilo."
+      : "Sacramento's ambiance is perfect for relaxed and memorable celebrations. With its centuries-old arches and intimate lighting, the space offers a cozy and sophisticated atmosphere. On Fridays and Saturdays, the ambiance takes on a special energy, with ambient music and a festive vibe that turns any event into a unique experience. After 11 PM, the restaurant transforms into a club, with DJ sets and a lively atmosphere, perfect for extending the night in style. Whether for a formal meeting or a lively party, our space adapts to your style.",
 
     cta: isPT ? "Visite o Nosso Bar" : "Visit Our Bar",
     cta2: isPT ? "Contacte-nos para o Bar" : "Contact Us About the Bar",
@@ -53,7 +52,8 @@ function EventosJantares() {
     <div>
       <Header
         imgSrc="https://s3-alpha-sig.figma.com/img/8eab/7cf7/8ec96553881c29df97bf69da632e0ea8?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=gIzCvWeASBfXbw8vdmaaWUfFPGYuzPz7trqU9Ehclg2tD4h699yX2DqdSv1HdG-LPTJ585Xpr4-w6ITTS65~WUQAFN2zsV3p-S5dFBbK~jk2GR90Bq3Q8g4eiFHHwHZaM5epzFzJtbBT9OC4jxnUv-JcEC1AJ42Wkb054z7NyvP-JtjMeadmasNXnyO1GXeFze2iP~cwB4g0K-3eo8PgcWQo0BCC3nzyif-~ssRvO1Z~c4kqZvdT2csEuvz4dP6zcQBdbKQCcV3UIWn1u79v5QH5bVyZNc6GDScV54qiFhQAe72n1nKEiUEBJldNsofKoO5MeGDBDsyQUq8ScX8Gsg__"
-        titlePt="COCKTAILS EXCLUSIVOS NO CORAÇÃO DO CHIADO"
+        titlePt="Eventos e 
+Jantares Especiais"
         titleEn="EXCLUSIVE COCKTAILS IN THE HEART OF CHIADO"
       />
       <div className="p-6">

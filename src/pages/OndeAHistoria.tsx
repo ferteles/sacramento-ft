@@ -141,16 +141,16 @@ function OndeAHistoria() {
 
           {/* Texto e botão */}
           <motion.div
-            className="px-10 flex flex-col items-center text-center justify-center lg:mt-30"
+            className="lg:px-10 flex flex-col items-center text-center justify-center lg:mt-30"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <h1 className="text-5xl font-caudex py-10 text-white lg:max-w-[1044px] w-full uppercase">
+            <h1 className="text-4xl lg:text-5xl font-caudex py-10  text-white lg:max-w-[1044px] w-full uppercase">
               {texts.title}
             </h1>
-            <button className="cursor-pointer border border-white px-2 py-4 uppercase lg:w-56">
-              <h1 className="text-base text-white">{texts.cta}</h1>
+            <button className="cursor-pointer border border-white px-2 py-4 uppercase lg:w-56 ">
+              <h1 className="text-sm lg:text-base text-white">{texts.cta}</h1>
             </button>
           </motion.div>
 
@@ -181,7 +181,7 @@ function OndeAHistoria() {
 
         <HistoriaSection />
 
-        <div className="-mt-30 lg:-mt-50 z-10 w-full px-6 flex flex-col items-center justify-center lg:gap-20">
+        <div className="-mt-10 lg:-mt-50 z-10 w-full px-6 flex flex-col items-center justify-center lg:gap-20">
           <GaleryFlex />
           <Arrow title={texts.arrow} fontSize="text-4xl" />
           <Form />

@@ -98,7 +98,9 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
 
       {/* Navbar mobile */}
       <div className="flex lg:hidden flex-row w-full p-10 justify-between items-center">
-        <img src={logo} alt="Logo" />
+        <Link to="/">
+          <img src={logo} alt="Logo" />
+        </Link>
         <button
           className="cursor-pointer"
           onClick={() => setShowMobileNav(true)}
