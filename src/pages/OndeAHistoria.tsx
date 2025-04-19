@@ -149,9 +149,12 @@ function OndeAHistoria() {
             <h1 className="text-4xl lg:text-5xl font-caudex py-10  text-white lg:max-w-[1044px] w-full uppercase">
               {texts.title}
             </h1>
-            <button className="cursor-pointer border border-white px-2 py-4 uppercase lg:w-56 ">
-              <h1 className="text-sm lg:text-base text-white">{texts.cta}</h1>
-            </button>
+            <a href="#form">
+              {" "}
+              <button className="cursor-pointer border border-white px-2 py-4 uppercase lg:w-56 ">
+                <h1 className="text-sm lg:text-base text-white">{texts.cta}</h1>
+              </button>
+            </a>
           </motion.div>
 
           {/* Mobile Navbar */}
