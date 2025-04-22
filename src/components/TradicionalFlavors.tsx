@@ -45,7 +45,7 @@ function TradicionalFlavors() {
       {/* Texto circular girando */}
       <svg
         viewBox="0 0 650 650"
-        className="absolute w-[650px] h-[650px] z-[5] animate-rotate-slow lg:w-[90vw] lg:h-[90vw] max-w-[1200px] max-h-[1200px]"
+        className="absolute w-[550px] h-[550px] z-[5] animate-rotate-slow lg:w-[90vw] lg:h-[90vw] max-w-[1200px] max-h-[1200px]"
       >
         <defs>
           <path
@@ -64,11 +64,11 @@ function TradicionalFlavors() {
       <img
         src={circularImage}
         alt=""
-        className="rounded-full w-[300px] h-[300px] object-cover z-[2] lg:w-[600px] lg:h-[600px] max-w-[90vw] max-h-[90vw]"
+        className="rounded-full w-[250px] h-[250px] object-cover z-[2] lg:w-[600px] lg:h-[600px] max-w-[90vw] max-h-[90vw]"
       />
 
       {/* Texto no centro */}
-      <div className="absolute text-white text-center z-[6] text-2xl font-caudex tracking-tight leading-snug uppercase lg:text-4xl">
+      <div className="absolute text-white text-center z-[6] text-xl font-caudex tracking-tight leading-snug uppercase lg:text-4xl">
         <h1>{t.centerTitle}</h1>
       </div>
     </div>
