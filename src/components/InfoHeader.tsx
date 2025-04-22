@@ -21,12 +21,12 @@ function InfoHeader() {
 
   return (
     <div
-      className="rounded-b-full p-5 flex gap- lg:flex-row items-center justify-center lg:gap-5 flex-col text-white text-center"
+      className="rounded-b-full px-10 py-5 flex gap- lg:flex-row items-center justify-center lg:gap-5 flex-col text-white text-center"
       style={{
         backgroundImage: `url(${bg})`,
       }}
     >
-      <h2 className="text-xs lg:text-lg">
+      <h2>
         {texts.lunch}
         <br />
       </h2>

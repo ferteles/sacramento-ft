@@ -51,7 +51,7 @@ function Footer() {
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
-      className="bg-cover w-full bg-no-repeat bg-center text-white lg:flex lg:flex-row"
+      className="bg-cover w-full bg-no-repeat bg-center text-white lg:flex lg:flex-row "
     >
       {/* Bloco do logo */}
       <div className="bg-[#441F0E] flex items-center justify-center p-10 md:p-20 lg:h-[684px]">
@@ -59,7 +59,7 @@ function Footer() {
       </div>
 
       {/* Conteúdo principal */}
-      <div className="flex flex-col lg:items-center lg:flex-row justify-between px-6 gap-10 max-w-7xl lg:ml-20 mx-auto">
+      <div className="flex flex-col lg:items-center lg:flex-row justify-between px-6 gap-10 max-w-7xl  py-10 lg:ml-20 mx-auto">
         {/* Navegação */}
         <div className="flex flex-col gap-2 text-sm lg:text-xl">
           {t.nav.map((item, index) => (

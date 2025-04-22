@@ -62,7 +62,7 @@ function RestauranteMaisGiro() {
           height="h-[500px]"
         />
         <div className="flex flex-col lg:flex-row items-center justify-evenly gap-10 lg:px-10 lg:my-20">
-          <p className="my-10 w-1/2">{t.paragraph3}</p>
+          <p className="my-10 lg:w-1/2">{t.paragraph3}</p>
           <div className="w-1/2">{/* Placeholder de imagem futura */}</div>
         </div>
         <Form />

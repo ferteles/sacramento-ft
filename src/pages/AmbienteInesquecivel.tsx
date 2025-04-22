@@ -101,15 +101,17 @@ function AmbienteInesquecivel() {
             height="h-[670px] "
           />
         </div>
-        <div className="lg:px-10 px-6 flex flex-col items-center">
-          <Card
-            imageSrc="https://s3-alpha-sig.figma.com/img/c9f6/b7b3/2b7086b865742b58fbdfde65ce82478b?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=X0GEMoTp677mGaZJmrdgzamr2UE2opJZVqtEm3DBAg00hNPw0yFBhfEp7lLbj6NEsRtFkYChIOkxm2KDmPOOfb2EwvYXI9O0mgiKT-auOa6WAmsw7-tiDGxNxbfPl1QQqbxG0e2hRGp~RlYi9eUHoQHoBgOnhtAaC5oHBQadAYr7oZr6cpfzNU9hJSaxs~JWQFSkYjMW-hjqmp0Da~3SfbJ-umt41xHAMlLJgVC4ovVJyiNAdCeYmyP0GGfrRg92s2sHI8WiwR-nEyXMPwXpERQkUGu1sVF7bgL8vjiijLW8EvaDY-GHOGCs~osPHnsNOrw~FxsYz~V0a-Mr6CiYug__"
-            title={t.bloco3Titulo}
-            width="w-80 lg:w-full"
-            height="h-[517px]"
-          />
-          <div className="flex flex-col lg:flex-row-reverse items-start justify-evenly gap-10 lg:px-10 sm:py-20 ">
-            <p className="lg:max-w-1/3 ">{t.bloco3Texto1}</p>
+        <div className="lg:px-10 px-6 flex flex-col items-center gap-20">
+          <div className="">
+            <Card
+              imageSrc="https://s3-alpha-sig.figma.com/img/c9f6/b7b3/2b7086b865742b58fbdfde65ce82478b?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=X0GEMoTp677mGaZJmrdgzamr2UE2opJZVqtEm3DBAg00hNPw0yFBhfEp7lLbj6NEsRtFkYChIOkxm2KDmPOOfb2EwvYXI9O0mgiKT-auOa6WAmsw7-tiDGxNxbfPl1QQqbxG0e2hRGp~RlYi9eUHoQHoBgOnhtAaC5oHBQadAYr7oZr6cpfzNU9hJSaxs~JWQFSkYjMW-hjqmp0Da~3SfbJ-umt41xHAMlLJgVC4ovVJyiNAdCeYmyP0GGfrRg92s2sHI8WiwR-nEyXMPwXpERQkUGu1sVF7bgL8vjiijLW8EvaDY-GHOGCs~osPHnsNOrw~FxsYz~V0a-Mr6CiYug__"
+              title={t.bloco3Titulo}
+              width="w-80 lg:w-full"
+              height="h-[517px]"
+            />
+          </div>
+          <div className="flex flex-col lg:flex-row-reverse items-start justify-evenly gap-10 lg:px-10 sm:py-20  ">
+            <p className="lg:max-w-1/3  ">{t.bloco3Texto1}</p>
             <div className="flex flex-col items-start lg:max-w-1/3">
               <p className="">{t.bloco3Texto2}</p>
               <Arrow title={t.cta3} />
