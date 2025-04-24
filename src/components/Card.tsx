@@ -69,7 +69,7 @@ const Card = ({
             rounded
           "
         >
-          <h1 className="font-caudex text-2xl lg:text-5xl lg:whitespace-nowrap lg:w-[calc(100vw-8rem)] p-10">
+          <h1 className="font-caudex text-2xl lg:text-5xl lg:max-w-full p-6 lg:p-10 break-words whitespace-normal">
             {translatedTitle}
           </h1>
         </div>

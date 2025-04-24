@@ -40,7 +40,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <button className="cursor-pointer" onClick={toggleLanguage}>
-          <h1 className="text-xs lg:text-base font-bold mx-10 text-white">
+          <h1 className="text-xs lg:text-base font-bold mx-8 text-white">
             PT/EN
           </h1>
         </button>
@@ -75,7 +75,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
             <motion.img
               src={logo}
               alt="Logo Sacramento"
-              className="h-15 lg:h-15"
+              className="h-12"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 120 }}
             />

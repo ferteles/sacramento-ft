@@ -10,7 +10,7 @@ function Footer() {
   const t = {
     nav: isPT
       ? [
-          { name: "O Restaurante", path: "/restaurante" },
+          { name: "Restaurante", path: "/restaurante" },
           { name: "Gastronomia", path: "/saboreie-noite" },
           { name: "História", path: "/" },
           { name: "Eventos", path: "/eventos" },
@@ -18,7 +18,7 @@ function Footer() {
           { name: "Reservas", path: "/melhor-alternativa" },
         ]
       : [
-          { name: "The Restaurant", path: "/restaurante" },
+          { name: "Restaurant", path: "/restaurante" },
           { name: "Gastronomy", path: "/saboreie-noite" },
           { name: "History", path: "/" },
           { name: "Events", path: "/eventos" },
@@ -54,7 +54,7 @@ function Footer() {
       className="bg-cover w-full bg-no-repeat bg-center text-white lg:flex lg:flex-row font-catamaran font-thin"
     >
       {/* Bloco do logo */}
-      <div className="bg-[#441F0E] flex items-center justify-center p-10 md:p-20 lg:h-[684px]">
+      <div className="bg-[#441F0E] flex items-center justify-center p-10 lg:p-5 md:p-20 lg:h-[684px]">
         <img src={logo} alt="Logo Sacramento" className="w-40 md:w-52" />
       </div>
 
