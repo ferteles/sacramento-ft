@@ -40,13 +40,15 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <button className="cursor-pointer" onClick={toggleLanguage}>
-          <h1 className="text-xs lg:text-base text-white">PT/EN</h1>
+          <h1 className="text-xs lg:text-base font-bold mx-10 text-white">
+            PT/EN
+          </h1>
         </button>
       </motion.div>
 
       {/* Navbar desktop */}
       <motion.div
-        className="hidden lg:flex items-center justify-between w-full px-20 py-6 relative z-50 lg:h-35"
+        className="hidden lg:flex items-center justify-evenly w-full px-20 py-6 relative z-50 lg:h-35"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
@@ -73,7 +75,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
             <motion.img
               src={logo}
               alt="Logo Sacramento"
-              className="h-10 lg:h-15"
+              className="h-15 lg:h-15"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 120 }}
             />

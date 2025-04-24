@@ -51,7 +51,7 @@ function Footer() {
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
-      className="bg-cover w-full bg-no-repeat bg-center text-white lg:flex lg:flex-row "
+      className="bg-cover w-full bg-no-repeat bg-center text-white lg:flex lg:flex-row font-catamaran font-thin"
     >
       {/* Bloco do logo */}
       <div className="bg-[#441F0E] flex items-center justify-center p-10 md:p-20 lg:h-[684px]">
@@ -59,9 +59,9 @@ function Footer() {
       </div>
 
       {/* Conteúdo principal */}
-      <div className="flex flex-col lg:items-center lg:flex-row justify-between px-6 gap-10 max-w-7xl  py-10 lg:ml-20 mx-auto">
+      <div className="flex flex-col lg:items-center lg:flex-row justify-between px-6 gap-10 lg:gap-40 max-w-7xl  py-10 lg:ml-20 mx-auto">
         {/* Navegação */}
-        <div className="flex flex-col gap-2 text-sm lg:text-xl">
+        <div className="flex flex-col gap-2 text-sm lg:text-xl lg:gap-7">
           {t.nav.map((item, index) => (
             <Link key={index} to={item.path}>
               {item.name}
@@ -70,37 +70,41 @@ function Footer() {
         </div>
 
         {/* Horários */}
-        <div className="flex flex-col text-sm lg:text-xl">
-          <h2 className="mb-1">{t.hours[0]}</h2>
-          <h2 className="mb-1">{t.hours[1]}</h2>
-          <h2 className="mt-3 mb-1">{t.hours[2]}</h2>
-          <h2>{t.hours[3]}</h2>
+        <div className="flex flex-col text-sm lg:text-xl lg:gap-7">
+          <div>
+            <h2 className="mb-1">{t.hours[0]}</h2>
+            <h2 className="mb-1">{t.hours[1]}</h2>
+          </div>
+          <div>
+            <h2 className="mt-3 mb-1">{t.hours[2]}</h2>
+            <h2>{t.hours[3]}</h2>
+          </div>
         </div>
 
         {/* Endereço */}
-        <div className="flex flex-col text-sm lg:text-xl">
+        <div className="flex flex-col text-sm lg:text-xl  ">
           {t.address.map((line, i) => (
             <h2 key={i}>{line}</h2>
           ))}
         </div>
-
-        {/* Redes Sociais */}
-        <div className="flex flex-col text-sm gap-2 lg:text-xl">
-          <a
-            href="https://www.instagram.com/sacramentodochiado"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t.social[0]}
-          </a>
-          <a
-            href="https://www.facebook.com/restaurantesacramentodochiado"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t.social[1]}
-          </a>
-        </div>
+      </div>
+      {/* Redes Sociais */}
+      <div className="flex flex-row  p-6 text-sm gap-2 lg:text-lg lg:pr-20 lg:pt-30 lg:gap-10">
+        <a
+          href="https://www.instagram.com/sacramentodochiado"
+          target="_blank"
+          rel="noopener noreferrer"
+          className=""
+        >
+          {t.social[0]}
+        </a>
+        <a
+          href="https://www.facebook.com/restaurantesacramentodochiado"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t.social[1]}
+        </a>
       </div>
     </div>
   );

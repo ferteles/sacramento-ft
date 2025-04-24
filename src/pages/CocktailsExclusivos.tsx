@@ -79,7 +79,7 @@ function CocktailsExclusivos() {
           <div className="">
             <div className="flex flex-col lg:flex-row items-start justify-center gap-10 lg:px-40 lg:py-20 py-10  ">
               {/* Primeiro parágrafo (à direita no desktop) */}
-              <p className="lg:max-w-1/3 ">{t.p3a}</p>
+              <p className="lg:max-w-1/2 ">{t.p3a}</p>
 
               {/* Segundo parágrafo + Arrow (à esquerda no desktop) */}
               <div className="flex flex-col items-start lg:max-w-1/2 lg:justify-between">

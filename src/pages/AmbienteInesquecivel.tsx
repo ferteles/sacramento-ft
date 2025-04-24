@@ -78,7 +78,7 @@ function AmbienteInesquecivel() {
           </div>
 
           {/* Imagem à direita no desktop */}
-          <div className="w-full lg:w-1/2 flex justify-center">
+          <div className="w-full lg:w-1/3 flex justify-center">
             <Card
               imageSrc="https://s3-alpha-sig.figma.com/img/c680/7edc/5555c9d711ef594e42fa819e69103aa5?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=bNUA4LEqCOU58ZxYdOGit-NJ9NrkiQO~DJOxe2kmh~OgMly2uRC4aJicNxzeBQTBklN~12a82JsrUmsDD-XXzFnsh5xJsPMmt-aMp2z88A2iBwNdiUTQjmbSSg-KzSsXlviBK~Y~TaxPenY9gyU2HTCXfsMS6vnjBJ9u0rrghQo6q8BIGj7z8hEP-i~0yB2uTXCCK~OxVJVXc2aNtqaQHgW1J0oAleqdJWIR0a58eSYMkNaF0rmeqzDi3dgxhnoeuUva13ouWttyKyu8aJiobkyNMAqdlJ53~z6x1M~Nd6bTghzA9yazezGYoNQM2RCsce04YE1~9DJP6EH1169FJg__"
               width="w-full lg:w-[417px]"
@@ -89,7 +89,7 @@ function AmbienteInesquecivel() {
 
         <GaleryAmbienteInesq />
 
-        <div className="flex flex-col lg:flex-row-reverse items-center justify-evenly gap-10 lg:px-10 py-20 mt-40 lg:mt-0 lg:pt-0 p-6">
+        <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-10 lg:px-50 py-20 mt-40 lg:mt-0 lg:pt-0 p-6">
           <div className="lg:w-1/2">
             <h1 className="h1-title">{t.bloco2Titulo}</h1>
             <p>{t.bloco2Texto}</p>
@@ -101,16 +101,16 @@ function AmbienteInesquecivel() {
             height="h-[670px] "
           />
         </div>
-        <div className="lg:px-10 px-6 flex flex-col items-center gap-20">
+        <div className="lg:px-10 px-6 flex flex-col items-center w-full gap-20">
           <div className="">
             <Card
               imageSrc="https://s3-alpha-sig.figma.com/img/c9f6/b7b3/2b7086b865742b58fbdfde65ce82478b?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=X0GEMoTp677mGaZJmrdgzamr2UE2opJZVqtEm3DBAg00hNPw0yFBhfEp7lLbj6NEsRtFkYChIOkxm2KDmPOOfb2EwvYXI9O0mgiKT-auOa6WAmsw7-tiDGxNxbfPl1QQqbxG0e2hRGp~RlYi9eUHoQHoBgOnhtAaC5oHBQadAYr7oZr6cpfzNU9hJSaxs~JWQFSkYjMW-hjqmp0Da~3SfbJ-umt41xHAMlLJgVC4ovVJyiNAdCeYmyP0GGfrRg92s2sHI8WiwR-nEyXMPwXpERQkUGu1sVF7bgL8vjiijLW8EvaDY-GHOGCs~osPHnsNOrw~FxsYz~V0a-Mr6CiYug__"
               title={t.bloco3Titulo}
-              width="w-80 lg:w-full"
+              width="lg:w-400"
               height="h-[517px]"
             />
           </div>
-          <div className="flex flex-col lg:flex-row-reverse items-start justify-evenly gap-10 lg:px-10 sm:py-20  ">
+          <div className="flex flex-col lg:flex-row-reverse items-start justify-evenly gap-10 lg:px-1 sm:py-20  ">
             <p className="lg:max-w-1/3  ">{t.bloco3Texto1}</p>
             <div className="flex flex-col items-start lg:max-w-1/3">
               <p className="">{t.bloco3Texto2}</p>
@@ -118,7 +118,7 @@ function AmbienteInesquecivel() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row items-top justify-center gap-10 px-6 lg:px-10 py-20">
+        <div className="flex flex-col lg:flex-row items-top justify-center gap-10 px-6 lg:px-63 py-20">
           {/* Texto à esquerda no desktop */}
           <div className="w-full lg:w-1/2 flex flex-col justify-center items-start">
             <h1 className="h1-title text-left">{t.bloco4Titulo}</h1>

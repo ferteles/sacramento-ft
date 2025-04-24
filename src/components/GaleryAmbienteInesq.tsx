@@ -12,7 +12,7 @@ function GaleryAmbienteInesq() {
         <div className="flex gap-5 w-full lg:items-center justify-center lg:justify-start">
           <Card
             imageSrc="https://s3-alpha-sig.figma.com/img/01cb/1082/aacac5735b948f097326e2ee56c769df?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=a-UhDB6m-cFLy9A-t5KbxD1h-frI-k60GNn9b3WGPGvnFlvIfKmBWpmIXXzDRUYO8KOU~Ot2amz9MwkMUU8jfqQPTeUR4zTomfFhEzfJmMVwjzT1GkIlvn-UtEcEhCQZdxCYhgzYLOw6VjkdY5E1h7TAKd0vsp67-Rf-sehgVdDZTUgIahP9TozCyiAlTbjEtoj8t3cfrvvME7bGo1-E9-N-qR8MW7RklUzvNB0EnKbeSdlz9uxX6LXjQ2WpvTvT9OFBHSlWlX1ikEVbGG1CRXmR0KPe4OdT2hRjjwoq1kENBbZdf-N6zVcpBa0FR9me5c9nsgQ1BFOPwMisQWmRVw__"
-            width=" lg:w-120 w-52"
+            width=" lg:w-170 w-52"
             height="lg:h-120 h-80"
           />
         </div>

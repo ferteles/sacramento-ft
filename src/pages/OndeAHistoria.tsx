@@ -46,23 +46,23 @@ function OndeAHistoria() {
 
   return (
     <div>
-      <div className="top-0 w-full bg-repeat max-w-screen">
+      <div className="w-full max-w-screen lg:h-screen flex flex-col">
         {/* Faixa superior PT/EN */}
         <motion.div
-          className="h-6 bg-center flex flex-row-reverse px-2"
+          className="h-8 bg-center flex flex-row-reverse px-10"
           style={{ backgroundImage: `url(${topheader})` }}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <button className="cursor-pointer" onClick={toggleLanguage}>
-            <h1 className="text-xs text-white">PT/EN</h1>
+            <h1 className="text-base font-bold text-white">PT/EN</h1>
           </button>
         </motion.div>
 
-        {/* Header com fundo e texto animado */}
+        {/* Header principal (ocupa o restante da tela) */}
         <motion.div
-          className="bg-black flex flex-col items-center justify-start w-full h-[665px] relative overflow-hidden"
+          className="bg-black flex flex-col items-center justify-between w-full flex-grow relative overflow-hidden"
           style={{
             backgroundImage:
               "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://s3-alpha-sig.figma.com/img/c48f/2622/ffe386edd5d0bba4833406f81886e5bb?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=eqENCwSlnkj1CSw62VDrfICHcJ-PAuOi5SqIPwK69QYD6sFhPnznCA~DB7mN8gH8i3rlDVqzVS-mq8JNcDzBQwp1t8-T1nFj-kLUKkOwrOii0pme7~A6b3B~x5-CPUDTc-fX-9RW6Ne6~N8Y3nkyNnQpSN79DheJkKd5SI1XTHKnXTFHl5YL5AuFrivNIrCWYY4EgKLr0u7UqtfIpUE~1V5Hy5eD5AfH4ddc-iiOax8keIJGZ~8BUtx~~D1fXQ3PJmTL7-Rjw4vPw1sx-ySHVb56VCaA4pAfCZd8-POJ6Lu7U7pQXRVdKNe7LSJQNL7SQ103Oyf1NoG00VreFD0oNA__)",
@@ -75,7 +75,7 @@ function OndeAHistoria() {
         >
           {/* NAVBAR desktop */}
           <motion.div
-            className="hidden lg:flex items-center justify-between w-full px-20 py-6 relative z-50"
+            className="hidden lg:flex items-center justify-evenly w-full px-20 py-6 relative z-50"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -101,7 +101,11 @@ function OndeAHistoria() {
               transition={{ duration: 1.2, ease: "easeOut", delay: 0.8 }}
             >
               <Link to="/">
-                <img src={logo} alt="Logo Sacramento" className="h-10" />
+                <img
+                  src={logo}
+                  alt="Logo Sacramento"
+                  className="h-10 lg:h-15 mt-5"
+                />
               </Link>
             </motion.div>
             <div className="flex gap-6 text-white text-sm">
@@ -139,19 +143,18 @@ function OndeAHistoria() {
             </button>
           </motion.div>
 
-          {/* Texto e botão */}
+          {/* Texto central + CTA */}
           <motion.div
-            className="lg:px-10 flex flex-col items-center text-center justify-center lg:mt-30"
+            className="flex flex-col items-center text-center justify-center flex-grow px-4 py-10 lg:px-10 "
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <h1 className="text-4xl lg:text-5xl font-caudex py-10  text-white lg:max-w-[1044px] w-full uppercase">
+            <h1 className="text-4xl lg:text-7xl font-caudex py-10 text-white lg:max-w-[1200px] w-full uppercase">
               {texts.title}
             </h1>
             <a href="#form">
-              {" "}
-              <button className="cursor-pointer border border-white px-2 py-4 uppercase lg:w-56 ">
+              <button className="cursor-pointer border border-white px-2 py-4 uppercase lg:w-56">
                 <h1 className="text-sm lg:text-base text-white">{texts.cta}</h1>
               </button>
             </a>
@@ -161,22 +164,27 @@ function OndeAHistoria() {
           {menuOpen && <MobileNavBar onClose={() => setMenuOpen(false)} />}
         </motion.div>
 
-        <InfoHeader />
+        {/* InfoHeader dentro da mesma tela */}
+        <div className="w-full">
+          <InfoHeader />
+        </div>
       </div>
 
       {/* Conteúdo principal */}
       <div className="flex flex-col">
         <div className="flex flex-row items-center">
-          <div className="flex flex-col px-6 py-20 w-full lg:flex-row lg:justify-evenly lg:gap-40">
-            <div>
+          <div className="flex flex-col px-6 py-20 w-full lg:flex-row lg:justify-evenly lg:gap-40 gap-10">
+            <div className="lg:w-1/2 flex justify-start lg:justify-evenly ">
               <Card
                 imageSrc="https://s3-alpha-sig.figma.com/img/2b87/8156/c6923005c00eddbe0d9b34b4658226ee?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=TTqXhBKVvz4S8hsyKsZx-BuTUS2joECKCuVxb8uzdgkrzXbrXH4OCwpe3qe-2~MR8sc4uHNV1FdUh7jVvKIr5dpvjk-8A00mIw1RRAAeLDUlQIvTvb-mQf9BWhIQuato~E2SbFFNE1ycx4miczB-OZhQUcKb-UxRmt2x9h3kZb-eHAiaMzZtJJIIck5V4fHOFWesOjJPXJ2BIw1HZGZaMMxJfhkdctOkD3fKt-LlKuk6afO~EFIIZ4vHClaJde2tjIL5BHBvRLlTs6PTmps2TQv4wMKlrqwNeMRm5hwq8lvNwgDxLV4HjQKxMTT2kIhQj-akFQjYSipEF5-MB8sLwA__"
                 width="w-40 lg:w-[599px]"
                 height="h-48 lg:h-[735px]"
               />
             </div>
-            <div>
-              <h1 className="!lg:text-7xl h1-title w-full">{texts.h2}</h1>
+            <div className="lg:w-1/2 flex flex-col gap-10 justify-center">
+              <h1 className="lg:text-4xl font-caudex lg:max-w-1/2">
+                {texts.h2}
+              </h1>
               <p className="w-full lg:max-w-150">{texts.paragraph}</p>
             </div>
           </div>
@@ -186,7 +194,7 @@ function OndeAHistoria() {
 
         <div className="-mt-10 lg:-mt-50 z-10 w-full px-6 flex flex-col items-center justify-center lg:gap-20">
           <GaleryFlex />
-          <Arrow title={texts.arrow} fontSize="text-4xl" />
+          <Arrow title={texts.arrow} fontSize="text-5xl" />
           <Form />
         </div>
 

@@ -110,7 +110,7 @@ Jantares Especiais"
 
         {/* Card separado abaixo (mantido no fluxo mobile, opcional) */}
 
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center lg:my-60">
           <h1 className="w-full h1-title text-center">{t.h2Cocktails}</h1>
           <p className="lg:max-w-1/2">{t.p2Cocktails}</p>
           <Arrow title={t.cta3} />
@@ -127,7 +127,9 @@ Jantares Especiais"
 
           <div className="flex flex-col lg:flex-row items-start justify-center gap-10 lg:px-40 lg:py-20 py-10">
             {/* Primeiro parágrafo à direita no desktop */}
-            <p className="lg:max-w-1/3 text-justify">{t.pFinal1}</p>
+            <div className="lg:max-w-1/2">
+              <p className=" text-justify">{t.pFinal1}</p>
+            </div>
 
             {/* Segundo parágrafo + botão à esquerda */}
             <div className="flex flex-col items-start lg:max-w-1/2 lg:justify-between">

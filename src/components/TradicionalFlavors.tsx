@@ -34,7 +34,7 @@ function TradicionalFlavors() {
   };
 
   return (
-    <div className="relative flex items-center justify-center w-full h-[500px] lg:h-[700px] lg:mt-20 overflow-hidden">
+    <div className="relative flex items-center justify-center w-auto h-[500px] lg:h-[900px] lg:mt-20 overflow-hidden ">
       {/* Linha horizontal */}
       <img
         src={line}
@@ -45,7 +45,7 @@ function TradicionalFlavors() {
       {/* Texto circular girando */}
       <svg
         viewBox="0 0 650 650"
-        className="absolute w-[550px] h-[550px] z-[5] animate-rotate-slow lg:w-[90vw] lg:h-[90vw] max-w-[1200px] max-h-[1200px]"
+        className="absolute w-[550px] h-[550px]  lg:h-[1400px] lg:w-[1400px] z-[5] animate-rotate-slow  "
       >
         <defs>
           <path
@@ -64,7 +64,7 @@ function TradicionalFlavors() {
       <img
         src={circularImage}
         alt=""
-        className="rounded-full w-[250px] h-[250px] object-cover z-[2] lg:w-[600px] lg:h-[600px] max-w-[90vw] max-h-[90vw]"
+        className="rounded-full w-[250px] h-[250px]  object-cover z-[2] lg:w-[700px] lg:h-[700px] max-w-[90vw] max-h-[90vw]"
       />
 
       {/* Texto no centro */}

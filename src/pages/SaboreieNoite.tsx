@@ -68,15 +68,15 @@ function SaboreieNoite() {
         </div>
 
         <div className="my-10">
-          <div className="flex flex-col-reverse lg:flex-row items-center justify-center  gap-10 px-6 ">
+          <div className="flex flex-col-reverse lg:flex-row items-center justify-center lg:px-50 gap-10 px-6 ">
             {/* Texto à esquerda no desktop */}
-            <div className="flex flex-col justify-center  lg:max-w-1/2">
-              <h1 className="h1-title w-80 lg:max-w-1/2">{t.h2}</h1>
-              <p className="mt-4 lg:max-w-1/2">{t.p2}</p>
+            <div className="flex flex-col lg:max-w-1/2">
+              <h1 className="h1-title w-80 ">{t.h2}</h1>
+              <p className="mt-4">{t.p2}</p>
             </div>
 
             {/* Imagem à direita no desktop */}
-            <div className="w-full lg:w-1/2 flex lg:justify-center">
+            <div className="w-full lg:max-w-1/2 flex lg:justify-center">
               <Card
                 imageSrc="https://s3-alpha-sig.figma.com/img/e4c5/c11e/92cea469dea56f5d6fbf106c839fd3dc?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Fg-gd6cQT6OF1btmdubsS5VchgiT1mC~iJXcFYtBmF3gPqvi-B9zaAvcFnbxDSETsC4kfAsx6dOsLrbubF7vC6jKyByJZMEwyJu~pYCWTtQQwImgcpIjifWx2Fk2zTQG95XKAHHNUWt5ey5EYcL5g0dTQvpbZvKY0nADxrYcb5ljor5S5DpWnuDS9SvtT-V2km1pOEr9xabvWdQij~Y3JlABKccyf8l~D2ml7kGhrWeKtqVWzPmEyTZ7FiYbjURVDSbDI8etAqc~nEGmoD7RaeI48xadiPMwZRInvYIEhyPjH7zNlGfc8VIs-ILCRm5vQCDyZAtopGomwwtsabRvjg__"
                 height="h-96 lg:h-[624px]"
@@ -96,13 +96,15 @@ function SaboreieNoite() {
             height="h-[517px]"
           />
 
-          <div className="flex flex-col lg:flex-row-reverse items-start justify-center gap-10 lg:px-40  py-10">
+          <div className="flex flex-col lg:flex-row items-start justify-center gap-20 lg:px-40 lg:w-full  py-10">
             {/* Primeiro parágrafo (à direita no desktop) */}
-            <p className="lg:max-w-1/3 text-justify">{t.p3}</p>
+            <div className="flex flex-col lg:max-w-1/2">
+              <p className=" text-justify w-80">{t.p3}</p>
+            </div>
 
             {/* Segundo parágrafo + Arrow (à esquerda no desktop) */}
             <div className="flex flex-col items-start lg:max-w-1/2">
-              <p className="text-justify">{t.p4}</p>
+              <p className="text-justify w-80">{t.p4}</p>
               <Arrow title={t.cta} />
             </div>
           </div>
@@ -128,7 +130,7 @@ function SaboreieNoite() {
           <Card
             imageSrc="https://s3-alpha-sig.figma.com/img/b7f0/9d9a/530c4a2511dae27e7eb4e261cb511ab6?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=qmxzwWN6Y~He6yGBej9p38PH4Spw7d0dQP8V6VD4XX53eMcc0eJ45~kVbaj5o7JOfYZJUFs-kEWRjmRekVApOn59ub~3b0wvVwHKw7uHtfNP0jSMKGXU5PY6UYWow~28~sZjzvUScmFTpOKj4wmuVWRa2biwbDLviZh5jjcyoH4j3siy5IRCv3iIuhRyN5hDn1ZYtqOfykxNtbqIULZpauD2aVkONjHb0Ds27XqyOweJylsfN75aw4JdUXjqVRKQvdTpIuEpvZ4hMclzKKaxDJyCIXsGRg6beNjRgPNRSNNWh~jbRq0lrLYW-OWzcficUOBOE1uUZD5eN1a7YeE2MA__"
             width="w-full"
-            height="h-52"
+            height="h-150"
           />
           <Card
             imageSrc="https://s3-alpha-sig.figma.com/img/41e6/fe04/02d4278e783c5627e407cdee7b10d7b2?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=BWZjHJ4shuArKloXzd2Sl8nx7BHySdzcq87ZZefihSL8x42iB8ofdbfuASaYNRcaiy8cnFpA3qtora3FoHpZt9VpbxFnlWe0nDmY5bjDEQWcR8XrRD7yudm6V1Djg96sXpoFiG1TIpNDzHTa8t0dwVjm0DMLbhN9hdJ0~JS2WVwZ~WD9jHpEN8DFeaCekPUgcbuGFMvrSgsAdslTyKQV1qOanKeLbBgEvJlHvT5qQ0SMi30LzJMwSMyCUlOVH5vPv3UP1~TnrOt2xWlqmoiH8EIhuYlK0GP2iyt6J9Z5ENrtclwNOFJQJs1vYg05972xbFywdIIvw5BHW3K0-CV8hA__"

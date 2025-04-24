@@ -44,7 +44,7 @@ function RestauranteMaisGiro() {
       <Gastronomy />
       <TradicionalFlavors />
       <div className="p-6 gap-2 lg:px-20">
-        <div className="flex flex-col items-center justify-evenly lg:flex-row gap-20">
+        <div className="flex flex-col items-center justify-evenly lg:justify-center lg:flex-row gap-20 lg:mb-0">
           <div className="lg:max-w-100">
             <p className="font-catamaran">{t.paragraph1}</p>
           </div>

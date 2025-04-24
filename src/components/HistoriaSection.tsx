@@ -1,7 +1,7 @@
 import { useLanguage } from "../context/LanguageContext";
 import Card from "./Card";
 import bg from "../assets/bg-pg1.png";
-import Arrow from "./Arrow";
+import arrowWhite from "../assets/ArrowWhite.svg";
 
 function HistoriaSection() {
   const { language } = useLanguage();
@@ -25,14 +25,14 @@ function HistoriaSection() {
 
   return (
     <section
-      className="lg:h-[1500px] h-[1100px] relative w-full bg-cover bg-center bg-no-repeat text-white py-16 px-4 md:px-10 lg:px-20 flex items-center justify-center"
+      className="lg:h-[1800px] h-[1100px] relative w-full bg-cover bg-center bg-no-repeat text-white py-16 px-4 md:px-10 lg:px-20 flex items-center justify-center"
       style={{
         backgroundImage: `url(${bg})`,
       }}
     >
-      <div className="flex flex-col lg:flex-row items-center justify-start gap-10 max-w-7xl mx-auto w-full">
+      <div className="flex flex-col lg:flex-row items-center justify-start gap-10 max-w-7xl w-full">
         {/* Texto Esquerdo */}
-        <div className="w-full lg:w-1/3 text-sm leading-relaxed px-2 text-center lg:text-left">
+        <div className="w-full lg:w-1/2 text-sm leading-relaxed px-2 lg:px-8 text-center lg:text-left">
           <h1 className="text-3xl md:text-4xl font-caudex uppercase mb-4 block lg:hidden">
             {texts.title}
           </h1>
@@ -40,32 +40,37 @@ function HistoriaSection() {
         </div>
 
         {/* Centro */}
-        <div className="w-full lg:w-1/3 flex flex-col items-center text-center space-y-6">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-caudex uppercase hidden lg:block">
+        <div className="w-full lg:w-1/3 flex flex-col items-center text-center space-y-6 lg:mx-12 ">
+          <h1 className="text-3xl md:text-4xl lg:text-7xl  font-caudex uppercase hidden lg:block font-bold">
             {texts.title}
           </h1>
 
-          <Card
-            imageSrc="https://s3-alpha-sig.figma.com/img/35a8/ecdd/77bb7397ae204c4dba5fb9dc662a7dc4?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=K88CotFCi4QPdA-xbkZxZ0wkIByDoAzac1aJ8kkJVvtaHT~93hUHk2-latFgW7kfN0D94ZCdVjaYpm-C100pz0zQZYMrmr4r~33AQblYo4hB0wmyrssxFgmyDEe-mthq4HtnbVD4hpMlq0FB-aqG4jQqcw9dEfhxGMhccqzroeYSr8wNVcvNipbGOEtS4BnKWY2mrJfp0P2nSUF2iTOAhB5hcj--XoYNr973R6~YFeJjx~BkUzXWX0IszDZlTF0hKYIdcuKfHPLKpnXS-uS2ymvmrH-z2Ww5KA8MsEHA3A~9-qYJEQy0tMw5PceGQ1eJ91J6wG6NkpomTfZBDXNrGQ__"
-            width="w-60 md:w-72 lg:w-[474px]"
-            height="h-56 md:h-72 lg:h-[573px]"
-          />
+          <div className="p-20">
+            <Card
+              imageSrc="https://s3-alpha-sig.figma.com/img/35a8/ecdd/77bb7397ae204c4dba5fb9dc662a7dc4?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=K88CotFCi4QPdA-xbkZxZ0wkIByDoAzac1aJ8kkJVvtaHT~93hUHk2-latFgW7kfN0D94ZCdVjaYpm-C100pz0zQZYMrmr4r~33AQblYo4hB0wmyrssxFgmyDEe-mthq4HtnbVD4hpMlq0FB-aqG4jQqcw9dEfhxGMhccqzroeYSr8wNVcvNipbGOEtS4BnKWY2mrJfp0P2nSUF2iTOAhB5hcj--XoYNr973R6~YFeJjx~BkUzXWX0IszDZlTF0hKYIdcuKfHPLKpnXS-uS2ymvmrH-z2Ww5KA8MsEHA3A~9-qYJEQy0tMw5PceGQ1eJ91J6wG6NkpomTfZBDXNrGQ__"
+              width="w-60 md:w-72 lg:w-[474px]"
+              height="h-56 md:h-72 lg:h-[573px]"
+            />
+          </div>
 
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-caudex uppercase">
+          <h2 className="text-2xl md:text-3xl lg:text-7xl font-caudex uppercase font-bold">
             {texts.subtitle}
           </h2>
 
           <div className="mt-4">
-            <div className="flex justify-center">
-              <a href="#form">
-                <Arrow title={texts.cta} />
+            <div className="flex justify-center mt-10">
+              <a href="#form" className="flex flex-col lg:gap-5">
+                <h1 className="font-bold font-caudex lg:text-4xl text-base">
+                  {texts.cta.toUpperCase()}
+                </h1>
+                <img src={arrowWhite} alt="Seta branca" className="lg:w-100" />
               </a>
             </div>
           </div>
         </div>
 
         {/* Texto Direito */}
-        <div className="w-full lg:w-1/3 text-sm leading-relaxed px-2 mt-6 lg:mt-0 text-center lg:text-right">
+        <div className="w-full lg:w-1/2 text-sm leading-relaxed px-2 lg:px-8 mt-6 lg:mt-0 text-center lg:text-right">
           <p>{texts.right}</p>
         </div>
       </div>

@@ -23,12 +23,12 @@ function Gastronomy() {
       {/* Bloco título + parágrafo (desktop em linha, mobile em coluna) */}
       <div className="flex flex-col lg:flex-row w-full justify-between items-start gap-10 lg:py-40">
         {/* Título na esquerda */}
-        <h1 className="font-caudex text-4xl lg:text-5xl font-thin lg:w-1/2">
+        <h1 className="font-caudex text-4xl lg:text-7xl font-thin lg:w-1/2 lg:max-w-150 ">
           {texts.title}
         </h1>
 
         {/* Parágrafo na direita */}
-        <p className="font-catamaran text-base mt-6 lg:mt-0 lg:w-1/2 text-justify">
+        <p className="font-catamaran text-base lg:text-lg mt-6 lg:mt-0 lg:w-1/2 text-justify">
           {texts.paragraph}
         </p>
       </div>
