@@ -48,7 +48,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
 
       {/* Navbar desktop */}
       <motion.div
-        className="hidden lg:flex items-center justify-evenly w-full px-20 py-6 relative z-50 lg:h-35"
+        className="hidden lg:flex items-center justify-center w-full lg:gap-100 px-20 py-6 relative z-50 lg:h-35"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}

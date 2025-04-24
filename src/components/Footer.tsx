@@ -54,7 +54,7 @@ function Footer() {
       className="bg-cover w-full bg-no-repeat bg-center text-white lg:flex lg:flex-row font-catamaran font-thin"
     >
       {/* Bloco do logo */}
-      <div className="bg-[#441F0E] flex items-center justify-center p-10 lg:p-5 md:p-20 lg:h-[684px]">
+      <div className="bg-[#441F0E] flex items-center lg:w-140  justify-center p-10 lg:p-5  lg:h-[684px] ">
         <img src={logo} alt="Logo Sacramento" className="w-40 md:w-52" />
       </div>
 
@@ -89,7 +89,7 @@ function Footer() {
         </div>
       </div>
       {/* Redes Sociais */}
-      <div className="flex flex-row  p-6 text-sm gap-2 lg:text-lg lg:pr-20 lg:pt-30 lg:gap-10">
+      <div className="flex flex-row  p-6 text-sm gap-2 lg:text-lg  lg:pt-30 lg:gap-10">
         <a
           href="https://www.instagram.com/sacramentodochiado"
           target="_blank"
