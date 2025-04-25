@@ -51,15 +51,15 @@ function Footer() {
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
-      className="bg-cover w-full bg-no-repeat bg-center text-white lg:flex lg:flex-row font-catamaran font-thin"
+      className="bg-cover w-full bg-no-repeat bg-center text-white lg:flex lg:flex-row justify-end font-catamaran font-thin"
     >
       {/* Bloco do logo */}
-      <div className="bg-[#441F0E] flex items-center lg:w-140  justify-center p-10 lg:p-5  lg:h-[684px] ">
+      <div className="bg-[#441F0E] flex items-center lg:w-1/3   justify-center p-10 lg:p-5  lg:h-[684px] ">
         <img src={logo} alt="Logo Sacramento" className="w-40 md:w-52" />
       </div>
 
       {/* Conteúdo principal */}
-      <div className="flex flex-col lg:items-center lg:flex-row justify-between px-6 gap-10 lg:gap-40 max-w-7xl  py-10 lg:ml-20 mx-auto">
+      <div className="flex flex-col lg:items-start lg:pt-40 lg:flex-row justify-start px-6 gap-10 lg:gap-30 max-w-7xl  py-10 lg:ml-20 lg:w-2/3">
         {/* Navegação */}
         <div className="flex flex-col gap-2 text-sm lg:text-xl lg:gap-7">
           {t.nav.map((item, index) => (
@@ -82,7 +82,7 @@ function Footer() {
         </div>
 
         {/* Endereço */}
-        <div className="flex flex-col text-sm lg:text-xl  ">
+        <div className="flex flex-col  items-top text-sm lg:text-xl w ">
           {t.address.map((line, i) => (
             <h2 key={i}>{line}</h2>
           ))}

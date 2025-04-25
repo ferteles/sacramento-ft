@@ -21,17 +21,17 @@ function InfoHeader() {
 
   return (
     <div
-      className="rounded-b-full p-0 lg:p-5 flex gap- lg:flex-row items-center justify-center lg:gap-5 flex-col text-white text-center"
+      className="rounded-b-full p-0 lg:p-5 flex py-4 lg:flex-row items-center justify-center lg:gap-5 flex-col text-white text-center"
       style={{
         backgroundImage: `url(${bg})`,
       }}
     >
-      <h2 className="text-sm lg:text-sm ">
+      <h2 className="text-xs lg:text-sm ">
         {texts.lunch}
         <br />
       </h2>
-      <h2 className="text-sm lg:text-sm ">{texts.dinner}</h2>
-      <h3 className="font-bold text-xs lg:text-sm">{texts.address}</h3>
+      <h2 className="text-xs lg:text-sm ">{texts.dinner}</h2>
+      <h3 className="font-bold text-[9px] lg:text-sm">{texts.address}</h3>
     </div>
   );
 }

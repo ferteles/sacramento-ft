@@ -45,7 +45,7 @@ function HistoriaSection() {
             {texts.title}
           </h1>
 
-          <div className="p-20">
+          <div className="lg:p-20">
             <Card
               imageSrc="https://s3-alpha-sig.figma.com/img/35a8/ecdd/77bb7397ae204c4dba5fb9dc662a7dc4?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=K88CotFCi4QPdA-xbkZxZ0wkIByDoAzac1aJ8kkJVvtaHT~93hUHk2-latFgW7kfN0D94ZCdVjaYpm-C100pz0zQZYMrmr4r~33AQblYo4hB0wmyrssxFgmyDEe-mthq4HtnbVD4hpMlq0FB-aqG4jQqcw9dEfhxGMhccqzroeYSr8wNVcvNipbGOEtS4BnKWY2mrJfp0P2nSUF2iTOAhB5hcj--XoYNr973R6~YFeJjx~BkUzXWX0IszDZlTF0hKYIdcuKfHPLKpnXS-uS2ymvmrH-z2Ww5KA8MsEHA3A~9-qYJEQy0tMw5PceGQ1eJ91J6wG6NkpomTfZBDXNrGQ__"
               width="w-60 md:w-72 lg:w-[474px]"

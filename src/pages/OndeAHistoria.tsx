@@ -80,7 +80,7 @@ function OndeAHistoria() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <div className="flex gap-6 text-white text-sm">
+            <div className="flex gap-6 text-white text-sm lg:px-15">
               <Link
                 to="/restaurante"
                 className="cursor-pointer hover:underline"
@@ -104,11 +104,11 @@ function OndeAHistoria() {
                 <img
                   src={logo}
                   alt="Logo Sacramento"
-                  className="h-10 lg:h-15 mt-5"
+                  className="h-10 lg:h-12 "
                 />
               </Link>
             </motion.div>
-            <div className="flex gap-6 text-white text-sm">
+            <div className="flex gap-6 text-white text-sm lg:px-10">
               <Link
                 to="/saboreie-noite"
                 className="cursor-pointer hover:underline"
