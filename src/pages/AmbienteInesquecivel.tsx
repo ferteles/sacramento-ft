@@ -119,23 +119,25 @@ function AmbienteInesquecivel() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col lg:flex-row items-top justify-center gap-10 px-6 lg:px-63 py-20">
-          {/* Texto à esquerda no desktop */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center items-start">
-            <h1 className="h1-title text-left">{t.bloco4Titulo}</h1>
-            <p className="font-catamaran">{t.bloco4Texto}</p>
-            <div className="mt-6 ">
-              <Arrow title={t.cta4} />
+        <div className="flex justify-center px-6 py-20">
+          <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-50 w-full max-w-7xl">
+            {/* Texto à esquerda no desktop */}
+            <div className="w-full lg:w-1/2 flex flex-col justify-center items-start">
+              <h1 className="h1-title text-left">{t.bloco4Titulo}</h1>
+              <p className="font-catamaran">{t.bloco4Texto}</p>
+              <div className="mt-6">
+                <Arrow title={t.cta4} />
+              </div>
             </div>
-          </div>
 
-          {/* Imagem à direita no desktop */}
-          <div className="w-full lg:w-1/2 flex items-end justify-end lg:mr-30">
-            <Card
-              imageSrc="https://s3-alpha-sig.figma.com/img/94f2/d7db/f86261db7d74b812091b23b444e5267f?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=LkncVwj1AC4vw2RgS-7M6vetyFCslP1XupCLswx1C4GvKcysHdtrXmHEpU~1R2HcpK3CYN6ScK4X88SsVY0JPriN1VENez-hKc3gpBtUzZE-nss~sH0AClwXk7uyVLthg09VHjgmKHiA~IzIYXGFnhbeRjSP6iNPM2DFkJRzNZWsp14c3p6T4zCIqb1aLMcSfst~6cm6s-xgLfDrbM0NSpRq5iH3tuF1eUGRNhzeIscw9a-qBEsHP8~N3y3SGMRIgky5XzGZenU5D9Nc77XWYsVei02c33gbK4ANGA6MMRg0RWSnXb-1nJT27nvZkrSWlu3bsqEhhSqV6RqHHi7HHQ__"
-              width="w-full lg:w-[475px]"
-              height="h-[518px] lg:h-[740px]"
-            />
+            {/* Imagem à direita no desktop */}
+            <div className="w-full lg:w-1/2 flex items-end justify-start">
+              <Card
+                imageSrc="https://s3-alpha-sig.figma.com/img/94f2/d7db/f86261db7d74b812091b23b444e5267f?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=LkncVwj1AC4vw2RgS-7M6vetyFCslP1XupCLswx1C4GvKcysHdtrXmHEpU~1R2HcpK3CYN6ScK4X88SsVY0JPriN1VENez-hKc3gpBtUzZE-nss~sH0AClwXk7uyVLthg09VHjgmKHiA~IzIYXGFnhbeRjSP6iNPM2DFkJRzNZWsp14c3p6T4zCIqb1aLMcSfst~6cm6s-xgLfDrbM0NSpRq5iH3tuF1eUGRNhzeIscw9a-qBEsHP8~N3y3SGMRIgky5XzGZenU5D9Nc77XWYsVei02c33gbK4ANGA6MMRg0RWSnXb-1nJT27nvZkrSWlu3bsqEhhSqV6RqHHi7HHQ__"
+                width="w-full lg:w-[475px]"
+                height="h-[518px] lg:h-[740px]"
+              />
+            </div>
           </div>
         </div>
 
