@@ -6,6 +6,8 @@ import Gastronomy from "../components/Gastronomy";
 import Header from "../components/Header";
 import TradicionalFlavors from "../components/TradicionalFlavors";
 import { useLanguage } from "../context/LanguageContext";
+import imgHeader from "../assets/images/pg1/imgHeader.jpg";
+import cardImg from "../assets/images/pg2/cardImg.jpg";
 
 function RestauranteMaisGiro() {
   const { language } = useLanguage();
@@ -26,8 +28,8 @@ function RestauranteMaisGiro() {
     arrow: language === "pt" ? "RESERVE JÁ SUA MESA" : "BOOK YOUR TABLE NOW",
     cardTitle:
       language === "pt"
-        ? "VINHOS QUE CONTAM A HISTÓRIA DE PORTUGAL"
-        : "WINES THAT TELL THE STORY OF PORTUGAL",
+        ? "VINHOS QUE\nCONTAM A HISTÓRIA\nDE PORTUGAL"
+        : "WINES THAT\nTELL THE STORY\nOF PORTUGAL",
     paragraph3:
       language === "pt"
         ? "A nossa carta de vinhos foi cuidadosamente selecionada para complementar a experiência gastronómica no Sacramento. Com uma variedade de vinhos portugueses, desde os clássicos do Douro até aos surpreendentes vinhos do Alentejo, cada garrafa conta uma história única. Oferecemos também opções de harmonização, sugerindo o vinho perfeito para acompanhar cada prato. Descubra os sabores de Portugal através dos nossos vinhos, selecionados para enriquecer a sua refeição."
@@ -39,9 +41,11 @@ function RestauranteMaisGiro() {
       <Header
         titlePt="O RESTAURANTE MAIS GIRO DE LISBOA"
         titleEn="THE COOLEST RESTAURANT IN LISBON"
-        imgSrc="https://s3-alpha-sig.figma.com/img/442b/613d/29935c34b5370533e71b15fe5a68fb0a?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=h59bJ98i8NwVqmIAZJ~gYOeSSCVs-ELK~yOQfb7HwXlG3bywhY97Bsh7w~DD6R68XD~dxyA6-MhKFeY2ZBU6mEl0af3wkWC03VAkpbkewZ-Vu6Os6pzwAgXFWX65dqFeKce6ZD2ri7-KGTUtzUueqQKyoG6yZpVtwf5oC8BZ5GERCkmH65M6QW452gz6PoYwrdo-asTXAD3AZDXhuT9HLL991kryfq8~g6wvSWLtCrMp9KgkU9uhxBC~0PXb4PvvNwZXRPCu2BDSyUDabUMkUibbWR9nmOJ87PXvY5v~L37H9qtSoTmkncq2oESTqkrfAN~fBgYft~CjmqXRzu9MTw__"
+        imgSrc={imgHeader}
       />
-      <Gastronomy />
+      <div className="pt-20">
+        <Gastronomy />
+      </div>
       <TradicionalFlavors />
       <div className="p-6 gap-2 lg:px-20">
         <div className="flex flex-col items-center justify-evenly lg:justify-center lg:flex-row gap-20 lg:mb-0">
@@ -56,7 +60,7 @@ function RestauranteMaisGiro() {
         <br />
         <br />
         <Card
-          imageSrc="https://s3-alpha-sig.figma.com/img/268f/4437/98fe0987ee619665458e555b0f67c796?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=jV4TAI6QTGDkkDLIvGzM5WwUi5YU6Zh3R2hxdLBiefCDJwD2mx10nnmkfqAPAt5YQj~ZHqf0SFRL947OrpY4kVExGrxYsuv~smhpXXgH1k1DGldsZRPWLuNm3RzKjhl~Ak1ZcCazT7lUDkz8ywtQgAiK1eLdBxVQKnJuHP9NqVmQSeFs-i7CILhY1yrJMJnmB9GWmzHnqnOUMoH3TTHIqJ65dcgIY4KvZtauIyzEOZf18Z~3UQ1HEDJuXOSO9mZYihFqYdWRmHpr3A5vKiPhiLsNxdQZfMxgY6Ut0pL3Ea7gLftTXdU983pFYb7~WreAsGDELV4cOW~sjU1IKUWhGg__"
+          imageSrc={cardImg}
           title={t.cardTitle}
           width="w-full"
           height="h-[500px]"

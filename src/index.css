@@ -44,7 +44,7 @@ html {
 }
 .h1-title {
   font-family: "Caudex", serif;
-  font-size: 1.875rem; /* text-3xl */
+  font-size: 2rem; /* text-3xl */
   text-transform: uppercase;
   letter-spacing: -0.03em;
   line-height: 1.4;

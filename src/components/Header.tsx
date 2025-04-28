@@ -30,25 +30,23 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
   };
 
   return (
-    <div className="top-0 w-full bg-repeat overflow-hidden">
+    <div className="top-0 w-full bg-repeat overflow-hidden ">
       {/* Faixa superior com PT/EN */}
       <motion.div
-        className="h-4 bg-center flex flex-row-reverse px-2 lg:h-10"
+        className=" lg:h-10 h-8 bg-center flex flex-row-reverse px-2 fixed top-0 left-0 w-full z-50 bg-[#E4D9CD]"
         style={{ backgroundImage: `url(${bg})` }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <button className="cursor-pointer" onClick={toggleLanguage}>
-          <h1 className="text-xs lg:text-base font-bold mx-8 text-white">
-            PT/EN
-          </h1>
+          <h1 className="text-xs lg:text-base font-semi  text-white">PT/EN</h1>
         </button>
       </motion.div>
 
       {/* Navbar desktop */}
       <motion.div
-        className="hidden lg:flex items-center justify-center w-full lg:gap-100 px-20 py-6 relative z-50 lg:h-35"
+        className="hidden lg:flex items-center justify-center w-full lg:gap-100 px-20 py-6 fixed top-4 lg:top-10 left-0 bg-[#E4D9CD] z-40 h-30  shadow-md"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
@@ -75,7 +73,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
             <motion.img
               src={logo}
               alt="Logo Sacramento"
-              className="h-12"
+              className="h-12 "
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 120 }}
             />
@@ -99,15 +97,15 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
       </motion.div>
 
       {/* Navbar mobile */}
-      <div className="flex lg:hidden flex-row w-full p-10 justify-between items-center">
+      <div className="flex lg:hidden flex-row w-full px-2 justify-between items-center fixed h-13 top-6 left-0 bg-[#E4D9CD] z-40">
         <Link to="/">
-          <img src={logo} alt="Logo" />
+          <img src={logo} alt="Logo" className=" h-5" />
         </Link>
         <button
           className="cursor-pointer"
           onClick={() => setShowMobileNav(true)}
         >
-          <img src={menu} alt="Menu" />
+          <img src={menu} alt="Menu" className="h-4" />
         </button>
       </div>
 
@@ -117,13 +115,13 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
 
       {/* Banner com título e animação no background */}
       <motion.div
-        className="relative w-full h-50 lg:h-100 lg:pl-20 flex items-center"
+        className="relative w-full h-50 lg:h-120  lg:pl-20 flex items-center pt-24 lg:pt-40 "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 1 }}
       >
         <motion.div
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 "
           style={{
             backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${
               imgSrc || bgHeader
@@ -137,7 +135,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
         />
 
         <motion.h1
-          className="relative z-10 text-3xl lg:text-5xl font-caudex py-10 px-5 text-white text-left lg:max-w-2/5 uppercase"
+          className="relative z-10 text-2xl lg:text-5xl font-caudex py-10 px-5 text-white text-left  lg:max-w-2/5 uppercase"
           initial={{ x: -80, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1.4 }}
@@ -146,6 +144,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
         </motion.h1>
       </motion.div>
 
+      {/* InfoHeader */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}

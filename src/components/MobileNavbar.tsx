@@ -21,6 +21,7 @@ type MobileNavBarProps = {
 
 const MobileNavBar = ({ onClose }: MobileNavBarProps) => {
   const links = [
+    { to: "/", label: "Home" },
     { to: "/restaurante", label: "Restaurante" },
     { to: "/cocktails", label: "Bar" },
     { to: "/eventos", label: "Grupos" },

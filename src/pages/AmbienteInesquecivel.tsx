@@ -6,6 +6,12 @@ import GaleryAmbienteInesq from "../components/GaleryAmbienteInesq";
 import Header from "../components/Header";
 import { useLanguage } from "../context/LanguageContext";
 
+import imgHeader from "../assets/images/pg7/imgHeader.jpg";
+import img1 from "../assets/images/pg7/img1.jpg";
+import img2 from "../assets/images/pg7/img2.jpg";
+import img3 from "../assets/images/pg7/img3.jpg";
+import imgCard from "../assets/images/pg7/imgCard.jpg";
+
 function AmbienteInesquecivel() {
   const { language } = useLanguage();
   const isPT = language === "pt";
@@ -64,7 +70,7 @@ function AmbienteInesquecivel() {
       <Header
         titlePt="Ambiente Inesquecível"
         titleEn="Unforgettable Atmosphere"
-        imgSrc="https://s3-alpha-sig.figma.com/img/92a5/ffaf/b4456c154dd42c6e760d6e1dad199d10?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=mSkrCRS2BfxNaLt43OcePpp-XxfhwAAMxfQvqTEDtf3p0RyMjxnWCbkfwbwhfjRbHZx2L~FQ912Dpdorpz0enMEVmOyc8QXJlpQFLrbPk04OhjMbHr-Cb2S3tA6YVxT8DtbfVZ9ur8O4T~x30-6Vx2XSfHFX14XCo33oikb83lhQrGEzF9qfT26VIYhlFm2VCAzK5~g0knQhuncLJWsekE0byXFFuacFuasFdWK5zOxvH12-rh~FOyUMnfQHuIAQmGoBHZpVKM~VB82xATB6FcSxjVddGmGfYq49ASre3EH8bbQBYnHwLFTsciFHcPZOvqC9wVQJEMS85~gF~~N0qw__"
+        imgSrc={imgHeader}
       />
 
       <div className=" flex flex-col items-center">
@@ -80,7 +86,7 @@ function AmbienteInesquecivel() {
           {/* Imagem à direita no desktop */}
           <div className="w-full lg:w-1/3 flex justify-center">
             <Card
-              imageSrc="https://s3-alpha-sig.figma.com/img/c680/7edc/5555c9d711ef594e42fa819e69103aa5?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=bNUA4LEqCOU58ZxYdOGit-NJ9NrkiQO~DJOxe2kmh~OgMly2uRC4aJicNxzeBQTBklN~12a82JsrUmsDD-XXzFnsh5xJsPMmt-aMp2z88A2iBwNdiUTQjmbSSg-KzSsXlviBK~Y~TaxPenY9gyU2HTCXfsMS6vnjBJ9u0rrghQo6q8BIGj7z8hEP-i~0yB2uTXCCK~OxVJVXc2aNtqaQHgW1J0oAleqdJWIR0a58eSYMkNaF0rmeqzDi3dgxhnoeuUva13ouWttyKyu8aJiobkyNMAqdlJ53~z6x1M~Nd6bTghzA9yazezGYoNQM2RCsce04YE1~9DJP6EH1169FJg__"
+              imageSrc={img1}
               width="w-full lg:w-[417px]"
               height="h-[504px] lg:h-[718px]"
             />
@@ -96,7 +102,7 @@ function AmbienteInesquecivel() {
             <Arrow title={t.cta2} />
           </div>
           <Card
-            imageSrc="https://s3-alpha-sig.figma.com/img/d520/36e9/7f0d13977c3b1dc2e7f757391e8e513a?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=gnm-qOvAOx7Hn5vD2XVAki2VdTQCCk19TIBArbpfF0YDqRAiP7ldfN-bysIVyRLYXXBeVsd19SQnKFXdAGorBUjT-Zm1GvxPZX4MrbrQl~~ia1Hm8JqLxVsTz1Jo7EwxE5JXQltia9zq1H5efbSzCsLnnvpQClrhd4Qr1J5qFC12oKtwNM6pMzXN3S6kwVeJkWKMTCfnNM0hMw~yu9rwsKz-iz1eVdlVFch6~n0aPUz0euuwmg12lEfpw1p8w26QSlDTfk6~0Xa2gaX1pKhiU9yHa4JS4bZ-8Dmxq2ifuQbc34gcIHgAx2SfWR4STncQdicxvpNW0uhyUC810dFqeA__ "
+            imageSrc={img2}
             width="w-full lg:w-[534px]"
             height="h-[670px] "
           />
@@ -104,14 +110,14 @@ function AmbienteInesquecivel() {
         <div className="lg:px-10 px-6 flex flex-col items-center w-full gap-20">
           <div className="w-full ">
             <Card
-              imageSrc="https://s3-alpha-sig.figma.com/img/c9f6/b7b3/2b7086b865742b58fbdfde65ce82478b?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=X0GEMoTp677mGaZJmrdgzamr2UE2opJZVqtEm3DBAg00hNPw0yFBhfEp7lLbj6NEsRtFkYChIOkxm2KDmPOOfb2EwvYXI9O0mgiKT-auOa6WAmsw7-tiDGxNxbfPl1QQqbxG0e2hRGp~RlYi9eUHoQHoBgOnhtAaC5oHBQadAYr7oZr6cpfzNU9hJSaxs~JWQFSkYjMW-hjqmp0Da~3SfbJ-umt41xHAMlLJgVC4ovVJyiNAdCeYmyP0GGfrRg92s2sHI8WiwR-nEyXMPwXpERQkUGu1sVF7bgL8vjiijLW8EvaDY-GHOGCs~osPHnsNOrw~FxsYz~V0a-Mr6CiYug__"
+              imageSrc={imgCard}
               title={t.bloco3Titulo}
               width="w-full"
               height="h-[517px]"
             />
           </div>
 
-          <div className="flex flex-col lg:flex-row-reverse items-start justify-evenly gap-10 lg:px-1 sm:py-20">
+          <div className="flex flex-col lg:flex-row items-start justify-evenly lg:px-20  sm:py-20">
             <p className="lg:max-w-1/3">{t.bloco3Texto1}</p>
             <div className="flex flex-col items-start lg:max-w-1/3">
               <p>{t.bloco3Texto2}</p>
@@ -120,9 +126,9 @@ function AmbienteInesquecivel() {
           </div>
         </div>
         <div className="flex justify-center px-6 py-20">
-          <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-50 w-full max-w-7xl">
+          <div className="flex flex-col-reverse lg:flex-row items-start gap-10 lg:gap-50 w-full max-w-7xl">
             {/* Texto à esquerda no desktop */}
-            <div className="w-full lg:w-1/2 flex flex-col justify-center items-start">
+            <div className="w-full lg:w-1/2 flex flex-col-reverse justify-center items-start">
               <h1 className="h1-title text-left">{t.bloco4Titulo}</h1>
               <p className="font-catamaran">{t.bloco4Texto}</p>
               <div className="mt-6">
@@ -133,7 +139,7 @@ function AmbienteInesquecivel() {
             {/* Imagem à direita no desktop */}
             <div className="w-full lg:w-1/2 flex items-end justify-start">
               <Card
-                imageSrc="https://s3-alpha-sig.figma.com/img/94f2/d7db/f86261db7d74b812091b23b444e5267f?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=LkncVwj1AC4vw2RgS-7M6vetyFCslP1XupCLswx1C4GvKcysHdtrXmHEpU~1R2HcpK3CYN6ScK4X88SsVY0JPriN1VENez-hKc3gpBtUzZE-nss~sH0AClwXk7uyVLthg09VHjgmKHiA~IzIYXGFnhbeRjSP6iNPM2DFkJRzNZWsp14c3p6T4zCIqb1aLMcSfst~6cm6s-xgLfDrbM0NSpRq5iH3tuF1eUGRNhzeIscw9a-qBEsHP8~N3y3SGMRIgky5XzGZenU5D9Nc77XWYsVei02c33gbK4ANGA6MMRg0RWSnXb-1nJT27nvZkrSWlu3bsqEhhSqV6RqHHi7HHQ__"
+                imageSrc={img3}
                 width="w-full lg:w-[475px]"
                 height="h-[518px] lg:h-[740px]"
               />

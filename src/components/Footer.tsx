@@ -10,12 +10,13 @@ function Footer() {
   const t = {
     nav: isPT
       ? [
+          { name: "Home", path: "/" },
           { name: "Restaurante", path: "/restaurante" },
-          { name: "Gastronomia", path: "/saboreie-noite" },
-          { name: "História", path: "/" },
-          { name: "Eventos", path: "/eventos" },
-          { name: "Contato", path: "/ambiente" },
-          { name: "Reservas", path: "/melhor-alternativa" },
+          { name: "Bar", path: "/cocktails" },
+          { name: "Grupos", path: "/eventos" },
+          { name: "Jantar Tarde", path: "/saboreie-noite" },
+          { name: "Esplanada", path: "/melhor-alternativa" },
+          { name: "Club", path: "/ambiente" },
         ]
       : [
           { name: "Restaurant", path: "/restaurante" },
@@ -59,7 +60,7 @@ function Footer() {
       </div>
 
       {/* Conteúdo principal */}
-      <div className="flex flex-col lg:items-start lg:pt-40 lg:flex-row justify-start px-6 gap-10 lg:gap-30 max-w-7xl  py-10 lg:ml-20 lg:w-2/3">
+      <div className="flex flex-col lg:items-start lg:pt-40 lg:flex-row justify-start px-6 gap-5 lg:gap-30 max-w-7xl  py-10 lg:pl-20 lg:w-2/3">
         {/* Navegação */}
         <div className="flex flex-col gap-2 text-sm lg:text-xl lg:gap-7">
           {t.nav.map((item, index) => (
@@ -70,7 +71,7 @@ function Footer() {
         </div>
 
         {/* Horários */}
-        <div className="flex flex-col text-sm lg:text-xl lg:gap-7">
+        <div className="flex flex-col text-sm lg:text-xl lg:gap-7 lg:w-80 ">
           <div>
             <h2 className="mb-1">{t.hours[0]}</h2>
             <h2 className="mb-1">{t.hours[1]}</h2>
