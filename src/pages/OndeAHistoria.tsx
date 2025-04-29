@@ -43,7 +43,8 @@ function OndeAHistoria() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const threshold = window.innerHeight * 0.4;
+      const threshold = window.innerHeight * 0.2;
+
       if (window.scrollY > threshold && !scrolled) {
         setScrolled(true);
       } else if (window.scrollY <= threshold && scrolled) {
@@ -226,7 +227,7 @@ function OndeAHistoria() {
       </motion.div>
 
       {/* Placeholder */}
-      <div style={{ height: "50vh" }} />
+      <div style={{ height: "40vh" }} />
 
       {/* InfoHeader */}
       <div className="w-full">
