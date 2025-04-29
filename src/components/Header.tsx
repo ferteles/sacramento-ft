@@ -39,7 +39,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <button className="cursor-pointer" onClick={toggleLanguage}>
+        <button className="cursor-pointer " onClick={toggleLanguage}>
           <h1 className="text-xs lg:text-base font-semi  text-white">PT/EN</h1>
         </button>
       </motion.div>
@@ -97,7 +97,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
       </motion.div>
 
       {/* Navbar mobile */}
-      <div className="flex lg:hidden flex-row w-full px-2 justify-between items-center fixed h-13 top-6 left-0 bg-[#E4D9CD] z-40">
+      <div className="flex lg:hidden flex-row w-full px-2 justify-between items-center fixed h-14 top-8 left-0 bg-[#E4D9CD] z-40">
         <Link to="/">
           <img src={logo} alt="Logo" className=" h-5" />
         </Link>
@@ -115,7 +115,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
 
       {/* Banner com título e animação no background */}
       <motion.div
-        className="relative w-full h-50 lg:h-120  lg:pl-20 flex items-center pt-24 lg:pt-40 "
+        className="relative w-full h-60 lg:h-120  lg:pl-20 flex items-center pt-24 lg:pt-40 "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 1 }}

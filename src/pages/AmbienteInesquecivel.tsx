@@ -6,11 +6,11 @@ import GaleryAmbienteInesq from "../components/GaleryAmbienteInesq";
 import Header from "../components/Header";
 import { useLanguage } from "../context/LanguageContext";
 
-import imgHeader from "../assets/images/pg7/imgHeader.jpg";
 import img1 from "../assets/images/pg7/img1.jpg";
 import img2 from "../assets/images/pg7/img2.jpg";
 import img3 from "../assets/images/pg7/img3.jpg";
 import imgCard from "../assets/images/pg7/imgCard.jpg";
+import imgHeader from "../assets/images/pg7/imgHeader.jpg";
 
 function AmbienteInesquecivel() {
   const { language } = useLanguage();
@@ -75,11 +75,15 @@ function AmbienteInesquecivel() {
 
       <div className=" flex flex-col items-center">
         {/* Bloco principal responsivo */}
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10 px-6 py-20">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10 px-0 lg:px-6 py-20">
           {/* Texto à esquerda no desktop */}
-          <div className="flex flex-col justify-center lg:max-w-1/3">
-            <h1 className="h1-title">{t.bloco1Titulo}</h1>
-            <p className="mt-4 text-justify">{t.bloco1Texto}</p>
+          <div className="flex flex-col justify-center lg:max-w-1/3 px-6 lg:px-0">
+            <h1 className="text-3xl lg:text-6xl font-caudex">
+              {t.bloco1Titulo}
+            </h1>
+            <p className="mt-4 text-sm font-catamaran text-justify">
+              {t.bloco1Texto}
+            </p>
             <Arrow title={t.cta1} />
           </div>
 
@@ -95,10 +99,12 @@ function AmbienteInesquecivel() {
 
         <GaleryAmbienteInesq />
 
-        <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-10 lg:px-10 py-20 mt-40 lg:mt-0 lg:pt-0 p-6">
-          <div className="lg:w-1/2">
-            <h1 className="h1-title">{t.bloco2Titulo}</h1>
-            <p>{t.bloco2Texto}</p>
+        <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-10 px-0 lg:px-10 py-20 mt-40 lg:mt-0 lg:pt-0 p-6">
+          <div className="lg:w-1/2 px-6 lg:px-0">
+            <h1 className="text-3xl lg:text-6xl font-caudex">
+              {t.bloco2Titulo}
+            </h1>
+            <p className="font-catamaran text-base ">{t.bloco2Texto}</p>
             <Arrow title={t.cta2} />
           </div>
           <Card
@@ -118,19 +124,23 @@ function AmbienteInesquecivel() {
           </div>
 
           <div className="flex flex-col lg:flex-row items-start justify-evenly lg:px-20  sm:py-20">
-            <p className="lg:max-w-1/3">{t.bloco3Texto1}</p>
+            <p className="lg:max-w-1/3 font catamaran text-base">
+              {t.bloco3Texto1}
+            </p>
             <div className="flex flex-col items-start lg:max-w-1/3">
-              <p>{t.bloco3Texto2}</p>
+              <p className="font-catamaran text-base">{t.bloco3Texto2}</p>
               <Arrow title={t.cta3} />
             </div>
           </div>
         </div>
-        <div className="flex justify-center px-6 py-20">
+        <div className="flex justify-center px-6 lg:px-6 py-0 lg:py-20">
           <div className="flex flex-col-reverse lg:flex-row items-start gap-10 lg:gap-50 w-full max-w-7xl">
             {/* Texto à esquerda no desktop */}
-            <div className="w-full lg:w-1/2 flex flex-col-reverse justify-center items-start">
-              <h1 className="h1-title text-left">{t.bloco4Titulo}</h1>
-              <p className="font-catamaran">{t.bloco4Texto}</p>
+            <div className="w-full lg:w-1/2 flex flex-col-reverse justify-center items-start gap-10">
+              <h1 className="text-3xl lg:text-6xl font-caudex text-left">
+                {t.bloco4Titulo}
+              </h1>
+              <p className="font-catamaran text-base">{t.bloco4Texto}</p>
               <div className="mt-6">
                 <Arrow title={t.cta4} />
               </div>

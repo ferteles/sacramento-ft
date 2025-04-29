@@ -33,7 +33,7 @@ function Form() {
 
       {/* Texto + Formulário */}
       <div className="w-full lg:w-1/2 max-w-xl" id="form">
-        <h1 className="h1-title leading-10 text-xl md:text-2xl lg:text-3xl font-caudex max-w-[30rem]">
+        <h1 className="  text-3xl lg:text-6xl font-caudex max-w-[30rem]">
           {texts.title}
         </h1>
         <p className="font-catamaran text-base mt-3 max-w-[30rem]">
