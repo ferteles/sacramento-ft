@@ -97,15 +97,15 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
       </motion.div>
 
       {/* Navbar mobile */}
-      <div className="flex lg:hidden flex-row w-full px-2 justify-between items-center fixed h-14 top-8 left-0 bg-[#E4D9CD] z-40">
+      <div className="flex lg:hidden flex-row w-full px-5 justify-between items-center fixed h-14 top-8 left-0 bg-[#E4D9CD] z-40">
         <Link to="/">
-          <img src={logo} alt="Logo" className=" h-5" />
+          <img src={logo} alt="Logo" className=" h-7" />
         </Link>
         <button
           className="cursor-pointer"
           onClick={() => setShowMobileNav(true)}
         >
-          <img src={menu} alt="Menu" className="h-4" />
+          <img src={menu} alt="Menu" className="h-5" />
         </button>
       </div>
 
@@ -115,13 +115,13 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
 
       {/* Banner com título e animação no background */}
       <motion.div
-        className="relative w-full h-60 lg:h-120  lg:pl-20 flex items-center pt-24 lg:pt-40 "
+        className="relative w-full h-60 lg:h-120  lg:pl-20 flex items-center pt-24 lg:pt-40 overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, delay: 1 }}
       >
         <motion.div
-          className="absolute inset-0 z-0 "
+          className="absolute inset-0 z-0"
           style={{
             backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${
               imgSrc || bgHeader
@@ -129,8 +129,8 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          initial={{ scale: 1.05 }}
-          animate={{ scale: [1.05, 1, 1.05] }}
+          initial={{ scale: 1 }}
+          animate={{ scale: [1, 1.05, 1] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
 
@@ -146,6 +146,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
 
       {/* InfoHeader */}
       <motion.div
+        className="z-20"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.6 }}

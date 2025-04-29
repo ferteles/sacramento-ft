@@ -59,7 +59,7 @@ function SaboreieNoite() {
         imgSrc={imgHeader}
       />
       <div className="p-6">
-        <div className="flex flex-col-reverse lg:flex-row-reverse items-center justify-center lg:gap-30 gap-10 px-6 py-20">
+        <div className="flex flex-col-reverse lg:flex-row-reverse items-center justify-center lg:gap-30 gap-10  py-20">
           {/* Texto à esquerda no desktop */}
           <div className="flex flex-col justify-center lg:max-w-1/2">
             <h1 className="text-3xl lg:text-6xl font-caudex   lg:max-w-1/2">
@@ -81,7 +81,7 @@ function SaboreieNoite() {
         </div>
 
         <div className="my-10">
-          <div className="flex flex-col-reverse lg:flex-row items-center justify-center lg:px-50 gap-10 px-6 ">
+          <div className="flex flex-col-reverse lg:flex-row items-center justify-center lg:px-50 gap-10  ">
             {/* Texto à esquerda no desktop */}
             <div className="flex flex-col lg:max-w-1/2">
               <h1 className=" text-3xl lg:text-6xl font-caudex  ">{t.h2}</h1>
@@ -109,7 +109,7 @@ function SaboreieNoite() {
             height="h-[517px]"
           />
 
-          <div className="flex flex-col lg:flex-row items-start justify-center gap-20 lg:px-40 lg:w-full  py-10">
+          <div className="flex flex-col lg:flex-row items-start justify-center gap-10 lg:gap-20 lg:px-40 lg:w-full  py-10">
             {/* Primeiro parágrafo (à direita no desktop) */}
             <div className="flex flex-col lg:max-w-1/2">
               <p className=" text-justify lg:w-90 font-catamaran font-thin">

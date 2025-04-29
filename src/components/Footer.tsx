@@ -60,9 +60,9 @@ function Footer() {
       </div>
 
       {/* Conteúdo principal */}
-      <div className="flex flex-col lg:items-start lg:pt-40 lg:flex-row justify-start px-6 gap-5 lg:gap-30 max-w-7xl  py-10 lg:pl-20 lg:w-2/3">
+      <div className="flex flex-col lg:items-start lg:pt-40 lg:flex-row justify-start px-6 gap-5 lg:gap-10 max-w-7xl  py-10 lg:pl-20 lg:w-2/3">
         {/* Navegação */}
-        <div className="flex flex-col gap-2 text-sm lg:text-xl lg:gap-7">
+        <div className="flex flex-col gap-2 text-sm lg:text-xl lg:w-80 lg:gap-7">
           {t.nav.map((item, index) => (
             <Link key={index} to={item.path}>
               {item.name}

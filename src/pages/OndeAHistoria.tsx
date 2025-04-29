@@ -126,7 +126,7 @@ function OndeAHistoria() {
       >
         {/* Faixa superior */}
         <motion.div
-          className="h-10 lg:h-13 bg-center flex flex-row-reverse items-center px-5 lg:px-10 "
+          className="h-8 lg:h-10 bg-center flex flex-row-reverse items-center px-5 lg:px-10 "
           style={{
             backgroundImage: `url(${topheader})`,
             backgroundSize: "cover",
@@ -143,8 +143,8 @@ function OndeAHistoria() {
 
         {/* Navbar */}
         <div
-          className={`flex items-center justify-between lg:justify-evenly w-full px-5 lg:px-20 py-4 ${
-            scrolled ? "bg-[#E4D9CD]" : "bg-transparent"
+          className={`flex items-center justify-between lg:justify-evenly w-full px-5  lg:px-20 py-4 ${
+            scrolled ? "bg-[#E4D9CD] shadow-md" : "bg-transparent"
           } transition-all duration-500`}
         >
           {/* Left Links */}
@@ -226,7 +226,7 @@ function OndeAHistoria() {
       </motion.div>
 
       {/* Placeholder */}
-      <div style={{ height: "var(--header-height)" }} />
+      <div style={{ height: "50vh" }} />
 
       {/* InfoHeader */}
       <div className="w-full">

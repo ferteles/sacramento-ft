@@ -65,7 +65,7 @@ Jantares Especiais"
       />
       <div className="p-6">
         {/* Bloco principal com texto e imagem */}
-        <div className="flex flex-col-reverse lg:flex-row-reverse items-start w-full justify-center lg:gap-40 gap-20 px-6 py-20">
+        <div className="flex flex-col-reverse lg:flex-row-reverse items-start w-full justify-center lg:gap-40 gap-20  py-20">
           <div className="flex flex-col justify-center lg:max-w-1/3">
             <h1 className="h1-title">{t.h1}</h1>
             <p className="mt-4 text-justify">{t.p1}</p>
@@ -99,13 +99,15 @@ Jantares Especiais"
 
         {/* Seção de cocktails */}
         <div className="flex flex-col items-center justify-center lg:my-60">
-          <h1 className="w-full h1-title text-center">{t.h2Cocktails}</h1>
+          <h1 className="w-full h1-title text-left lg:text-center ">
+            {t.h2Cocktails}
+          </h1>
           <p className="lg:max-w-1/2">{t.p2Cocktails}</p>
           <Arrow title={t.cta3} />
         </div>
 
         {/* Seção de história e alma */}
-        <div className="lg:px-40 p-6 lg:my-40">
+        <div className="lg:px-40  lg:my-40">
           <Card
             imageSrc={imgCard}
             height="h-80 lg:h-[570px]"

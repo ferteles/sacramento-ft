@@ -21,7 +21,7 @@ function Gastronomy() {
   return (
     <div
       key={language}
-      className="p-2 flex flex-col items-center justify-center lg:px-40"
+      className="px-6 flex flex-col items-center justify-center lg:px-40"
     >
       {/* Bloco título + parágrafo */}
       <div className="flex flex-col lg:flex-row w-full justify-center items-start  lg:py-40">

@@ -70,7 +70,7 @@ const Card = ({
           "
         >
           {translatedTitle && (
-            <h1 className="uppercase font-caudex text-2xl lg:text-6xl lg:max-w-full p-6 lg:p-10 break-words whitespace-normal">
+            <h1 className="uppercase font-caudex text-xl lg:text-6xl lg:max-w-full p-6 lg:p-10 break-words whitespace-normal">
               {translatedTitle.includes("\n")
                 ? translatedTitle.split("\n").map((line, idx) => (
                     <span key={idx} className="block">

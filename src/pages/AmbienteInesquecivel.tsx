@@ -100,7 +100,7 @@ function AmbienteInesquecivel() {
         <GaleryAmbienteInesq />
 
         <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-10 px-0 lg:px-10 py-20 mt-40 lg:mt-0 lg:pt-0 p-6">
-          <div className="lg:w-1/2 px-6 lg:px-0">
+          <div className="flex flex-col lg:flex-col lg:w-1/2 px-6 lg:px-0 gap-5 lg:gap-10 ">
             <h1 className="text-3xl lg:text-6xl font-caudex">
               {t.bloco2Titulo}
             </h1>
@@ -134,9 +134,9 @@ function AmbienteInesquecivel() {
           </div>
         </div>
         <div className="flex justify-center px-6 lg:px-6 py-0 lg:py-20">
-          <div className="flex flex-col-reverse lg:flex-row items-start gap-10 lg:gap-50 w-full max-w-7xl">
+          <div className="flex flex-col-reverse lg:flex-row items-start gap-10 lg:gap-30 w-full max-w-7xl lg:px-20">
             {/* Texto à esquerda no desktop */}
-            <div className="w-full lg:w-1/2 flex flex-col-reverse justify-center items-start gap-10">
+            <div className="w-full lg:w-1/2 flex flex-col-reverse lg:flex-col justify-center items-start gap-10">
               <h1 className="text-3xl lg:text-6xl font-caudex text-left">
                 {t.bloco4Titulo}
               </h1>
