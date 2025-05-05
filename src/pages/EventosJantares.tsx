@@ -42,7 +42,7 @@ function EventosJantares() {
       : "Sacramento's ambiance is perfect for relaxed and memorable celebrations...",
 
     cta: isPT ? "Visite o Nosso Bar" : "Visit Our Bar",
-    cta2: isPT ? "Contacte-nos para o Bar" : "Contact Us About the Bar",
+    cta2: isPT ? "Contacte-nos para o seu evento" : "Contact Us About the Bar",
     cta3: isPT
       ? "Contacte-nos para o seu evento"
       : "Contact Us About Your Event",
@@ -50,8 +50,8 @@ function EventosJantares() {
       ? "O ambiente do Sacramento é perfeito para celebrações descontraídas e memoráveis. Com os seus arcos centenários e iluminação intimista, o espaço oferece uma atmosfera acolhedora e sofisticada. Às sextas e sábados, o ambiente ganha uma energia especial, com música ambiente e uma vibe festiva que transforma qualquer evento numa experiência única."
       : "Sacramento's ambiance is perfect for relaxed and memorable celebrations. With its centuries-old arches and intimate lighting, the space offers a cozy and sophisticated atmosphere. On Fridays and Saturdays, the ambiance takes on a special energy, with ambient music and a festive vibe that turns any event into a unique experience. After 11 PM, the restaurant transforms into a club, with DJ sets and a lively atmosphere, perfect for extending the night in style. Whether for a formal meeting or a lively party, our space adapts to your style.",
     pFinal2: isPT
-      ? "O ambiente do Sacramento é perfeito para celebrações descontraídas e memoráveis. Com os seus arcos centenários e iluminação intimista, o espaço oferece uma atmosfera acolhedora e sofisticada. Às sextas e sábados, o ambiente ganha uma energia especial, com música ambiente e uma vibe festiva que transforma qualquer evento numa experiência única. A partir das 23h, o restaurante transforma-se em um clube, com DJ sets e uma atmosfera animada, ideal para prolongar a noite em grande estilo. Seja para uma reunião formal ou uma festa animada, o nosso espaço adapta-se ao seu estilo."
-      : "Sacramento's ambiance is perfect for relaxed and memorable celebrations. With its centuries-old arches and intimate lighting, the space offers a cozy and sophisticated atmosphere. On Fridays and Saturdays, the ambiance takes on a special energy, with ambient music and a festive vibe that turns any event into a unique experience. After 11 PM, the restaurant transforms into a club, with DJ sets and a lively atmosphere, perfect for extending the night in style. Whether for a formal meeting or a lively party, our space adapts to your style.",
+      ? "A partir das 23h, o restaurante transforma-se em um clube, com DJ sets e uma atmosfera animada, ideal para prolongar a noite em grande estilo. Seja para uma reunião formal ou uma festa animada, o nosso espaço adapta-se ao seu estilo."
+      : "Starting at 11 PM, the restaurant transforms into a club, with DJ sets and a lively atmosphere—perfect for extending the night in style. Whether for a formal gathering or a lively party, our space adapts to your vibe.",
   };
 
   return (
@@ -65,9 +65,11 @@ Jantares Especiais"
       />
       <div className="p-6">
         {/* Bloco principal com texto e imagem */}
-        <div className="flex flex-col-reverse lg:flex-row-reverse items-start w-full justify-center lg:gap-40 gap-20  py-20">
+        <div className="flex flex-col-reverse lg:flex-row-reverse items-center w-full justify-center lg:gap-40 gap-20  py-20">
           <div className="flex flex-col justify-center lg:max-w-1/3">
-            <h1 className="h1-title">{t.h1}</h1>
+            <h2 className="font-caudex text-3xl lg:text-5xl uppercase">
+              {t.h1}
+            </h2>
             <p className="mt-4 text-justify">{t.p1}</p>
             <div className="mt-6 flex flex-row items-start">
               <Arrow title={t.cta} />

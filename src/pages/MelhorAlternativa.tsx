@@ -116,9 +116,9 @@ function MelhorAlternativa() {
         <div className="flex flex-col lg:flex-row items-center justify-evenly gap-10 px-6 py-20">
           {/* Texto à esquerda no desktop */}
           <div className="flex flex-col justify-center lg:max-w-1/4">
-            <h1 className="text-3xl lg:text-6xl font-caudex uppercase">
+            <h2 className="text-3xl lg:text-6xl font-caudex uppercase">
               {t.pGastronomiaTitulo}
-            </h1>
+            </h2>
           </div>
 
           {/* Imagem à direita no desktop */}

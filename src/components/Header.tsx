@@ -33,7 +33,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
     <div className="top-0 w-full bg-repeat overflow-hidden ">
       {/* Faixa superior com PT/EN */}
       <motion.div
-        className=" lg:h-10 h-8 bg-center flex flex-row-reverse px-2 fixed top-0 left-0 w-full z-50 bg-[#E4D9CD]"
+        className=" lg:h-7 h-8 bg-center flex flex-row-reverse px-2 fixed top-0 left-0 w-full z-50 bg-[#E4D9CD]"
         style={{ backgroundImage: `url(${bg})` }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
 
       {/* Navbar desktop */}
       <motion.div
-        className="hidden lg:flex items-center justify-center w-full lg:gap-100 px-20 py-6 fixed top-4 lg:top-10 left-0 bg-[#E4D9CD] z-40 h-30  shadow-md"
+        className="hidden lg:flex items-center justify-center w-full lg:gap-100 px-20 py-6 fixed top-6 lg:top-6 left-0 bg-[#E4D9CD] z-40 h-30  shadow-md"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
@@ -123,7 +123,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
         <motion.div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(${
               imgSrc || bgHeader
             })`,
             backgroundSize: "cover",

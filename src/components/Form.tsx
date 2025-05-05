@@ -33,10 +33,14 @@ function Form() {
 
       {/* Texto + Formulário */}
       <div className="w-full lg:w-1/2 max-w-xl" id="form">
-        <h1 className="  text-3xl lg:text-6xl font-caudex max-w-[30rem]">
+        <h3
+          className="text-3xl lg:text-5xl font-caudex max-w-[30rem] uppercase"
+          style={{ fontWeight: 50 }}
+        >
           {texts.title}
-        </h1>
-        <p className="font-catamaran text-base mt-3 max-w-[30rem]">
+        </h3>
+
+        <p className="font-catamaran text-base mt-3 max-w-[70rem]">
           {texts.paragraph}
         </p>
         <form

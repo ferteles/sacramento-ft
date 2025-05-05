@@ -55,16 +55,20 @@ function CocktailsExclusivos() {
             />
           </div>
           <div className="lg:w-1/3 w-full flex flex-col gap-5 items-start justify-start h-full">
-            <h1 className="font-caudex text-3xl uppercase">{t.h1}</h1>
-            <p className="font-catamaran">{t.p1}</p>
+            <h2 className="font-caudex text-3xl lg:text-5xl uppercase">
+              {t.h1}
+            </h2>
+            <p className="font-catamaran text-sm">{t.p1}</p>
           </div>
         </div>
 
         <div className="flex flex-col lg:flex-row-reverse w-full p-6 lg:p-0 gap-10">
           <Card imageSrc={img2} width="w-full" height="h-80 lg:h-[571px]" />
           <div className="lg:max-w-1/2 flex flex-col items-start justify-center gap-3 lg:p-30">
-            <h1 className="font-caudex text-3xl uppercase">{t.h2}</h1>
-            <p>{t.p2}</p>
+            <h2 className="font-caudex text-3xl lg:text-5xl uppercase">
+              {t.h2}
+            </h2>
+            <p className="text-sm font-catamaran">{t.p2}</p>
             <Arrow title={t.cta1} />
           </div>
         </div>

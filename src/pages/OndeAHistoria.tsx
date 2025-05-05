@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useLanguage } from "../context/LanguageContext";
+
 import topheader from "../assets/backgroundHeaderFooter.svg";
 import logo from "../assets/LogoBranca.svg";
 import menuIcon from "../assets/MenuIcoWhite.svg";
+import imgHeader from "../assets/images/pg1/imgHeader.jpg";
+import img1 from "../assets/images/pg1/img1.jpg";
+
 import InfoHeader from "../components/InfoHeader";
 import Card from "../components/Card";
 import HistoriaSection from "../components/HistoriaSection";
@@ -14,72 +18,25 @@ import Footer from "../components/Footer";
 import Form from "../components/Form";
 import MobileNavBar from "../components/MobileNavbar";
 
-import imgHeader from "../assets/images/pg1/imgHeader.jpg";
-import img1 from "../assets/images/pg1/img1.jpg";
-
-function OndeAHistoria() {
-  const [menuOpen, setMenuOpen] = useState(false);
+// Hook de scroll
+function useScrolled(threshold = 0.2) {
   const [scrolled, setScrolled] = useState(false);
-  const controls = useAnimation();
-  const headerRef = useRef<HTMLDivElement>(null);
-
-  const { language, toggleLanguage } = useLanguage();
-
-  const transitionSettings = { duration: 0.5, ease: "easeInOut" };
-
-  const headerLinks = {
-    pt: {
-      left: ["Restaurante", "Bar", "Grupos"],
-      right: ["Jantar Tarde", "Esplanada", "Club"],
-    },
-    en: {
-      left: ["Restaurant", "Bar", "Groups"],
-      right: ["Late Dinner", "Esplanade", "Club"],
-    },
-  };
-
-  const leftPaths = ["/restaurante", "/cocktails", "/eventos"];
-  const rightPaths = ["/saboreie-noite", "/melhor-alternativa", "/ambiente"];
 
   useEffect(() => {
-    const handleScroll = () => {
-      const threshold = window.innerHeight * 0.2;
-
-      if (window.scrollY > threshold && !scrolled) {
-        setScrolled(true);
-      } else if (window.scrollY <= threshold && scrolled) {
-        setScrolled(false);
-      }
+    const onScroll = () => {
+      setScrolled(window.scrollY > window.innerHeight * threshold);
     };
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [threshold]);
 
-    const updateHeaderHeight = () => {
-      if (headerRef.current) {
-        document.documentElement.style.setProperty(
-          "--header-height",
-          `${headerRef.current.offsetHeight}px`
-        );
-      }
-    };
+  return scrolled;
+}
 
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", updateHeaderHeight);
-    updateHeaderHeight();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", updateHeaderHeight);
-    };
-  }, [scrolled]);
-
-  useEffect(() => {
-    controls.start({
-      backgroundColor: scrolled ? "#E4D9CD" : "#000000",
-      height: scrolled ? "5rem" : "100vh",
-      transition: transitionSettings,
-    });
-  }, [scrolled, controls]);
-
-  const texts = {
+// Hook de textos
+function useTexts(language: string) {
+  return {
     title:
       language === "pt"
         ? "Onde a História de Lisboa Encontra a Gastronomia Portuguesa"
@@ -104,10 +61,76 @@ function OndeAHistoria() {
         </>
       ),
   };
+}
+
+// Componente auxiliar
+const NavLinks = ({
+  labels,
+  paths,
+  scrolled,
+}: {
+  labels: string[];
+  paths: string[];
+  scrolled: boolean;
+}) => (
+  <>
+    {labels.map((label, idx) => (
+      <Link
+        key={idx}
+        to={paths[idx]}
+        className={`hover:underline ${scrolled ? "text-black" : "text-white"}`}
+      >
+        {label}
+      </Link>
+    ))}
+  </>
+);
+
+function OndeAHistoria() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const controls = useAnimation();
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  const { language, toggleLanguage } = useLanguage();
+  const scrolled = useScrolled();
+  const texts = useTexts(language);
+
+  const transitionSettings = { duration: 0.5, ease: "easeInOut" };
+
+  const headerLinks = {
+    pt: {
+      left: ["Restaurante", "Bar", "Grupos"],
+      right: ["Jantar Tarde", "Esplanada", "Club"],
+    },
+    en: {
+      left: ["Restaurant", "Bar", "Groups"],
+      right: ["Late Dinner", "Esplanade", "Club"],
+    },
+  };
+
+  const leftPaths = ["/restaurante", "/cocktails", "/eventos"];
+  const rightPaths = ["/saboreie-noite", "/melhor-alternativa", "/ambiente"];
+
+  useEffect(() => {
+    if (headerRef.current) {
+      document.documentElement.style.setProperty(
+        "--header-height",
+        `${headerRef.current.offsetHeight}px`
+      );
+    }
+  }, []);
+
+  useEffect(() => {
+    controls.start({
+      backgroundColor: scrolled ? "#E4D9CD" : "#000000",
+      height: scrolled ? "5rem" : "100vh",
+      transition: transitionSettings,
+    });
+  }, [scrolled, controls]);
 
   return (
     <div className="w-full overflow-x-hidden">
-      {/* Header completo */}
+      {/* Header */}
       <motion.div
         ref={headerRef}
         animate={controls}
@@ -127,7 +150,7 @@ function OndeAHistoria() {
       >
         {/* Faixa superior */}
         <motion.div
-          className="h-8 lg:h-10 bg-center flex flex-row-reverse items-center px-5 lg:px-10 "
+          className="h-8 lg:h-10 bg-center flex flex-row-reverse items-center px-5 lg:px-10"
           style={{
             backgroundImage: `url(${topheader})`,
             backgroundSize: "cover",
@@ -144,52 +167,39 @@ function OndeAHistoria() {
 
         {/* Navbar */}
         <div
-          className={`flex items-center justify-between lg:justify-evenly w-full px-5  lg:px-20 py-4 ${
+          className={`flex items-center justify-between lg:justify-evenly w-full px-5 lg:px-20 py-4 ${
             scrolled ? "bg-[#E4D9CD] shadow-md" : "bg-transparent"
           } transition-all duration-500`}
         >
-          {/* Left Links */}
           <div className="hidden lg:flex gap-6 text-sm">
-            {headerLinks[language].left.map((label, idx) => (
-              <Link
-                key={idx}
-                to={leftPaths[idx]}
-                className={`hover:underline ${
-                  scrolled ? "text-black" : "text-white"
-                }`}
-              >
-                {label}
-              </Link>
-            ))}
+            <NavLinks
+              labels={headerLinks[language].left}
+              paths={leftPaths}
+              scrolled={scrolled}
+            />
           </div>
 
-          {/* Center Logo */}
           <Link to="/">
             <motion.img
               src={logo}
               alt="Logo Sacramento"
-              animate={{ filter: scrolled ? "brightness(0)" : "brightness(1)" }}
+              animate={{
+                filter: scrolled ? "brightness(0)" : "brightness(1)",
+              }}
               transition={transitionSettings}
               className="h-7 lg:h-12"
             />
           </Link>
 
-          {/* Right Links */}
           <div className="hidden lg:flex gap-6 text-sm">
-            {headerLinks[language].right.map((label, idx) => (
-              <Link
-                key={idx}
-                to={rightPaths[idx]}
-                className={`hover:underline ${
-                  scrolled ? "text-black" : "text-white"
-                }`}
-              >
-                {label}
-              </Link>
-            ))}
+            <NavLinks
+              labels={headerLinks[language].right}
+              paths={rightPaths}
+              scrolled={scrolled}
+            />
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile menu */}
           <div className="flex lg:hidden">
             <button onClick={() => setMenuOpen(true)}>
               <motion.img
@@ -199,7 +209,7 @@ function OndeAHistoria() {
                   filter: scrolled ? "brightness(0)" : "brightness(1)",
                 }}
                 transition={transitionSettings}
-                className="h-5 "
+                className="h-5"
               />
             </button>
           </div>
@@ -223,18 +233,15 @@ function OndeAHistoria() {
             </a>
           </motion.div>
         )}
+
         {menuOpen && <MobileNavBar onClose={() => setMenuOpen(false)} />}
       </motion.div>
 
-      {/* Placeholder */}
+      {/* Espaço do Header */}
       <div style={{ height: "40vh" }} />
 
-      {/* InfoHeader */}
-      <div className="w-full">
-        <InfoHeader />
-      </div>
-
-      {/* Main Content */}
+      {/* Conteúdo principal */}
+      <InfoHeader />
       <div className="flex flex-col items-start">
         <div className="flex flex-col lg:flex-row px-6 py-20 gap-10 lg:justify-evenly">
           <div className="lg:w-1/2 flex lg:justify-center">
@@ -245,9 +252,9 @@ function OndeAHistoria() {
             />
           </div>
           <div className="lg:w-1/2 flex flex-col gap-10 justify-start lg:mt-20">
-            <h1 className="text-3xl lg:text-6xl font-caudex uppercase lg:max-w-2/3 ">
+            <h2 className="text-3xl lg:text-5xl font-caudex uppercase lg:max-w-2/3">
               {texts.h2}
-            </h1>
+            </h2>
             <p className="w-full lg:max-w-xl">{texts.paragraph}</p>
           </div>
         </div>

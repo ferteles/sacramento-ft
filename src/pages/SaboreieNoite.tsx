@@ -62,10 +62,10 @@ function SaboreieNoite() {
         <div className="flex flex-col-reverse lg:flex-row-reverse items-center justify-center lg:gap-30 gap-10  py-20">
           {/* Texto à esquerda no desktop */}
           <div className="flex flex-col justify-center lg:max-w-1/2">
-            <h1 className="text-3xl lg:text-6xl font-caudex   lg:max-w-1/2">
+            <h2 className="text-3xl lg:text-6xl font-caudex   lg:max-w-3/4">
               {t.h1}
-            </h1>
-            <p className="mt-4 text-justify lg:max-w-1/2 font-catamaran font-thin">
+            </h2>
+            <p className="mt-4 text-justify lg:max-w-3/4 font-catamaran font-thin">
               {t.p1}
             </p>
           </div>
@@ -84,7 +84,7 @@ function SaboreieNoite() {
           <div className="flex flex-col-reverse lg:flex-row items-center justify-center lg:px-50 gap-10  ">
             {/* Texto à esquerda no desktop */}
             <div className="flex flex-col lg:max-w-1/2">
-              <h1 className=" text-3xl lg:text-6xl font-caudex  ">{t.h2}</h1>
+              <h2 className=" text-3xl lg:text-6xl font-caudex  ">{t.h2}</h2>
               <p className="mt-4 font-catamaran font-thin">{t.p2}</p>
             </div>
 

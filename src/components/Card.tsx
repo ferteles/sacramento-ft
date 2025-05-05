@@ -39,7 +39,6 @@ const Card = ({
   const { ref, isVisible } = useInView();
   const { language } = useLanguage();
 
-  // Suporte a string ou objeto de tradução
   const translatedTitle =
     typeof title === "string" ? title : title?.[language] ?? "";
 
@@ -49,15 +48,13 @@ const Card = ({
       className={`relative rounded-2xl lg:rounded-4xl overflow-hidden bg-cover transition-all duration-700 ${
         isVisible ? "animate-fade-in-up" : "opacity-0"
       } ${width} ${height}`}
+      style={{
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))
+, url(${imageSrc})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
     >
-      <img
-        src={imageSrc}
-        alt="Imagem do Card"
-        className="w-full h-full object-cover"
-        loading="lazy"
-        decoding="async"
-      />
-
       {translatedTitle && (
         <div
           className="
@@ -67,19 +64,18 @@ const Card = ({
             py-2 
             text-white text-sm 
             rounded
+            z-10
           "
         >
-          {translatedTitle && (
-            <h1 className="uppercase font-caudex text-xl lg:text-6xl lg:max-w-full p-6 lg:p-10 break-words whitespace-normal">
-              {translatedTitle.includes("\n")
-                ? translatedTitle.split("\n").map((line, idx) => (
-                    <span key={idx} className="block">
-                      {line}
-                    </span>
-                  ))
-                : translatedTitle}
-            </h1>
-          )}
+          <h2 className="uppercase font-caudex text-xl lg:text-6xl lg:max-w-full p-6 lg:p-10 break-words whitespace-normal">
+            {translatedTitle.includes("\n")
+              ? translatedTitle.split("\n").map((line, idx) => (
+                  <span key={idx} className="block">
+                    {line}
+                  </span>
+                ))
+              : translatedTitle}
+          </h2>
         </div>
       )}
     </div>

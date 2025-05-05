@@ -43,22 +43,38 @@ function TradicionalFlavors() {
       />
 
       {/* Texto circular girando */}
-      <svg
-        viewBox="0 0 650 650"
-        className="absolute w-[550px] h-[550px]  lg:h-[1400px] lg:w-[1400px] z-[5] animate-rotate-slow  "
-      >
-        <defs>
-          <path
-            id="circlePath"
-            d="M325,325 m -170,0 a 170,170 0 1,1 340,0 a 170,170 0 1,1 -340,0"
-          />
-        </defs>
-        <text fill="#000" fontSize="15" fontFamily="Caudex" letterSpacing="20">
-          <textPath xlinkHref="#circlePath" textLength="1065">
-            {t.circleText}
-          </textPath>
-        </text>
-      </svg>
+      <>
+        <h3 className="sr-only font-thin font-caudex">
+          Texto circular animado
+        </h3>
+
+        <svg
+          viewBox="0 0 650 650"
+          className="absolute w-[550px] h-[550px] lg:h-[1400px] lg:w-[1400px] z-[5] animate-rotate-slow"
+          role="img"
+          aria-labelledby="titulo-circular"
+        >
+          <title id="titulo-circular">Texto circular animado</title>
+
+          <defs>
+            <path
+              id="circlePath"
+              d="M325,325 m -170,0 a 170,170 0 1,1 340,0 a 170,170 0 1,1 -340,0"
+            />
+          </defs>
+          <text
+            fill="#000"
+            fontSize="24"
+            fontWeight="100"
+            fontFamily="Caudex"
+            letterSpacing="30"
+          >
+            <textPath xlinkHref="#circlePath" textLength="1065">
+              {t.circleText}
+            </textPath>
+          </text>
+        </svg>
+      </>
 
       {/* Imagem circular central */}
       <img
@@ -69,7 +85,7 @@ function TradicionalFlavors() {
 
       {/* Texto no centro */}
       <div className="absolute text-white text-center z-[6] text-xl font-caudex tracking-tight leading-snug uppercase lg:text-4xl">
-        <h1>{t.centerTitle}</h1>
+        <h2>{t.centerTitle}</h2>
       </div>
     </div>
   );
