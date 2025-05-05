@@ -1,16 +1,21 @@
-import Arrow from "../components/Arrow";
-import Card from "../components/Card";
-import Footer from "../components/Footer";
-import Form from "../components/Form";
-import GaleryAmbienteInesq from "../components/GaleryAmbienteInesq";
-import Header from "../components/Header";
+import React, { Suspense } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
-import img1 from "../assets/images/pg7/img1.jpg";
-import img2 from "../assets/images/pg7/img2.jpg";
-import img3 from "../assets/images/pg7/img3.jpg";
-import imgCard from "../assets/images/pg7/imgCard.jpg";
-import imgHeader from "../assets/images/pg7/imgHeader.jpg";
+import img1 from "../assets/images/pg7/img1.webp";
+import img2 from "../assets/images/pg7/img2.webp";
+import img3 from "../assets/images/pg7/img3.webp";
+import imgCard from "../assets/images/pg7/imgCard.webp";
+import imgHeader from "../assets/images/pg7/imgHeader.webp";
+
+// Lazy imports
+const Arrow = React.lazy(() => import("../components/Arrow"));
+const Card = React.lazy(() => import("../components/Card"));
+const Footer = React.lazy(() => import("../components/Footer"));
+const Form = React.lazy(() => import("../components/Form"));
+const GaleryAmbienteInesq = React.lazy(
+  () => import("../components/GaleryAmbienteInesq")
+);
+const Header = React.lazy(() => import("../components/Header"));
 
 function AmbienteInesquecivel() {
   const { language } = useLanguage();
@@ -67,102 +72,104 @@ function AmbienteInesquecivel() {
 
   return (
     <div className="bg-[#E4D9CD]">
-      <Header
-        titlePt="Ambiente Inesquecível"
-        titleEn="Unforgettable Atmosphere"
-        imgSrc={imgHeader}
-      />
+      <Suspense
+        fallback={
+          <div className="text-center py-10">Carregando cabeçalho...</div>
+        }
+      >
+        <Header
+          titlePt="Ambiente Inesquecível"
+          titleEn="Unforgettable Atmosphere"
+          imgSrc={imgHeader}
+        />
 
-      <div className=" flex flex-col items-center">
-        {/* Bloco principal responsivo */}
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10 px-0 lg:px-6 py-20">
-          {/* Texto à esquerda no desktop */}
-          <div className="flex flex-col justify-center lg:max-w-1/3 px-6 lg:px-0">
-            <h2 className="text-3xl lg:text-6xl font-caudex">
-              {t.bloco1Titulo}
-            </h2>
-            <p className="mt-4 text-sm font-catamaran text-justify">
-              {t.bloco1Texto}
-            </p>
-            <Arrow title={t.cta1} />
-          </div>
-
-          {/* Imagem à direita no desktop */}
-          <div className="w-full lg:w-1/3 flex justify-center">
-            <Card
-              imageSrc={img1}
-              width="w-full lg:w-[417px]"
-              height="h-[504px] lg:h-[718px]"
-            />
-          </div>
-        </div>
-
-        <GaleryAmbienteInesq />
-
-        <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-10 px-0 lg:px-10 py-20 mt-40 lg:mt-0 lg:pt-0 p-6">
-          <div className="flex flex-col lg:flex-col lg:w-1/2 px-6 lg:px-0 gap-5 lg:gap-10 ">
-            <h2 className="text-3xl lg:text-6xl font-caudex">
-              {t.bloco2Titulo}
-            </h2>
-            <p className="font-catamaran text-base ">{t.bloco2Texto}</p>
-            <Arrow title={t.cta2} />
-          </div>
-          <Card
-            imageSrc={img2}
-            width="w-full lg:w-[534px]"
-            height="h-[670px] "
-          />
-        </div>
-        <div className="lg:px-10 px-6 flex flex-col items-center w-full gap-20">
-          <div className="w-full ">
-            <Card
-              imageSrc={imgCard}
-              title={t.bloco3Titulo}
-              width="w-full"
-              height="h-[517px]"
-            />
-          </div>
-
-          <div className="flex flex-col lg:flex-row items-start justify-evenly lg:px-20  sm:py-20">
-            <p className="lg:max-w-1/3 font catamaran text-base">
-              {t.bloco3Texto1}
-            </p>
-            <div className="flex flex-col items-start lg:max-w-1/3">
-              <p className="font-catamaran text-base">{t.bloco3Texto2}</p>
-              <Arrow title={t.cta3} />
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-center px-6 lg:px-6 py-0 lg:py-20">
-          <div className="flex flex-col-reverse lg:flex-row items-start gap-10 lg:gap-30 w-full max-w-7xl lg:px-20">
+        <div className=" flex flex-col items-center">
+          {/* Bloco principal responsivo */}
+          <div className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10 px-0 lg:px-6 py-20">
             {/* Texto à esquerda no desktop */}
-            <div className="w-full lg:w-1/2 flex flex-col-reverse lg:flex-col justify-center items-start gap-10">
-              <h3 className="text-3xl lg:text-6xl font-caudex text-left">
-                {t.bloco4Titulo}
-              </h3>
-              <p className="font-catamaran text-base">{t.bloco4Texto}</p>
-              <div className="mt-6">
-                <Arrow title={t.cta4} />
-              </div>
+            <div className="flex flex-col justify-center lg:max-w-1/3 px-6 lg:px-0">
+              <h1 className="text-3xl lg:text-6xl font-caudex">
+                {t.bloco1Titulo}
+              </h1>
+              <p className="mt-4 text-sm font-catamaran text-justify">
+                {t.bloco1Texto}
+              </p>
+              <Arrow title={t.cta1} />
             </div>
 
             {/* Imagem à direita no desktop */}
-            <div className="w-full lg:w-1/2 flex items-end justify-start">
+            <div className="w-full lg:w-1/3 flex justify-center">
               <Card
-                imageSrc={img3}
-                width="w-full lg:w-[475px]"
-                height="h-[518px] lg:h-[740px]"
+                imageSrc={img1}
+                width="w-full lg:w-[417px]"
+                height="h-[504px] lg:h-[718px]"
               />
             </div>
           </div>
-        </div>
+          <GaleryAmbienteInesq />
+          <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-10 px-0 lg:px-10 py-20 mt-40 lg:mt-0 lg:pt-0 p-6">
+            <div className="flex flex-col lg:flex-col lg:w-1/2 px-6 lg:px-0 gap-5 lg:gap-10 ">
+              <h1 className="text-3xl lg:text-6xl font-caudex">
+                {t.bloco2Titulo}
+              </h1>
+              <p className="font-catamaran text-base ">{t.bloco2Texto}</p>
+              <Arrow title={t.cta2} />
+            </div>
+            <Card
+              imageSrc={img2}
+              width="w-full lg:w-[534px]"
+              height="h-[670px] "
+            />
+          </div>
+          <div className="lg:px-10 px-6 flex flex-col items-center w-full gap-20">
+            <div className="w-full ">
+              <Card
+                imageSrc={imgCard}
+                title={t.bloco3Titulo}
+                width="w-full"
+                height="h-[517px]"
+              />
+            </div>
 
-        <div className="p-6">
+            <div className="flex flex-col lg:flex-row items-start justify-evenly lg:px-20  sm:py-20">
+              <p className="lg:max-w-1/3 font catamaran text-base">
+                {t.bloco3Texto1}
+              </p>
+              <div className="flex flex-col items-start lg:max-w-1/3">
+                <p className="font-catamaran text-base">{t.bloco3Texto2}</p>
+                <Arrow title={t.cta3} />
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center px-6 lg:px-6 py-0 lg:py-20">
+            <div className="flex flex-col-reverse lg:flex-row items-start gap-10 lg:gap-30 w-full max-w-7xl lg:px-20">
+              {/* Texto à esquerda no desktop */}
+              <div className="w-full lg:w-1/2 flex flex-col-reverse lg:flex-col justify-center items-start gap-10">
+                <h1 className="text-3xl lg:text-6xl font-caudex text-left">
+                  {t.bloco4Titulo}
+                </h1>
+                <p className="font-catamaran text-base">{t.bloco4Texto}</p>
+                <div className="mt-6">
+                  <Arrow title={t.cta4} />
+                </div>
+              </div>
+
+              {/* Imagem à direita no desktop */}
+              <div className="w-full lg:w-1/2 flex items-end justify-start">
+                <Card
+                  imageSrc={img3}
+                  width="w-full lg:w-[475px]"
+                  height="h-[518px] lg:h-[740px]"
+                />
+              </div>
+            </div>
+          </div>
+
           <Form />
         </div>
-      </div>
 
-      <Footer />
+        <Footer />
+      </Suspense>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import Card from "./Card";
-import img1grid from "../assets/images/pg7/img1grid.jpg";
-import img2grid from "../assets/images/pg7/img2grid.jpg";
-import img3grid from "../assets/images/pg7/img3grid.jpg";
+import img1grid from "../assets/images/pg7/img1grid.webp";
+import img2grid from "../assets/images/pg7/img2grid.webp";
+import img3grid from "../assets/images/pg7/img3grid.webp";
 
 function GaleryAmbienteInesq() {
   return (

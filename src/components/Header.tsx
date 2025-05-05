@@ -5,7 +5,7 @@ import { useLanguage } from "../context/LanguageContext";
 import logo from "../assets/Logo.svg";
 import InfoHeader from "./InfoHeader";
 import menu from "../assets/MenuIco.svg";
-import bgHeader from "../assets/bgHeader.png";
+import bgHeader from "../assets/bgHeader.webp";
 import bg from "../assets/backgroundHeaderFooter.svg";
 import MobileNavBar from "./MobileNavbar";
 

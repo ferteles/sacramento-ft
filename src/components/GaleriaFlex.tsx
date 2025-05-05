@@ -1,10 +1,10 @@
 import Card from "./Card";
-import imgEsq1 from "../assets/images/pg1/GaleryFlex/imgEsq1.jpg";
-import imgEsq2 from "../assets/images/pg1/GaleryFlex/imgEsq2.jpg";
-import imgDir1 from "../assets/images/pg1/GaleryFlex/imgDir1.jpg";
-import imgDir2 from "../assets/images/pg1/GaleryFlex/imgDir2.jpg";
-import imgEsq3 from "../assets/images/pg1/GaleryFlex/imgEsq3.jpg";
-import imgBottom from "../assets/images/pg1/GaleryFlex/imgBaixo.jpg";
+import imgEsq1 from "../assets/images/pg1/GaleryFlex/imgEsq1.webp";
+import imgEsq2 from "../assets/images/pg1/GaleryFlex/imgEsq2.webp";
+import imgDir1 from "../assets/images/pg1/GaleryFlex/imgDir1.webp";
+import imgDir2 from "../assets/images/pg1/GaleryFlex/imgDir2.webp";
+import imgEsq3 from "../assets/images/pg1/GaleryFlex/imgEsq3.webp";
+import imgBottom from "../assets/images/pg1/GaleryFlex/imgBaixo.webp";
 
 function GaleryFlex() {
   return (

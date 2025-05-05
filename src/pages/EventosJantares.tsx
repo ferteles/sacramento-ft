@@ -1,16 +1,21 @@
-import Arrow from "../components/Arrow";
-import Card from "../components/Card";
-import Footer from "../components/Footer";
-import Form from "../components/Form";
-import Header from "../components/Header";
+import React, { Suspense } from "react";
 import { useLanguage } from "../context/LanguageContext";
-import imgHeader from "../assets/images/pg4/imgHeader.jpg";
-import img1 from "../assets/images/pg4/img1.png";
-import imgCima1 from "../assets/images/pg4/imgCima1.jpg";
-import imgCima2 from "../assets/images/pg4/imgCima2.jpg";
-import imgBaixo from "../assets/images/pg4/imgBaixo.jpg";
-import imgDir from "../assets/images/pg4/imgDir.jpg";
-import imgCard from "../assets/images/pg4/imgCard.jpg";
+
+// Imagens
+import imgHeader from "../assets/images/pg4/imgHeader.webp";
+import img1 from "../assets/images/pg4/img1.webp";
+import imgCima1 from "../assets/images/pg4/imgCima1.webp";
+import imgCima2 from "../assets/images/pg4/imgCima2.webp";
+import imgBaixo from "../assets/images/pg4/imgBaixo.webp";
+import imgDir from "../assets/images/pg4/imgDir.webp";
+import imgCard from "../assets/images/pg4/imgCard.webp";
+
+// Lazy-loaded components
+const Arrow = React.lazy(() => import("../components/Arrow"));
+const Card = React.lazy(() => import("../components/Card"));
+const Footer = React.lazy(() => import("../components/Footer"));
+const Form = React.lazy(() => import("../components/Form"));
+const Header = React.lazy(() => import("../components/Header"));
 
 function EventosJantares() {
   const { language } = useLanguage();
@@ -56,32 +61,41 @@ function EventosJantares() {
 
   return (
     <div>
-      <Header
-        imgSrc={imgHeader}
-        titlePt="Restaurante para Grupos em Lisboa: Eventos e
-Jantares Especiais"
-        titleEn="Restaurant for Groups in Lisbon: Events and Special Dinners
-"
-      />
+      <Suspense
+        fallback={
+          <div className="text-center py-10">Carregando cabeçalho...</div>
+        }
+      >
+        <Header
+          imgSrc={imgHeader}
+          titlePt="Restaurante para Grupos em Lisboa: Eventos e Jantares Especiais"
+          titleEn="Restaurant for Groups in Lisbon: Events and Special Dinners"
+        />
+      </Suspense>
+
       <div className="p-6">
-        {/* Bloco principal com texto e imagem */}
-        <div className="flex flex-col-reverse lg:flex-row-reverse items-center w-full justify-center lg:gap-40 gap-20  py-20">
+        {/* Texto + Imagem */}
+        <div className="flex flex-col-reverse lg:flex-row-reverse items-center w-full justify-center lg:gap-40 gap-20 py-20">
           <div className="flex flex-col justify-center lg:max-w-1/3">
             <h2 className="font-caudex text-3xl lg:text-5xl uppercase">
               {t.h1}
             </h2>
             <p className="mt-4 text-justify">{t.p1}</p>
             <div className="mt-6 flex flex-row items-start">
-              <Arrow title={t.cta} />
+              <Suspense fallback={<div>Carregando botão...</div>}>
+                <Arrow title={t.cta} />
+              </Suspense>
             </div>
           </div>
 
           <div className="w-full lg:w-1/3 flex justify-end">
-            <Card
-              imageSrc={img1}
-              width="w-full lg:w-[600px]"
-              height="h-[504px] lg:h-[900px]"
-            />
+            <Suspense fallback={<div>Carregando imagem...</div>}>
+              <Card
+                imageSrc={img1}
+                width="w-full lg:w-[600px]"
+                height="h-[504px] lg:h-[900px]"
+              />
+            </Suspense>
           </div>
         </div>
 
@@ -89,48 +103,67 @@ Jantares Especiais"
         <div className="mt-10 space-y-4 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-4">
           <div className="flex flex-col gap-4">
             <div className="grid grid-cols-2 gap-4">
-              <Card imageSrc={imgCima2} height="h-52 lg:h-96" />
-              <Card imageSrc={imgCima1} height="h-52 lg:h-96" />
+              <Suspense fallback={<div>Carregando imagem...</div>}>
+                <Card imageSrc={imgCima2} height="h-52 lg:h-96" />
+              </Suspense>
+              <Suspense fallback={<div>Carregando imagem...</div>}>
+                <Card imageSrc={imgCima1} height="h-52 lg:h-96" />
+              </Suspense>
             </div>
 
-            <Card imageSrc={imgBaixo} height="h-80 lg:h-[525px]" />
+            <Suspense fallback={<div>Carregando imagem...</div>}>
+              <Card imageSrc={imgBaixo} height="h-80 lg:h-[525px]" />
+            </Suspense>
           </div>
 
-          <Card imageSrc={imgDir} height="h-[468px] lg:h-[928px]" />
+          <Suspense fallback={<div>Carregando imagem...</div>}>
+            <Card imageSrc={imgDir} height="h-[468px] lg:h-[928px]" />
+          </Suspense>
         </div>
 
         {/* Seção de cocktails */}
         <div className="flex flex-col items-center justify-center lg:my-60">
-          <h1 className="w-full h1-title text-left lg:text-center ">
+          <h1 className="w-full h1-title text-left lg:text-center">
             {t.h2Cocktails}
           </h1>
           <p className="lg:max-w-1/2">{t.p2Cocktails}</p>
-          <Arrow title={t.cta3} />
+          <Suspense fallback={<div>Carregando botão...</div>}>
+            <Arrow title={t.cta3} />
+          </Suspense>
         </div>
 
-        {/* Seção de história e alma */}
-        <div className="lg:px-40  lg:my-40">
-          <Card
-            imageSrc={imgCard}
-            height="h-80 lg:h-[570px]"
-            width="w-full "
-            title="Celebrações com História e Alma"
-          />
+        {/* Seção final */}
+        <div className="lg:px-40 lg:my-40">
+          <Suspense fallback={<div>Carregando card...</div>}>
+            <Card
+              imageSrc={imgCard}
+              height="h-80 lg:h-[570px]"
+              width="w-full"
+              title="Celebrações com História e Alma"
+            />
+          </Suspense>
+
           <div className="flex flex-col lg:flex-row items-start justify-center gap-10 lg:px-40 lg:py-20 py-10">
             <div className="lg:max-w-1/2">
               <p className="text-justify">{t.pFinal1}</p>
             </div>
-
             <div className="flex flex-col items-start lg:max-w-1/2 lg:justify-between">
               <p className="text-justify">{t.pFinal2}</p>
-              <Arrow title={t.cta2} />
+              <Suspense fallback={<div>Carregando botão...</div>}>
+                <Arrow title={t.cta2} />
+              </Suspense>
             </div>
           </div>
         </div>
 
-        <Form />
+        <Suspense fallback={<div>Carregando formulário...</div>}>
+          <Form />
+        </Suspense>
       </div>
-      <Footer />
+
+      <Suspense fallback={<div>Carregando rodapé...</div>}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

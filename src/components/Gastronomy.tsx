@@ -1,7 +1,7 @@
 import { useLanguage } from "../context/LanguageContext";
-import section1Img1 from "../assets/images/pg2/section1Img1.jpg";
-import section1Img2 from "../assets/images/pg2/section1Img2.jpg";
-import section1Img3 from "../assets/images/pg2/section1Img3.jpg";
+import section1Img1 from "../assets/images/pg2/section1Img1.webp";
+import section1Img2 from "../assets/images/pg2/section1Img2.webp";
+import section1Img3 from "../assets/images/pg2/section1Img3.webp";
 import Card from "./Card";
 
 function Gastronomy() {

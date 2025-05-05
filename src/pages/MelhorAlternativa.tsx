@@ -1,17 +1,20 @@
-import Arrow from "../components/Arrow";
-import Card from "../components/Card";
-import Footer from "../components/Footer";
-import Form from "../components/Form";
-import Header from "../components/Header";
-import ViewOfChiado from "../components/ViewOfChiado";
+import React, { Suspense } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
-import imgHeader from "../assets/images/pg6/imgHeader.jpg";
-import imgCard from "../assets/images/pg6/imgCard.jpg";
-import img1 from "../assets/images/pg6/img1.jpg";
-import section2Img1 from "../assets/images/pg6/section2Img1.jpg";
-import section2Img2 from "../assets/images/pg6/section2Img2.jpg";
-import section2Img3 from "../assets/images/pg6/section2Img3.jpg";
+import imgHeader from "../assets/images/pg6/imgHeader.webp";
+import imgCard from "../assets/images/pg6/imgCard.webp";
+import img1 from "../assets/images/pg6/img1.webp";
+import section2Img1 from "../assets/images/pg6/section2Img1.webp";
+import section2Img2 from "../assets/images/pg6/section2Img2.webp";
+import section2Img3 from "../assets/images/pg6/section2Img3.webp";
+
+// Lazy load dos componentes
+const Header = React.lazy(() => import("../components/Header"));
+const Card = React.lazy(() => import("../components/Card"));
+const Arrow = React.lazy(() => import("../components/Arrow"));
+const Form = React.lazy(() => import("../components/Form"));
+const Footer = React.lazy(() => import("../components/Footer"));
+const ViewOfChiado = React.lazy(() => import("../components/ViewOfChiado"));
 
 function MelhorAlternativa() {
   const { language } = useLanguage();
@@ -55,73 +58,88 @@ function MelhorAlternativa() {
 
   return (
     <div>
-      <Header
-        titlePt="Esplanada em Lisboa:
-                A Melhor Alternativa aos Rooftops
-                "
-        titleEn="Terrace in Lisbon: The Best Alternative to Rooftops"
-        imgSrc={imgHeader}
-      />
+      <Suspense
+        fallback={
+          <div className="text-center py-8">Carregando cabeçalho...</div>
+        }
+      >
+        <Header
+          titlePt="Esplanada em Lisboa:
+              A Melhor Alternativa aos Rooftops
+              "
+          titleEn="Terrace in Lisbon: The Best Alternative to Rooftops"
+          imgSrc={imgHeader}
+        />
+      </Suspense>
+
       <div className="flex flex-col gap-5 ">
         <div className="p-6 lg:px-30 flex flex-col gap-10">
-          <Card
-            imageSrc={imgCard}
-            title={t.cardTitle}
-            width="w-full"
-            height="h-[469px]"
-          />
+          <Suspense fallback={<div>Carregando imagem...</div>}>
+            <Card
+              imageSrc={imgCard}
+              title={t.cardTitle}
+              width="w-full"
+              height="h-[469px]"
+            />
+          </Suspense>
         </div>
+
         <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-40 px-6 py-20">
-          {/* Texto à esquerda no desktop */}
           <div className="flex flex-col justify-end lg:w-1/3">
             <p className="text-justify font-catamaran font-thin">
               {t.pEsplanada1}
             </p>
           </div>
 
-          {/* Imagem à direita no desktop */}
           <div className="w-full lg:w-1/3 flex justify-start">
-            <Card
-              imageSrc={img1}
-              width="w-64 lg:w-200"
-              height="h-80 h-[600px]"
-            />
+            <Suspense fallback={<div>Carregando imagem...</div>}>
+              <Card
+                imageSrc={img1}
+                width="w-64 lg:w-200"
+                height="h-80 h-[600px]"
+              />
+            </Suspense>
           </div>
         </div>
 
-        <div className=" sm:p-6 lg:p-0 w-full">
-          {/* Imagem / componente visual no topo */}
-          <ViewOfChiado />
+        <div className="sm:p-6 lg:p-0 w-full">
+          <Suspense fallback={<div>Carregando vista do Chiado...</div>}>
+            <ViewOfChiado />
+          </Suspense>
 
-          {/* Texto e Arrow responsivo abaixo */}
           <div className="flex flex-col lg:flex-row items-start justify-center gap-10 lg:py-10 px-6 lg:px-50 py-10 w-full">
-            {/* Primeiro parágrafo */}
             <div className="lg:w-90">
               <p className="font-catamaran font-thin">{t.pEsplanada2}</p>
             </div>
 
-            {/* Segundo parágrafo + Arrow */}
             <div className="flex flex-col items-start lg:max-w-90">
               <p className="font-catamaran font-thin">{t.pEsplanada3}</p>
-              <Arrow title={t.cta} />
+              <Suspense fallback={<div>Carregando botão...</div>}>
+                <Arrow title={t.cta} />
+              </Suspense>
             </div>
           </div>
         </div>
 
         <div className="flex flex-col gap-5 items-center lg:flex-row lg:items-center lg:justify-center">
-          <Card imageSrc={section2Img1} height="h-80" width="w-80" />
-          <Card imageSrc={section2Img2} height="h-80" width="w-80" />
-          <Card imageSrc={section2Img3} height="h-80" width="w-80" />
+          <Suspense fallback={<div>Carregando imagem...</div>}>
+            <Card imageSrc={section2Img1} height="h-80" width="w-80" />
+          </Suspense>
+          <Suspense fallback={<div>Carregando imagem...</div>}>
+            <Card imageSrc={section2Img2} height="h-80" width="w-80" />
+          </Suspense>
+          <Suspense fallback={<div>Carregando imagem...</div>}>
+            <Card imageSrc={section2Img3} height="h-80" width="w-80" />
+          </Suspense>
         </div>
+
         <div className="flex flex-col lg:flex-row items-center justify-evenly gap-10 px-6 py-20">
-          {/* Texto à esquerda no desktop */}
           <div className="flex flex-col justify-center lg:max-w-1/4">
             <h2 className="text-3xl lg:text-6xl font-caudex uppercase">
               {t.pGastronomiaTitulo}
             </h2>
           </div>
 
-          {/* Imagem à direita no desktop */}
           <div className="w-full lg:w-1/3 flex justify-end">
             <p className="text-justify font-catamaran font-thin">
               {t.pGastronomiaTexto}
@@ -130,10 +148,15 @@ function MelhorAlternativa() {
         </div>
 
         <div className="px-6 lg:px-0">
-          <Form />
+          <Suspense fallback={<div>Carregando formulário...</div>}>
+            <Form />
+          </Suspense>
         </div>
       </div>
-      <Footer />
+
+      <Suspense fallback={<div>Carregando rodapé...</div>}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

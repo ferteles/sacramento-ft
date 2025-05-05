@@ -1,18 +1,21 @@
-import Arrow from "../components/Arrow";
-import Card from "../components/Card";
-import Header from "../components/Header";
-import Form from "../components/Form";
-import Footer from "../components/Footer";
+import React, { Suspense } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
-import imgHeader from "../assets/images/pg5/imgHeader.jpg";
-import img1 from "../assets/images/pg5/img1.jpg";
-import img2 from "../assets/images/pg5/img2.jpg";
-import imgCard from "../assets/images/pg5/imgCard.jpg";
-import imgCimaEsq from "../assets/images/pg5/imgCimaEsq.jpg";
-import imgBaixoEsq from "../assets/images/pg5/imgBaixoEsq.jpg";
-import imgMeio from "../assets/images/pg5/imgMeio.jpg";
-import imgDir from "../assets/images/pg5/imgDir.jpg";
+import imgHeader from "../assets/images/pg5/imgHeader.webp";
+import img1 from "../assets/images/pg5/img1.webp";
+import img2 from "../assets/images/pg5/img2.webp";
+import imgCard from "../assets/images/pg5/imgCard.webp";
+import imgCimaEsq from "../assets/images/pg5/imgCimaEsq.webp";
+import imgBaixoEsq from "../assets/images/pg5/imgBaixoEsq.webp";
+import imgMeio from "../assets/images/pg5/imgMeio.webp";
+import imgDir from "../assets/images/pg5/imgDir.webp";
+
+// Componentes otimizados com lazy
+const Arrow = React.lazy(() => import("../components/Arrow"));
+const Card = React.lazy(() => import("../components/Card"));
+const Header = React.lazy(() => import("../components/Header"));
+const Form = React.lazy(() => import("../components/Form"));
+const Footer = React.lazy(() => import("../components/Footer"));
 
 function SaboreieNoite() {
   const { language } = useLanguage();
@@ -53,14 +56,16 @@ function SaboreieNoite() {
   };
   return (
     <div className="">
-      <Header
-        titlePt="Jantar Tarde em Lisboa: Saboreie a Noite"
-        titleEn="Late Dinner in Lisbon: Savor the Night"
-        imgSrc={imgHeader}
-      />
+      <Suspense fallback={<div>Carregando cabeçalho...</div>}>
+        <Header
+          titlePt="Jantar Tarde em Lisboa: Saboreie a Noite"
+          titleEn="Late Dinner in Lisbon: Savor the Night"
+          imgSrc={imgHeader}
+        />
+      </Suspense>
+
       <div className="p-6">
         <div className="flex flex-col-reverse lg:flex-row-reverse items-center justify-center lg:gap-30 gap-10  py-20">
-          {/* Texto à esquerda no desktop */}
           <div className="flex flex-col justify-center lg:max-w-1/2">
             <h2 className="text-3xl lg:text-6xl font-caudex   lg:max-w-3/4">
               {t.h1}
@@ -70,85 +75,98 @@ function SaboreieNoite() {
             </p>
           </div>
 
-          {/* Imagem à direita no desktop */}
           <div className="w-full lg:w-1/2 flex justify-end">
-            <Card
-              imageSrc={img1}
-              height="h-96 lg:h-[624px]"
-              width="w-full lg:w-[509px] "
-            />
+            <Suspense fallback={<div>Carregando imagem...</div>}>
+              <Card
+                imageSrc={img1}
+                height="h-96 lg:h-[624px]"
+                width="w-full lg:w-[509px] "
+              />
+            </Suspense>
           </div>
         </div>
 
         <div className="my-10">
           <div className="flex flex-col-reverse lg:flex-row items-center justify-center lg:px-50 gap-10  ">
-            {/* Texto à esquerda no desktop */}
             <div className="flex flex-col lg:max-w-1/2">
               <h2 className=" text-3xl lg:text-6xl font-caudex  ">{t.h2}</h2>
               <p className="mt-4 font-catamaran font-thin">{t.p2}</p>
             </div>
 
-            {/* Imagem à direita no desktop */}
             <div className="w-full lg:max-w-1/2 flex lg:justify-center">
-              <Card
-                imageSrc={img2}
-                height="h-96 lg:h-[624px]"
-                width="w-full lg:w-[640px]"
-              />
+              <Suspense fallback={<div>Carregando imagem...</div>}>
+                <Card
+                  imageSrc={img2}
+                  height="h-96 lg:h-[624px]"
+                  width="w-full lg:w-[640px]"
+                />
+              </Suspense>
             </div>
           </div>
         </div>
+
         <div className="lg:px-40 lg:my-40 ">
-          <Card
-            imageSrc={imgCard}
-            title={{
-              pt: "Noites Inesquecíveis no \n Coração de Lisboa",
-              en: "Unforgettable Nights in the Heart of Lisbon",
-            }}
-            width="w-80 lg:w-full"
-            height="h-[517px]"
-          />
+          <Suspense fallback={<div>Carregando imagem...</div>}>
+            <Card
+              imageSrc={imgCard}
+              title={{
+                pt: "Noites Inesquecíveis no \n Coração de Lisboa",
+                en: "Unforgettable Nights in the Heart of Lisbon",
+              }}
+              width="w-80 lg:w-full"
+              height="h-[517px]"
+            />
+          </Suspense>
 
           <div className="flex flex-col lg:flex-row items-start justify-center gap-10 lg:gap-20 lg:px-40 lg:w-full  py-10">
-            {/* Primeiro parágrafo (à direita no desktop) */}
             <div className="flex flex-col lg:max-w-1/2">
               <p className=" text-justify lg:w-90 font-catamaran font-thin">
                 {t.p3}
               </p>
             </div>
 
-            {/* Segundo parágrafo + Arrow (à esquerda no desktop) */}
             <div className="flex flex-col items-start lg:max-w-1/2">
               <p className="text-justify lg:w-90 font-catamaran font-thin">
                 {t.p4}
               </p>
-              <Arrow title={t.cta} />
+              <Suspense fallback={<div>Carregando botão...</div>}>
+                <Arrow title={t.cta} />
+              </Suspense>
             </div>
           </div>
         </div>
 
-        <Card imageSrc={imgCimaEsq} height="h-150" width="w-full" />
+        <Suspense fallback={<div>Carregando imagem...</div>}>
+          <Card imageSrc={imgCimaEsq} height="h-150" width="w-full" />
+        </Suspense>
       </div>
 
       <div className="flex flex-col lg:flex-row w-full">
-        {/* Imagem vertical à esquerda no desktop */}
         <img
           src={imgBaixoEsq}
           alt="Imagem"
           className="w-full h-69 lg:h-auto lg:w-1/2 object-cover lg:pl-6 lg:rounded-4xl"
         />
 
-        {/* Coluna de cards à direita no desktop */}
         <div className="flex flex-col items-start justify-center p-6 gap-5 lg:w-1/2">
-          <Card imageSrc={imgMeio} width="w-full" height="h-150" />
-          <Card imageSrc={imgDir} width="w-full" height="h-[499px]" />
+          <Suspense fallback={<div>Carregando imagem...</div>}>
+            <Card imageSrc={imgMeio} width="w-full" height="h-150" />
+          </Suspense>
+          <Suspense fallback={<div>Carregando imagem...</div>}>
+            <Card imageSrc={imgDir} width="w-full" height="h-[499px]" />
+          </Suspense>
         </div>
       </div>
 
       <div className="p-6">
-        <Form />
+        <Suspense fallback={<div>Carregando formulário...</div>}>
+          <Form />
+        </Suspense>
       </div>
-      <Footer />
+
+      <Suspense fallback={<div>Carregando rodapé...</div>}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

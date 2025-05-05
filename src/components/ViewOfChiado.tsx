@@ -1,6 +1,6 @@
 import { useLanguage } from "../context/LanguageContext";
-import circularImage from "../assets/imgcircular2.png";
-import line from "../assets/line.png";
+import circularImage from "../assets/imgcircular2.webp";
+import line from "../assets/line.webp";
 
 function ViewOfChiado() {
   const { language } = useLanguage();

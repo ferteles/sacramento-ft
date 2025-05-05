@@ -1,13 +1,17 @@
-import Card from "../components/Card";
-import Header from "../components/Header";
-import Form from "../components/Form";
-import Footer from "../components/Footer";
-import Arrow from "../components/Arrow";
+import React, { Suspense } from "react";
 import { useLanguage } from "../context/LanguageContext";
-import headerImg from "../assets/images/pg3/imgHeader.jpg";
-import img1 from "../assets/images/pg3/img1.jpg";
-import img2 from "../assets/images/pg3/img2.jpg";
-import cardImg from "../assets/images/pg3/cardImg.jpg";
+
+import headerImg from "../assets/images/pg3/imgHeader.webp";
+import img1 from "../assets/images/pg3/img1.webp";
+import img2 from "../assets/images/pg3/img2.webp";
+import cardImg from "../assets/images/pg3/cardImg.webp";
+
+// Lazy loading de componentes pesados
+const Card = React.lazy(() => import("../components/Card"));
+const Header = React.lazy(() => import("../components/Header"));
+const Form = React.lazy(() => import("../components/Form"));
+const Footer = React.lazy(() => import("../components/Footer"));
+const Arrow = React.lazy(() => import("../components/Arrow"));
 
 function CocktailsExclusivos() {
   const { language } = useLanguage();
@@ -40,19 +44,28 @@ function CocktailsExclusivos() {
 
   return (
     <div className="">
-      <Header
-        titlePt="COCKTAILS EXCLUSIVOS NO CORAÇÃO DO CHIADO"
-        titleEn="EXCLUSIVE COCKTAILS IN THE HEART OF CHIADO"
-        imgSrc={headerImg}
-      />
+      <Suspense
+        fallback={
+          <div className="text-center py-10">Carregando cabeçalho...</div>
+        }
+      >
+        <Header
+          titlePt="COCKTAILS EXCLUSIVOS NO CORAÇÃO DO CHIADO"
+          titleEn="EXCLUSIVE COCKTAILS IN THE HEART OF CHIADO"
+          imgSrc={headerImg}
+        />
+      </Suspense>
+
       <div className="flex flex-col">
         <div className="flex flex-col gap-10 lg:gap-40 p-6 lg:flex-row items-start lg:items-center justify-center w-full lg:my-30 lg:px-30">
           <div className="lg:w-1/3 w-full flex flex-row-reverse">
-            <Card
-              imageSrc={img1}
-              height="h-96 lg:h-[561px]"
-              width="w-full lg:w-130"
-            />
+            <Suspense fallback={<div>Carregando imagem...</div>}>
+              <Card
+                imageSrc={img1}
+                height="h-96 lg:h-[561px]"
+                width="w-full lg:w-130"
+              />
+            </Suspense>
           </div>
           <div className="lg:w-1/3 w-full flex flex-col gap-5 items-start justify-start h-full">
             <h2 className="font-caudex text-3xl lg:text-5xl uppercase">
@@ -63,31 +76,49 @@ function CocktailsExclusivos() {
         </div>
 
         <div className="flex flex-col lg:flex-row-reverse w-full p-6 lg:p-0 gap-10">
-          <Card imageSrc={img2} width="w-full" height="h-80 lg:h-[571px]" />
+          <Suspense fallback={<div>Carregando imagem...</div>}>
+            <Card imageSrc={img2} width="w-full" height="h-80 lg:h-[571px]" />
+          </Suspense>
           <div className="lg:max-w-1/2 flex flex-col items-start justify-center gap-3 lg:p-30">
             <h2 className="font-caudex text-3xl lg:text-5xl uppercase">
               {t.h2}
             </h2>
             <p className="text-sm font-catamaran">{t.p2}</p>
-            <Arrow title={t.cta1} />
+            <Suspense fallback={<div>Carregando...</div>}>
+              <Arrow title={t.cta1} />
+            </Suspense>
           </div>
         </div>
 
         <div className="lg:px-40 p-6 lg:my-40">
-          <Card imageSrc={cardImg} width="w-full" height="h-96" title={t.h3} />
+          <Suspense fallback={<div>Carregando card...</div>}>
+            <Card
+              imageSrc={cardImg}
+              width="w-full"
+              height="h-96"
+              title={t.h3}
+            />
+          </Suspense>
           <div className="">
             <div className="flex flex-col lg:flex-row items-start justify-center gap-10 lg:px-40 lg:py-20 py-10">
               <p className="lg:max-w-1/2">{t.p3a}</p>
               <div className="flex flex-col items-start lg:max-w-1/2 lg:justify-between">
                 <p>{t.p3b}</p>
-                <Arrow title={t.cta2} />
+                <Suspense fallback={<div>Carregando botão...</div>}>
+                  <Arrow title={t.cta2} />
+                </Suspense>
               </div>
             </div>
-            <Form />
+            <Suspense fallback={<div>Carregando formulário...</div>}>
+              <Form />
+            </Suspense>
           </div>
         </div>
       </div>
-      <Footer />
+
+      <Suspense fallback={<div>Carregando rodapé...</div>}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import { useLanguage } from "../context/LanguageContext";
 import Card from "./Card";
-import bg from "../assets/bg-pg1.png";
+import bg from "../assets/bg-pg1.webp";
 import arrowWhite from "../assets/ArrowWhite.svg";
-import img1 from "../assets/images/pg1/umPalacioHistorico.jpg";
+import img1 from "../assets/images/pg1/umPalacioHistorico.webp";
 
 function HistoriaSection() {
   const { language } = useLanguage();

@@ -1,6 +1,6 @@
 import { useLanguage } from "../context/LanguageContext";
-import circularImage from "../assets/imgcircular.png";
-import line from "../assets/line.png";
+import circularImage from "../assets/imgcircular.webp";
+import line from "../assets/line.webp";
 
 function TradicionalFlavors() {
   const { language } = useLanguage();

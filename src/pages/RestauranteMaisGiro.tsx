@@ -1,13 +1,19 @@
-import Arrow from "../components/Arrow";
-import Card from "../components/Card";
-import Footer from "../components/Footer";
-import Form from "../components/Form";
-import Gastronomy from "../components/Gastronomy";
-import Header from "../components/Header";
-import TradicionalFlavors from "../components/TradicionalFlavors";
+import React, { Suspense } from "react";
 import { useLanguage } from "../context/LanguageContext";
-import imgHeader from "../assets/images/pg1/imgHeader.jpg";
-import cardImg from "../assets/images/pg2/cardImg.jpg";
+
+import imgHeader from "../assets/images/pg1/imgHeader.webp";
+import cardImg from "../assets/images/pg2/cardImg.webp";
+
+// Lazy loading dos componentes
+const Arrow = React.lazy(() => import("../components/Arrow"));
+const Card = React.lazy(() => import("../components/Card"));
+const Footer = React.lazy(() => import("../components/Footer"));
+const Form = React.lazy(() => import("../components/Form"));
+const Gastronomy = React.lazy(() => import("../components/Gastronomy"));
+const Header = React.lazy(() => import("../components/Header"));
+const TradicionalFlavors = React.lazy(
+  () => import("../components/TradicionalFlavors")
+);
 
 function RestauranteMaisGiro() {
   const { language } = useLanguage();
@@ -38,40 +44,46 @@ function RestauranteMaisGiro() {
 
   return (
     <div className="max-w-screen">
-      <Header
-        titlePt="O RESTAURANTE MAIS GIRO DE LISBOA"
-        titleEn="THE COOLEST RESTAURANT IN LISBON"
-        imgSrc={imgHeader}
-      />
-      <div className="pt-20">
-        <Gastronomy />
-      </div>
-      <TradicionalFlavors />
-      <div className="p-6 gap-2 lg:px-20">
-        <div className="flex flex-col items-start justify-evenly lg:justify-center lg:flex-row gap-20 lg:mb-0">
-          <div className="lg:max-w-100">
-            <p className="font-catamaran">{t.paragraph1}</p>
-          </div>
-          <div className="flex flex-col ">
-            <p className="font-catamaran lg:max-w-100">{t.paragraph2}</p>
-            <Arrow title={t.arrow} />
-          </div>
-        </div>
-        <br />
-        <br />
-        <Card
-          imageSrc={cardImg}
-          title={t.cardTitle}
-          width="w-full"
-          height="h-[500px]"
+      <Suspense
+        fallback={
+          <div className="text-center py-10">Carregando cabeçalho...</div>
+        }
+      >
+        <Header
+          titlePt="O RESTAURANTE MAIS GIRO DE LISBOA"
+          titleEn="THE COOLEST RESTAURANT IN LISBON"
+          imgSrc={imgHeader}
         />
-        <div className="flex flex-col lg:flex-row items-center justify-evenly gap-10 lg:px-10 lg:my-20">
-          <p className="my-10 lg:w-1/2">{t.paragraph3}</p>
-          <div className="w-1/2"></div>
+        <div className="pt-20">
+          <Gastronomy />
         </div>
-        <Form />
-      </div>
-      <Footer />
+        <TradicionalFlavors />
+        <div className="p-6 gap-2 lg:px-20">
+          <div className="flex flex-col items-start justify-evenly lg:justify-center lg:flex-row gap-20 lg:mb-0">
+            <div className="lg:max-w-100">
+              <p className="font-catamaran">{t.paragraph1}</p>
+            </div>
+            <div className="flex flex-col ">
+              <p className="font-catamaran lg:max-w-100">{t.paragraph2}</p>
+              <Arrow title={t.arrow} />
+            </div>
+          </div>
+          <br />
+          <br />
+          <Card
+            imageSrc={cardImg}
+            title={t.cardTitle}
+            width="w-full"
+            height="h-[500px]"
+          />
+          <div className="flex flex-col lg:flex-row items-center justify-evenly gap-10 lg:px-10 lg:my-20">
+            <p className="my-10 lg:w-1/2">{t.paragraph3}</p>
+            <div className="w-1/2"></div>
+          </div>
+          <Form />
+        </div>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

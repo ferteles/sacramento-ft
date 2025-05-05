@@ -1,23 +1,25 @@
 import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, Suspense } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
 import topheader from "../assets/backgroundHeaderFooter.svg";
 import logo from "../assets/LogoBranca.svg";
 import menuIcon from "../assets/MenuIcoWhite.svg";
-import imgHeader from "../assets/images/pg1/imgHeader.jpg";
-import img1 from "../assets/images/pg1/img1.jpg";
+import imgHeader from "../assets/images/pg1/imgHeader.webp";
+import img1 from "../assets/images/pg1/img1.webp";
 
-import InfoHeader from "../components/InfoHeader";
-import Card from "../components/Card";
-import HistoriaSection from "../components/HistoriaSection";
-import GaleryFlex from "../components/GaleriaFlex";
-import Arrow from "../components/Arrow";
-import Footer from "../components/Footer";
-import Form from "../components/Form";
-import MobileNavBar from "../components/MobileNavbar";
-
+// Lazy load dos componentes
+const InfoHeader = React.lazy(() => import("../components/InfoHeader"));
+const Card = React.lazy(() => import("../components/Card"));
+const HistoriaSection = React.lazy(
+  () => import("../components/HistoriaSection")
+);
+const GaleryFlex = React.lazy(() => import("../components/GaleriaFlex"));
+const Arrow = React.lazy(() => import("../components/Arrow"));
+const Footer = React.lazy(() => import("../components/Footer"));
+const Form = React.lazy(() => import("../components/Form"));
+const MobileNavBar = React.lazy(() => import("../components/MobileNavbar"));
 // Hook de scroll
 function useScrolled(threshold = 0.2) {
   const [scrolled, setScrolled] = useState(false);
@@ -234,39 +236,53 @@ function OndeAHistoria() {
           </motion.div>
         )}
 
-        {menuOpen && <MobileNavBar onClose={() => setMenuOpen(false)} />}
+        {menuOpen && (
+          <Suspense
+            fallback={
+              <div className="text-white text-center">Carregando menu...</div>
+            }
+          >
+            <MobileNavBar onClose={() => setMenuOpen(false)} />
+          </Suspense>
+        )}
       </motion.div>
 
       {/* Espaço do Header */}
       <div style={{ height: "40vh" }} />
 
       {/* Conteúdo principal */}
-      <InfoHeader />
-      <div className="flex flex-col items-start">
-        <div className="flex flex-col lg:flex-row px-6 py-20 gap-10 lg:justify-evenly">
-          <div className="lg:w-1/2 flex lg:justify-center">
-            <Card
-              imageSrc={img1}
-              width="w-40 lg:w-[599px]"
-              height="h-48 lg:h-[735px]"
-            />
+      <Suspense
+        fallback={
+          <div className="text-center py-10">Carregando conteúdo...</div>
+        }
+      >
+        <InfoHeader />
+        <div className="flex flex-col items-start">
+          <div className="flex flex-col lg:flex-row px-6 py-20 gap-10 lg:justify-evenly">
+            <div className="lg:w-1/2 flex lg:justify-center">
+              <Card
+                imageSrc={img1}
+                width="w-40 lg:w-[599px]"
+                height="h-48 lg:h-[735px]"
+              />
+            </div>
+            <div className="lg:w-1/2 flex flex-col gap-10 justify-start lg:mt-20">
+              <h2 className="text-3xl lg:text-5xl font-caudex uppercase lg:max-w-2/3">
+                {texts.h2}
+              </h2>
+              <p className="w-full lg:max-w-xl">{texts.paragraph}</p>
+            </div>
           </div>
-          <div className="lg:w-1/2 flex flex-col gap-10 justify-start lg:mt-20">
-            <h2 className="text-3xl lg:text-5xl font-caudex uppercase lg:max-w-2/3">
-              {texts.h2}
-            </h2>
-            <p className="w-full lg:max-w-xl">{texts.paragraph}</p>
-          </div>
-        </div>
 
-        <HistoriaSection />
-        <div className="-mt-10 lg:-mt-50 w-full flex flex-col items-center gap-20 px-6">
-          <GaleryFlex />
-          <Arrow title={texts.arrow} fontSize="text-5xl" />
-          <Form />
+          <HistoriaSection />
+          <div className="-mt-10 lg:-mt-50 w-full flex flex-col items-center gap-20 px-6">
+            <GaleryFlex />
+            <Arrow title={texts.arrow} fontSize="text-5xl" />
+            <Form />
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </Suspense>
     </div>
   );
 }

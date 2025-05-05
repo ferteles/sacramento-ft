@@ -1,6 +1,6 @@
 import { useLanguage } from "../context/LanguageContext";
 import Card from "./Card";
-import imgForm from "../assets/imgForm.jpg";
+import imgForm from "../assets/imgForm.webp";
 
 function Form() {
   const { language } = useLanguage();
