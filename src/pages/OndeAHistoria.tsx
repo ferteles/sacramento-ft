@@ -6,7 +6,7 @@ import { useLanguage } from "../context/LanguageContext";
 import topheader from "../assets/backgroundHeaderFooter.svg";
 import logo from "../assets/LogoBranca.svg";
 import menuIcon from "../assets/MenuIcoWhite.svg";
-import imgHeader from "../assets/images/pg1/imgHeader.webp";
+import gifHeader from "../assets/images/pg1/gif.mp4";
 import img1 from "../assets/images/pg1/img1.webp";
 
 // Lazy load dos componentes
@@ -140,16 +140,20 @@ function OndeAHistoria() {
           backgroundColor: "#000000",
           height: "100vh",
         }}
-        className="w-full flex flex-col fixed top-0 left-0 z-50"
-        style={{
-          backgroundImage: !scrolled
-            ? `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${imgHeader})`
-            : "none",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
+        className="w-full flex flex-col fixed top-0 left-0 z-50 overflow-hidden" // Adicionando overflow-hidden
       >
+        {/* Vídeo de fundo */}
+        {!scrolled && (
+          <video
+            src={gifHeader} // Certifique-se de que gifHeader aponta para o .mp4
+            autoPlay
+            loop
+            muted
+            className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+            style={{ opacity: 0.5 }} // Ajuste a opacidade conforme necessário
+          />
+        )}
+
         {/* Faixa superior */}
         <motion.div
           className="h-8 lg:h-10 bg-center flex flex-row-reverse items-center px-5 lg:px-10"
@@ -157,6 +161,7 @@ function OndeAHistoria() {
             backgroundImage: `url(${topheader})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
+            backgroundColor: "#000000",
           }}
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
