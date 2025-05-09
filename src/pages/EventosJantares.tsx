@@ -123,9 +123,9 @@ function EventosJantares() {
 
         {/* Seção de cocktails */}
         <div className="flex flex-col items-center justify-center lg:my-60">
-          <h1 className="w-full h1-title text-left lg:text-center">
+          <h2 className="w-full h1-title text-left lg:text-center">
             {t.h2Cocktails}
-          </h1>
+          </h2>
           <p className="lg:max-w-1/2">{t.p2Cocktails}</p>
           <Suspense fallback={<div>Carregando botão...</div>}>
             <Arrow title={t.cta3} />

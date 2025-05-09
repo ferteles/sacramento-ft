@@ -40,7 +40,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <button className="cursor-pointer " onClick={toggleLanguage}>
-          <h1 className="text-xs lg:text-base font-semi  text-white">PT/EN</h1>
+          <p className="text-xs lg:text-base font-semi  text-white">PT/EN</p>
         </button>
       </motion.div>
 

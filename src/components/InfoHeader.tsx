@@ -26,12 +26,12 @@ function InfoHeader() {
         backgroundImage: `url(${bg})`,
       }}
     >
-      <h2 className="text-xs lg:text-sm ">
+      <p className="text-xs lg:text-sm ">
         {texts.lunch}
         <br />
-      </h2>
-      <h2 className="text-xs lg:text-sm ">{texts.dinner}</h2>
-      <h3 className="font-bold text-[9px] lg:text-sm">{texts.address}</h3>
+      </p>
+      <p className="text-xs lg:text-sm ">{texts.dinner}</p>
+      <p className="font-bold text-[9px] lg:text-sm">{texts.address}</p>
     </div>
   );
 }

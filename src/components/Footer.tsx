@@ -73,19 +73,19 @@ function Footer() {
         {/* Horários */}
         <div className="flex flex-col text-sm lg:text-xl lg:gap-7 lg:w-80 ">
           <div>
-            <h2 className="mb-1">{t.hours[0]}</h2>
-            <h2 className="mb-1">{t.hours[1]}</h2>
+            <p className="mb-1">{t.hours[0]}</p>
+            <p className="mb-1">{t.hours[1]}</p>
           </div>
           <div>
-            <h2 className="mt-3 mb-1">{t.hours[2]}</h2>
-            <h2>{t.hours[3]}</h2>
+            <p className="mt-3 mb-1">{t.hours[2]}</p>
+            <p>{t.hours[3]}</p>
           </div>
         </div>
 
         {/* Endereço */}
         <div className="flex flex-col  items-top text-sm lg:text-xl w ">
           {t.address.map((line, i) => (
-            <h2 key={i}>{line}</h2>
+            <p key={i}>{line}</p>
           ))}
         </div>
       </div>

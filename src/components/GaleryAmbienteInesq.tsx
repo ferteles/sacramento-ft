@@ -6,7 +6,7 @@ import img3grid from "../assets/images/pg7/img3grid.webp";
 function GaleryAmbienteInesq() {
   return (
     <div className="h-[1313px] flex flex-col gap-5 w-full p-0">
-      <div className="flex lg:flex-row flex-col lg:items-end items-center justify-start w-full gap-10">
+      <div className="flex lg:flex-row flex-col lg:items-end items-center justify-start w-full gap-10 ">
         <Card
           imageSrc={img1grid}
           width="lg:w-1/3 w-full"

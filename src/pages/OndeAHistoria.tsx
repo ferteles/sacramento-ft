@@ -163,7 +163,7 @@ function OndeAHistoria() {
           transition={transitionSettings}
         >
           <button onClick={toggleLanguage}>
-            <h1 className="text-sm font-semi text-white">PT/EN</h1>
+            <p className="text-sm font-semi text-white cursor-pointer">PT/EN</p>
           </button>
         </motion.div>
 

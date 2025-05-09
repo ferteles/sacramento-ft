@@ -9,11 +9,11 @@ function Arrow({ title, fontSize = "text-lg" }: ArrowProps) {
   return (
     <div className="my-5">
       <div className="flex flex-col lg:flex-row items-center lg:justify-start gap-2 lg:gap-4">
-        <h1
+        <p
           className={`font-caudex uppercase ${fontSize} text-center lg:text-left`}
         >
           {title}
-        </h1>
+        </p>
         <a href="#form" className="cursor-pointer group mt-2 lg:mt-0">
           <img
             src={arrow}

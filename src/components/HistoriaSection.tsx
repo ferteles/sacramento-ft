@@ -34,17 +34,17 @@ function HistoriaSection() {
       <div className="flex flex-col lg:flex-row items-center justify-start gap-10 max-w-7xl w-full">
         {/* Texto Esquerdo */}
         <div className="w-full lg:w-1/2 text-sm leading-relaxed px-2 lg:px-8 text-center lg:text-left">
-          <h1 className="text-3xl md:text-4xl font-caudex uppercase mb-4 block lg:hidden">
+          <h2 className="text-3xl md:text-4xl font-caudex uppercase mb-4 block lg:hidden">
             {texts.title}
-          </h1>
+          </h2>
           <p>{texts.left}</p>
         </div>
 
         {/* Centro */}
         <div className="w-full lg:w-1/3 flex flex-col items-center text-center space-y-6 lg:mx-12 ">
-          <h1 className="text-3xl md:text-4xl lg:text-7xl  font-caudex uppercase hidden lg:block font-bold">
+          <h2 className="text-3xl md:text-4xl lg:text-7xl  font-caudex uppercase hidden lg:block font-bold">
             {texts.title}
-          </h1>
+          </h2>
 
           <div className="lg:p-20">
             <Card
@@ -61,9 +61,9 @@ function HistoriaSection() {
           <div className="mt-4">
             <div className="flex justify-center mt-10">
               <a href="#form" className="flex flex-col lg:gap-5">
-                <h1 className="font-bold font-caudex lg:text-4xl text-base">
+                <p className="font-bold font-caudex lg:text-4xl text-base">
                   {texts.cta.toUpperCase()}
-                </h1>
+                </p>
                 <img src={arrowWhite} alt="Seta branca" className="lg:w-100" />
               </a>
             </div>
