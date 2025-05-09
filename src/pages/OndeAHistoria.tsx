@@ -6,7 +6,7 @@ import { useLanguage } from "../context/LanguageContext";
 import topheader from "../assets/backgroundHeaderFooter.svg";
 import logo from "../assets/LogoBranca.svg";
 import menuIcon from "../assets/MenuIcoWhite.svg";
-import gifHeader from "../assets/images/pg1/gif.mp4";
+import gifHeader from "../assets/images/pg1/gifHeader.webm";
 import img1 from "../assets/images/pg1/img1.webp";
 
 // Lazy load dos componentes
