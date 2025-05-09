@@ -52,8 +52,8 @@ function MelhorAlternativa() {
     cta: isPT ? "Reserve seu lugar" : "Reserve your table",
 
     cardTitle: isPT
-      ? "Um Bar com\nAlma Histórica\nE Vibração Contemporânea"
-      : "A Bar With\nHistoric Soul\nAnd Contemporary Vibe",
+      ? "Esplanada no Chiado:\nHistória e Gastronomia\nao Ar Livre"
+      : "Terrace in Chiado:\nHistory and Gastronomy\nOutdoors",
   };
 
   return (

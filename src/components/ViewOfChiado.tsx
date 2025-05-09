@@ -35,7 +35,7 @@ function ViewOfChiado() {
       />
 
       {/* Texto no centro */}
-      <div className="absolute text-white text-center z-[6] text-2xl font-caudex tracking-tight leading-snug uppercase lg:text-4xl">
+      <div className="absolute text-white text-center z-[6] text-2xl font-caudex tracking-tight leading-tighter uppercase lg:text-5xl">
         <h3>{t.centerTitle}</h3>
       </div>
     </div>
