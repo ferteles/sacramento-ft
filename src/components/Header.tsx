@@ -127,7 +127,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
               imgSrc || bgHeader
             })`,
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "top center",
           }}
           initial={{ scale: 1 }}
           animate={{ scale: [1, 1.05, 1] }}
