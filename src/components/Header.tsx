@@ -13,9 +13,15 @@ type HeaderProps = {
   titlePt: string;
   titleEn: string;
   imgSrc?: string;
+  backgroundPosition?: "top center" | "center";
 };
 
-function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
+function Header({
+  titlePt,
+  titleEn,
+  imgSrc,
+  backgroundPosition = "center", // Valor padrão agora é "center"
+}: HeaderProps) {
   const [showMobileNav, setShowMobileNav] = useState(false);
   const { toggleLanguage, language } = useLanguage();
 
@@ -46,7 +52,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
 
       {/* Navbar desktop */}
       <motion.div
-        className="hidden lg:flex items-center justify-center w-full lg:gap-100 px-20 py-6 fixed top-6 lg:top-6 left-0 bg-[#E4D9CD] z-40 h-30  shadow-md"
+        className="hidden lg:flex items-center justify-evenly w-full lg:gap-100 px-20 py-6 fixed top-6 lg:top-6 left-0 bg-[#E4D9CD] z-40 h-30  shadow-md"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
@@ -127,7 +133,7 @@ function Header({ titlePt, titleEn, imgSrc }: HeaderProps) {
               imgSrc || bgHeader
             })`,
             backgroundSize: "cover",
-            backgroundPosition: "top center",
+            backgroundPosition: backgroundPosition, // Usa o valor da prop
           }}
           initial={{ scale: 1 }}
           animate={{ scale: [1, 1.05, 1] }}

@@ -21,7 +21,7 @@ function InfoHeader() {
 
   return (
     <div
-      className="rounded-b-4xl lg:rounded-b-full p-10 lg:p-5 flex py-4 lg:flex-row items-center lg:h-13 justify-center lg:gap-5 flex-col text-white text-center mx-0 lg:mx-20"
+      className="rounded-b-4xl lg:rounded-b-full p-10 lg:p-5 flex py-4 lg:flex-row items-center lg:h-15 justify-center lg:gap-5 flex-col text-white text-center mx-0 lg:mx-20"
       style={{
         backgroundImage: `url(${bg})`,
       }}

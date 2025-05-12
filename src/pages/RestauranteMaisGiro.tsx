@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
-import imgHeader from "../assets/images/pg1/imgHeader.webp";
+import imgHeader from "../assets/images/pg2/imgHeader.webp";
 import cardImg from "../assets/images/pg2/cardImg.webp";
 
 // Lazy loading dos componentes

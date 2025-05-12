@@ -6,7 +6,7 @@ import { useLanguage } from "../context/LanguageContext";
 import topheader from "../assets/backgroundHeaderFooter.svg";
 import logo from "../assets/LogoBranca.svg";
 import menuIcon from "../assets/MenuIcoWhite.svg";
-import gifHeader from "../assets/images/pg1/gifHeader.webm";
+import gifHeader from "../assets/images/pg1/gifHeader.gif";
 import img1 from "../assets/images/pg1/img1.webp";
 
 // Lazy load dos componentes
@@ -125,7 +125,7 @@ function OndeAHistoria() {
   useEffect(() => {
     controls.start({
       backgroundColor: scrolled ? "#E4D9CD" : "#000000",
-      height: scrolled ? "5rem" : "100vh",
+      height: scrolled ? "" : "100vh",
       transition: transitionSettings,
     });
   }, [scrolled, controls]);
@@ -144,11 +144,8 @@ function OndeAHistoria() {
       >
         {/* Vídeo de fundo */}
         {!scrolled && (
-          <video
+          <img
             src={gifHeader} // Certifique-se de que gifHeader aponta para o .mp4
-            autoPlay
-            loop
-            muted
             className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
             style={{ opacity: 0.5 }} // Ajuste a opacidade conforme necessário
           />
@@ -174,7 +171,7 @@ function OndeAHistoria() {
 
         {/* Navbar */}
         <div
-          className={`flex items-center justify-between lg:justify-evenly w-full px-5 lg:px-20 py-4 ${
+          className={`flex items-center justify-between lg:justify-evenly w-full px-5 lg:px-20 py-4 shadow-md${
             scrolled ? "bg-[#E4D9CD] shadow-md" : "bg-transparent"
           } transition-all duration-500`}
         >
@@ -194,7 +191,7 @@ function OndeAHistoria() {
                 filter: scrolled ? "brightness(0)" : "brightness(1)",
               }}
               transition={transitionSettings}
-              className="h-7 lg:h-12"
+              className="h-7 lg:h-10"
             />
           </Link>
 

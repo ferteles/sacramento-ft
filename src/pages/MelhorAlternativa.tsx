@@ -69,6 +69,7 @@ function MelhorAlternativa() {
               "
           titleEn="Terrace in Lisbon: The Best Alternative to Rooftops"
           imgSrc={imgHeader}
+          backgroundPosition="top center"
         />
       </Suspense>
 
