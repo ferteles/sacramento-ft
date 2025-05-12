@@ -21,7 +21,8 @@ const Arrow = React.lazy(() => import("../components/Arrow"));
 const Footer = React.lazy(() => import("../components/Footer"));
 const Form = React.lazy(() => import("../components/Form"));
 const MobileNavBar = React.lazy(() => import("../components/MobileNavbar"));
-// Hook de scroll
+
+// Hook de scroll (mantido)
 function useScrolled(threshold = 0.2) {
   const [scrolled, setScrolled] = useState(false);
 
@@ -37,7 +38,7 @@ function useScrolled(threshold = 0.2) {
   return scrolled;
 }
 
-// Hook de textos
+// Hook de textos (mantido)
 function useTexts(language: string) {
   return {
     title:
@@ -66,7 +67,7 @@ function useTexts(language: string) {
   };
 }
 
-// Componente auxiliar
+// Componente auxiliar (mantido)
 const NavLinks = ({
   labels,
   paths,
@@ -93,6 +94,7 @@ function OndeAHistoria() {
   const [menuOpen, setMenuOpen] = useState(false);
   const controls = useAnimation();
   const headerRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false); // Novo estado para controlar se é mobile
 
   const { language, toggleLanguage } = useLanguage();
   const scrolled = useScrolled();
@@ -131,6 +133,19 @@ function OndeAHistoria() {
     });
   }, [scrolled, controls]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Define seu breakpoint para mobile
+    };
+
+    handleResize(); // Verifica na montagem inicial
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="w-full overflow-x-hidden">
       {/* Header */}
@@ -143,23 +158,26 @@ function OndeAHistoria() {
         }}
         className="w-full flex flex-col fixed top-0 left-0 z-50 overflow-hidden" // Adicionando overflow-hidden
       >
-        {/* Vídeo de fundo */}
+        {/* Vídeo/GIF de fundo */}
         {!scrolled && (
           <div className="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
-            <video
-              autoPlay
-              loop
-              muted
-              src={gifHeaderPC}
-              className="w-full h-full object-cover"
-              style={{ opacity: 0.5, display: "block" }} // Garante que o vídeo seja exibido por padrão
-            />
-            <img
-              src={gifHeaderMobile}
-              alt="Background Animation"
-              className="w-full h-full object-cover absolute top-0 left-0"
-              style={{ opacity: 0.5, display: "none" }} // Oculta o GIF inicialmente
-            />
+            {!isMobile ? (
+              <video
+                autoPlay
+                loop
+                muted
+                src={gifHeaderPC}
+                className="w-full h-full object-cover"
+                style={{ opacity: 0.5 }}
+              />
+            ) : (
+              <img
+                src={gifHeaderMobile}
+                alt="Background Animation"
+                className="w-full h-full object-cover"
+                style={{ opacity: 0.5 }}
+              />
+            )}
           </div>
         )}
 
