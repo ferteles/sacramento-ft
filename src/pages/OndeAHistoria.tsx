@@ -6,7 +6,8 @@ import { useLanguage } from "../context/LanguageContext";
 import topheader from "../assets/backgroundHeaderFooter.svg";
 import logo from "../assets/LogoBranca.svg";
 import menuIcon from "../assets/MenuIcoWhite.svg";
-import gifHeader from "../assets/images/pg1/gifHeader2.gif";
+import gifHeaderPC from "../assets/images/pg1/gifHeaderPC.webm";
+import gifHeaderMobile from "../assets/images/pg1/gifHeaderMobile.gif";
 import img1 from "../assets/images/pg1/img1.webp";
 
 // Lazy load dos componentes
@@ -144,11 +145,22 @@ function OndeAHistoria() {
       >
         {/* Vídeo de fundo */}
         {!scrolled && (
-          <img
-            src={gifHeader} // Certifique-se de que gifHeader aponta para o .mp4
-            className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
-            style={{ opacity: 0.5 }} // Ajuste a opacidade conforme necessário
-          />
+          <div className="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
+            <video
+              autoPlay
+              loop
+              muted
+              src={gifHeaderPC}
+              className="w-full h-full object-cover"
+              style={{ opacity: 0.5, display: "block" }} // Garante que o vídeo seja exibido por padrão
+            />
+            <img
+              src={gifHeaderMobile}
+              alt="Background Animation"
+              className="w-full h-full object-cover absolute top-0 left-0"
+              style={{ opacity: 0.5, display: "none" }} // Oculta o GIF inicialmente
+            />
+          </div>
         )}
 
         {/* Faixa superior */}
