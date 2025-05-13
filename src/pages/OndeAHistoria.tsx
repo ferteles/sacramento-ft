@@ -276,23 +276,23 @@ function OndeAHistoria() {
 
           {/* Hero */}
           {!scrolled && (
-            <motion.div
-              className="flex flex-col items-center justify-center flex-grow text-center px-5 py-10"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="flex flex-col items-center justify-center flex-grow text-center px-5 py-10">
               <h1 className="text-4xl lg:text-7xl font-caudex text-white uppercase max-w-5xl">
                 {texts.title}
               </h1>
-              <a href="#form" className="mt-8">
+              <motion.a
+                href="#form"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="mt-8"
+              >
                 <button className="border border-white px-5 py-3 text-sm uppercase tracking-widest text-white hover:bg-white hover:text-black transition duration-300">
                   {texts.cta}
                 </button>
-              </a>
-            </motion.div>
+              </motion.a>
+            </div>
           )}
-
           {menuOpen && (
             <Suspense
               fallback={
