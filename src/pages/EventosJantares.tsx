@@ -29,8 +29,8 @@ function EventosJantares() {
       : "Memorable Events in a Historic Palace in Chiado",
 
     p1: isPT
-      ? "O Sacramento é o local ideal para eventos e jantares de grupo, onde a história de Lisboa se encontra com a gastronomia portuguesa. Com cinco salas interligadas, oferecemos um cenário único para celebrações inesquecíveis. Seja para uma reunião de negócios, uma comemoração especial ou uma confraternização entre amigos, o nosso espaço adapta-se às suas necessidades, proporcionando uma experiência personalizada e memorável. Localizado no coração do Chiado, o Sacramento combina a elegância de um palácio histórico com o conforto e a sofisticação que o seu evento merece. Além disso, após o jantar, pode terminar a sua noite no nosso clube com uma experiência completa com DJ e ambiente distinto."
-      : "Sacramento is the ideal venue for events and group dinners, where Lisbon's history meets Portuguese gastronomy. With five interconnected rooms, we offer a unique setting for unforgettable celebrations. Whether for a business meeting, a special celebration, or a gathering of friends, our space adapts to your needs, providing a personalized and memorable experience. Located in the heart of Chiado, Sacramento combines the elegance of a historic palace with the comfort and sophistication your event deserves. Moreover, after dinner, you can extend your evening in our club, enjoying a complete experience with a DJ and a vibrant atmosphere.",
+      ? "O Sacramento é o local ideal para eventos e jantares de grupo, onde a história de Lisboa se encontra com a gastronomia portuguesa. Com cinco salas interligadas, oferecemos um cenário único para celebrações inesquecíveis. Seja para uma reunião de negócios, uma comemoração especial ou uma confraternização entre amigos, o nosso espaço adapta-se às suas necessidades, proporcionando uma experiência personalizada e memorável. Localizado no Chiado, o Sacramento combina a elegância de um palácio histórico com o conforto e a sofisticação que o seu evento merece. Além disso, após o jantar, pode terminar a sua noite no nosso clube com uma experiência completa com DJ e ambiente distinto."
+      : "Sacramento is the ideal venue for events and group dinners, where Lisbon's history meets Portuguese gastronomy. With five interconnected rooms, we offer a unique setting for unforgettable celebrations. Whether for a business meeting, a special celebration, or a gathering of friends, our space adapts to your needs, providing a personalized and memorable experience. Located in Chiado, Sacramento combines the elegance of a historic palace with the comfort and sophistication your event deserves. Moreover, after dinner, you can extend your evening in our club, enjoying a complete experience with a DJ and a vibrant atmosphere.",
 
     h2Cocktails: isPT
       ? "Menus que Honram a Tradição, com Toques Modernos"
@@ -39,14 +39,6 @@ function EventosJantares() {
     p2Cocktails: isPT
       ? "Para os seus eventos, oferecemos menus personalizados que honram a tradição da gastronomia portuguesa, com um toque moderno. Desde buffets completos até menus de degustação, cada prato é cuidadosamente preparado para surpreender os seus convidados. Trabalhamos com ingredientes frescos e locais, garantindo uma experiência gastronómica de excelência. Seja para um jantar de negócios ou um jantar de gala, as nossas ementas são pensadas para agradar a todos os paladares. Além disso, o nosso bar oferece uma seleção de cocktails e bebidas premium, perfeitos para acompanhar qualquer ocasião."
       : "For your events, we offer customized menus that honor the tradition of Portuguese gastronomy, with a modern twist. From full buffets to tasting menus, each dish is carefully prepared to delight your guests. We work with fresh, local ingredients, ensuring an excellent dining experience. Whether for a business lunch or a gala dinner, our menus are designed to please every palate. Additionally, our bar offers a selection of premium cocktails and drinks, perfect for any occasion.",
-
-    h2Ambiente: isPT
-      ? "Celebrações com História e Alma"
-      : "Celebrations with History and Soul",
-
-    p3Ambiente: isPT
-      ? "O ambiente do Sacramento é perfeito para celebrações descontraídas e memoráveis..."
-      : "Sacramento's ambiance is perfect for relaxed and memorable celebrations...",
 
     cta: isPT ? "Visite o Nosso Bar" : "Visit Our Bar",
     cta2: isPT ? "Contacte-nos para o seu evento" : "Contact Us About the Bar",
@@ -57,8 +49,8 @@ function EventosJantares() {
       ? "O ambiente do Sacramento é perfeito para celebrações descontraídas e memoráveis. Com os seus arcos centenários e iluminação intimista, o espaço oferece uma atmosfera acolhedora e sofisticada. Às sextas e sábados, o ambiente ganha uma energia especial, com música ambiente e uma vibe festiva que transforma qualquer evento numa experiência única."
       : "Sacramento's ambiance is perfect for relaxed and memorable celebrations. With its centuries-old arches and intimate lighting, the space offers a cozy and sophisticated atmosphere. On Fridays and Saturdays, the ambiance takes on a special energy, with ambient music and a festive vibe that turns any event into a unique experience. After 11 PM, the restaurant transforms into a club, with DJ sets and a lively atmosphere, perfect for extending the night in style. Whether for a formal meeting or a lively party, our space adapts to your style.",
     pFinal2: isPT
-      ? "A partir das 23h, o restaurante transforma-se em um clube, com DJ sets e uma atmosfera animada, ideal para prolongar a noite em grande estilo. Seja para uma reunião formal ou uma festa animada, o nosso espaço adapta-se ao seu estilo."
-      : "Starting at 11 PM, the restaurant transforms into a club, with DJ sets and a lively atmosphere—perfect for extending the night in style. Whether for a formal gathering or a lively party, our space adapts to your vibe.",
+      ? "A partir das 22h, nosso clube abre suas portas, com DJ sets e uma atmosfera animada, ideal para prolongar a noite em grande estilo. Seja para uma reunião formal ou uma festa animada, o nosso espaço adapta-se ao seu estilo."
+      : "From 10:00 PM, our club opens its doors, with DJ sets and a lively atmosphere—perfect for extending the night in style. Whether for a formal gathering or a lively party, our space adapts to your vibe.",
   };
 
   return (

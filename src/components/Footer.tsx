@@ -27,18 +27,8 @@ function Footer() {
           { name: "Reservations", path: "/melhor-alternativa" },
         ],
     hours: isPT
-      ? [
-          "Almoço: Segunda a sexta-feira,",
-          "das 12h30 às 15h00",
-          "Jantar: Todos os dias,",
-          "das 19h30 às 0h00",
-        ]
-      : [
-          "Lunch: Monday to Friday,",
-          "from 12:30 PM to 3:00 PM",
-          "Dinner: Every day,",
-          "from 7:30 PM to 12:00 AM",
-        ],
+      ? ["Jantar: 18h00 às 01h00", "Esplanada: 16h00 às 23h00"]
+      : ["Dinner: 6:00 PM – 1:00 AM", "Terrace: 4:00 PM – 11:00 PM"],
     address: [
       "Sacramento do Chiado",
       "Calçada do Sacramento, 44",

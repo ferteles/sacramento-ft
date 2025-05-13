@@ -32,16 +32,16 @@ function SaboreieNoite() {
         : "Late Dinner in a Historic Palace in Lisboa",
     p1:
       language === "pt"
-        ? "No Sacramento, a cozinha está aberta até tarde, oferecendo uma experiência única para quem quer jantar tarde em Lisboa. Desfrute de pratos tradicionais com um toque moderno, num ambiente que respira história. Localizado no coração do Chiado, o Sacramento é o local ideal para quem procura uma refeição tardia, seja após um espetáculo, um evento ou simplesmente para desfrutar de uma noite tranquila em boa companhia. Com uma cozinha que funciona até tarde, garantimos que cada prato seja preparado com a mesma dedicação e qualidade que nos distingue."
-        : "At Sacramento, the kitchen is open until 1 AM, offering a unique experience for those looking to extend their night in Lisbon. Enjoy traditional dishes with a modern twist in a setting steeped in history. Located in the heart of Chiado, Sacramento is the perfect spot for a late-night meal, whether after a show, an event, or simply to enjoy a quiet night in good company. With a kitchen that operates until late, we ensure that every dish is prepared with the same dedication and quality that sets us apart.",
+        ? "No Sacramento, a cozinha está aberta até tarde, oferecendo uma experiência única para quem quer jantar tarde em Lisboa. Desfrute de pratos tradicionais com um toque moderno, num ambiente que respira história. O Sacramento é o local ideal para quem procura uma refeição tardia, seja após um espetáculo, um evento ou simplesmente para desfrutar de uma noite tranquila em boa companhia. Com uma cozinha que funciona até tarde, garantimos que cada prato seja preparado com a mesma dedicação e qualidade que nos distingue."
+        : "At Sacramento, the kitchen is open until 1 AM, offering a unique experience for those looking to extend their night in Lisbon. Enjoy traditional dishes with a modern twist in a setting steeped in history. Sacramento is the perfect spot for a late-night meal, whether after a show, an event, or simply to enjoy a quiet night in good company. With a kitchen that operates until late, we ensure that every dish is prepared with the same dedication and quality that sets us apart.",
     h2:
       language === "pt"
         ? "Sabores da Noite num Cenário Histórico"
         : "Nighttime Flavors in a Historic Setting",
     p2:
       language === "pt"
-        ? "Desfrute de uma refeição completa ou de petiscos deliciosos até altas horas. Oferecemos uma variedade de pratos que celebram a gastronomia portuguesa, desde clássicos como o bacalhau à brás até opções mais leves, perfeitas para o final da noite. Cada prato é preparado com ingredientes frescos e técnicas contemporâneas, garantindo uma experiência gastronómica memorável, mesmo nas horas mais tardias."
-        : "Enjoy a full meal or delicious snacks late into the night. We offer a variety of dishes that celebrate Portuguese gastronomy, from classics like bacalhau à brás to lighter options, perfect for late-night dining. Each dish is prepared with fresh ingredients and contemporary techniques, ensuring a memorable dining experience, even in the late hours.",
+        ? "Desfrute de uma refeição completa ou de petiscos deliciosos até altas horas. Oferecemos uma variedade de pratos que celebram a gastronomia portuguesa, desde clássicos como arroz de polvo com gambas à brás até opções mais leves, perfeitas para o final da noite."
+        : "Enjoy a full meal or delicious snacks late into the night. We offer a variety of dishes that celebrate Portuguese gastronomy, from classics like Octopus rice with prawns à brás to lighter options, perfect for late-night dining.",
     h3:
       language === "pt"
         ? "Noites Inesquecíveis no Coração de Lisboa"

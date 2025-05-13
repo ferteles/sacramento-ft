@@ -5,14 +5,14 @@ function InfoHeader() {
   const { language } = useLanguage();
 
   const texts = {
-    lunch:
+    openingHours:
       language === "pt"
-        ? "Almoço: Segunda a sexta-feira, das 12h30 às 15h00"
-        : "Lunch: Monday to Friday, from 12:30 PM to 3:00 PM",
-    dinner:
+        ? "Horário de Abertura: 18h00 - 01h00"
+        : "Opening Hours: 6:00 PM – 1:00 AM",
+    terrace:
       language === "pt"
-        ? "Jantar: Todos os dias, das 19h30 às 0h00"
-        : "Dinner: Every day, from 7:30 PM to 12:00 AM",
+        ? "Esplanada: 16h00 - 23h00"
+        : "Terrace: 4:00 PM – 11:00 PM",
     address:
       language === "pt"
         ? "Calçada do Sacramento, 44, Lisboa, Portugal"
@@ -27,10 +27,10 @@ function InfoHeader() {
       }}
     >
       <p className="text-xs lg:text-sm ">
-        {texts.lunch}
+        {texts.openingHours}
         <br />
       </p>
-      <p className="text-xs lg:text-sm ">{texts.dinner}</p>
+      <p className="text-xs lg:text-sm ">{texts.terrace}</p>
       <p className="font-bold text-[9px] lg:text-sm">{texts.address}</p>
     </div>
   );

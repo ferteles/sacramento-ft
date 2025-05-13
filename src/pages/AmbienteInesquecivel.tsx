@@ -31,8 +31,8 @@ function AmbienteInesquecivel() {
       : "Live Music in a Historic Palace in Lisbon",
 
     bloco1Texto: isPT
-      ? "Música ao vivo encontra a história de Lisboa. Com DJ sets que animam as noites de sexta e sábado, oferecemos uma experiência única que combina gastronomia, história e boa música. O nosso clube, localizado dentro do palácio histórico, é o destino perfeito para quem procura prolongar a noite em Lisboa. Com uma atmosfera vibrante e uma programação musical diversificada, o Sacramento transforma-se num espaço de festa e convívio a partir das 23h. O dress code é casual chic, e a guestlist é limitada a 250 pessoas por noite, garantindo uma experiência exclusiva e intimista."
-      : "Live music meets the history of Lisbon. With DJ sets livening up Friday and Saturday nights, we offer a unique experience that blends gastronomy, history, and great music. Our club, located within the historic palace, is the perfect destination for those looking to extend their night in Lisbon. With a vibrant atmosphere and a diverse musical lineup, Sacramento becomes a space for partying and socializing starting at 11 PM. The dress code is casual chic, and the guest list is limited to 250 people per night, ensuring an exclusive and intimate experience.",
+      ? "Música ao vivo, com DJ sets que animam as noites de sexta e sábado, oferecemos uma experiência única que combina gastronomia, história e boa música. O nosso clube, localizado dentro do palácio histórico, é o destino perfeito para quem procura prolongar a noite em Lisboa. Com uma atmosfera vibrante e uma programação musical diversificada, o Sacramento transforma-se num espaço de festa e convívio a partir das 23h. O dress code é casual chic, e a guestlist é limitada a 250 pessoas por noite, garantindo uma experiência exclusiva e intimista."
+      : "Live musics, with DJ sets livening up Friday and Saturday nights, we offer a unique experience that blends gastronomy, history, and great music. Our club, located within the historic palace, is the perfect destination for those looking to extend their night in Lisbon. With a vibrant atmosphere and a diverse musical lineup, Sacramento becomes a space for partying and socializing starting at 11 PM. The dress code is casual chic, and the guest list is limited to 250 people per night, ensuring an exclusive and intimate experience.",
 
     bloco2Titulo: isPT
       ? "Noites Animadas num Cenário Histórico"
@@ -51,8 +51,8 @@ function AmbienteInesquecivel() {
       : "Sacramento’s ambiance is perfect for relaxed and memorable celebrations. With its centuries-old arches and intimate lighting, the space offers a cozy and sophisticated atmosphere. On Fridays and Saturdays, it takes on a special energy, with ambient music and a festive vibe that turns any event into a unique experience.",
 
     bloco3Texto2: isPT
-      ? "A partir das 23h, o restaurante transforma-se em um clube, com DJ sets e uma atmosfera animada, ideal para prolongar a noite em grande estilo. Seja para uma reunião formal ou uma festa animada, o nosso espaço adapta-se ao seu estilo."
-      : "Starting at 11 PM, the restaurant turns into a club, with DJ sets and a lively atmosphere — perfect for extending the night in style. Whether for a formal gathering or a vibrant party, our space adapts to your style.",
+      ? "A partir das 22h, nosso clube abre suas portas, com DJ sets e uma atmosfera animada, ideal para prolongar a noite em grande estilo. Seja para uma reunião formal ou uma festa animada, o nosso espaço adapta-se ao seu estilo."
+      : "From 10:00 PM, our club opens its doors, with DJ sets and a lively atmosphere — perfect for extending the night in style. Whether for a formal gathering or a vibrant party, our space adapts to your style.",
 
     bloco4Titulo: isPT
       ? "Acesso Exclusivo e Dress Code"
