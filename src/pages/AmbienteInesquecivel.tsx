@@ -1,4 +1,6 @@
 import React, { Suspense } from "react";
+import { Helmet } from "react-helmet";
+
 import { useLanguage } from "../context/LanguageContext";
 
 import img1 from "../assets/images/pg7/img1.webp";
@@ -71,106 +73,149 @@ function AmbienteInesquecivel() {
   };
 
   return (
-    <div className="bg-[#E4D9CD]">
-      <Suspense
-        fallback={
-          <div className="text-center py-10">Carregando cabeçalho...</div>
-        }
-      >
-        <Header
-          titlePt="Ambiente Inesquecível"
-          titleEn="Unforgettable Atmosphere"
-          imgSrc={imgHeader}
+    <>
+      <Helmet>
+        <title>
+          {isPT
+            ? "Ambiente Inesquecível – Sacramento Chiado"
+            : "Unforgettable Atmosphere – Sacramento Chiado"}
+        </title>
+        <meta
+          name="description"
+          content={
+            isPT
+              ? "Descubra o clube do Sacramento em Lisboa: DJs ao vivo, ambiente sofisticado, palácio histórico e noites animadas no coração do Chiado."
+              : "Discover Sacramento’s club in Lisbon: live DJs, a sophisticated ambiance, a historic palace, and vibrant nights in the heart of Chiado."
+          }
         />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content={
+            isPT
+              ? "Ambiente Inesquecível – Sacramento Chiado"
+              : "Unforgettable Atmosphere – Sacramento Chiado"
+          }
+        />
+        <meta
+          property="og:description"
+          content={
+            isPT
+              ? "De sexta a sábado, o Sacramento transforma-se em clube com música ao vivo e acesso exclusivo para até 250 pessoas. Uma experiência única em Lisboa."
+              : "From Friday to Saturday, Sacramento turns into a club with live music and exclusive access for up to 250 guests. A unique experience in Lisbon."
+          }
+        />
+        <meta
+          property="og:image"
+          content="https://sacramento-taupe.vercel.app/assets/og-sacramento-banner.png"
+        />
+        <meta
+          property="og:url"
+          content="https://sacramento-taupe.vercel.app/ambiente"
+        />
+      </Helmet>
 
-        <div className=" flex flex-col items-center">
-          {/* Bloco principal responsivo */}
-          <div className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10 px-0 lg:px-6 py-20">
-            {/* Texto à esquerda no desktop */}
-            <div className="flex flex-col justify-center lg:max-w-1/3 px-6 lg:px-0">
-              <h2 className="text-3xl lg:text-6xl font-caudex">
-                {t.bloco1Titulo}
-              </h2>
-              <p className="mt-4 text-sm font-catamaran text-justify">
-                {t.bloco1Texto}
-              </p>
-              <Arrow title={t.cta1} />
-            </div>
+      <div className="bg-[#E4D9CD]">
+        <Suspense
+          fallback={
+            <div className="text-center py-10">Carregando cabeçalho...</div>
+          }
+        >
+          <Header
+            titlePt="Ambiente Inesquecível"
+            titleEn="Unforgettable Atmosphere"
+            imgSrc={imgHeader}
+          />
 
-            {/* Imagem à direita no desktop */}
-            <div className="w-full lg:w-1/3 flex justify-center">
-              <Card
-                imageSrc={img1}
-                width="w-full lg:w-[417px]"
-                height="h-[504px] lg:h-[718px]"
-              />
-            </div>
-          </div>
-          <GaleryAmbienteInesq />
-          <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-10 px-0 lg:px-10 py-20 mt-40 lg:mt-0 lg:pt-0 p-6">
-            <div className="flex flex-col lg:flex-col lg:w-1/2 px-6 lg:px-0 gap-5 lg:gap-10 ">
-              <h2 className="text-3xl lg:text-6xl font-caudex">
-                {t.bloco2Titulo}
-              </h2>
-              <p className="font-catamaran text-base ">{t.bloco2Texto}</p>
-              <Arrow title={t.cta2} />
-            </div>
-            <Card
-              imageSrc={img2}
-              width="w-full lg:w-[534px]"
-              height="h-[670px] "
-            />
-          </div>
-          <div className="lg:px-10 px-6 flex flex-col items-center w-full gap-20">
-            <div className="w-full ">
-              <Card
-                imageSrc={imgCard}
-                title={t.bloco3Titulo}
-                width="w-full"
-                height="h-[517px]"
-              />
-            </div>
-
-            <div className="flex flex-col lg:flex-row items-start justify-evenly lg:px-20  sm:py-20">
-              <p className="lg:max-w-1/3 font catamaran text-base">
-                {t.bloco3Texto1}
-              </p>
-              <div className="flex flex-col items-start lg:max-w-1/3">
-                <p className="font-catamaran text-base">{t.bloco3Texto2}</p>
-                <Arrow title={t.cta3} />
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-center px-6 lg:px-6 py-0 lg:py-20">
-            <div className="flex flex-col-reverse lg:flex-row items-start gap-10 lg:gap-30 w-full max-w-7xl lg:px-20">
+          <div className=" flex flex-col items-center">
+            {/* Bloco principal responsivo */}
+            <div className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10 px-0 lg:px-6 py-20">
               {/* Texto à esquerda no desktop */}
-              <div className="w-full lg:w-1/2 flex flex-col-reverse lg:flex-col justify-center items-start gap-10">
-                <h3 className="text-3xl lg:text-6xl font-caudex text-left">
-                  {t.bloco4Titulo}
-                </h3>
-                <p className="font-catamaran text-base">{t.bloco4Texto}</p>
-                <div className="mt-6">
-                  <Arrow title={t.cta4} />
-                </div>
+              <div className="flex flex-col justify-center lg:max-w-1/3 px-6 lg:px-0">
+                <h2 className="text-3xl lg:text-6xl font-caudex">
+                  {t.bloco1Titulo}
+                </h2>
+                <p className="mt-4 text-sm font-catamaran text-justify">
+                  {t.bloco1Texto}
+                </p>
+                <Arrow title={t.cta1} />
               </div>
 
               {/* Imagem à direita no desktop */}
-              <div className="w-full lg:w-1/2 flex items-end justify-start">
+              <div className="w-full lg:w-1/3 flex justify-center">
                 <Card
-                  imageSrc={img3}
-                  width="w-full lg:w-[475px]"
-                  height="h-[518px] lg:h-[740px]"
+                  imageSrc={img1}
+                  width="w-full lg:w-[417px]"
+                  height="h-[504px] lg:h-[718px]"
                 />
               </div>
             </div>
+            <GaleryAmbienteInesq />
+            <div className="flex flex-col lg:flex-row-reverse items-center justify-center gap-10 px-0 lg:px-10 py-20 mt-40 lg:mt-0 lg:pt-0 p-6">
+              <div className="flex flex-col lg:flex-col lg:w-1/2 px-6 lg:px-0 gap-5 lg:gap-10 ">
+                <h2 className="text-3xl lg:text-6xl font-caudex">
+                  {t.bloco2Titulo}
+                </h2>
+                <p className="font-catamaran text-base ">{t.bloco2Texto}</p>
+                <Arrow title={t.cta2} />
+              </div>
+              <Card
+                imageSrc={img2}
+                width="w-full lg:w-[534px]"
+                height="h-[670px] "
+              />
+            </div>
+            <div className="lg:px-10 px-6 flex flex-col items-center w-full gap-20">
+              <div className="w-full ">
+                <Card
+                  imageSrc={imgCard}
+                  title={t.bloco3Titulo}
+                  width="w-full"
+                  height="h-[517px]"
+                />
+              </div>
+
+              <div className="flex flex-col lg:flex-row items-start justify-evenly lg:px-20  sm:py-20">
+                <p className="lg:max-w-1/3 font catamaran text-base">
+                  {t.bloco3Texto1}
+                </p>
+                <div className="flex flex-col items-start lg:max-w-1/3">
+                  <p className="font-catamaran text-base">{t.bloco3Texto2}</p>
+                  <Arrow title={t.cta3} />
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center px-6 lg:px-6 py-0 lg:py-20">
+              <div className="flex flex-col-reverse lg:flex-row items-start gap-10 lg:gap-30 w-full max-w-7xl lg:px-20">
+                {/* Texto à esquerda no desktop */}
+                <div className="w-full lg:w-1/2 flex flex-col-reverse lg:flex-col justify-center items-start gap-10">
+                  <h3 className="text-3xl lg:text-6xl font-caudex text-left">
+                    {t.bloco4Titulo}
+                  </h3>
+                  <p className="font-catamaran text-base">{t.bloco4Texto}</p>
+                  <div className="mt-6">
+                    <Arrow title={t.cta4} />
+                  </div>
+                </div>
+
+                {/* Imagem à direita no desktop */}
+                <div className="w-full lg:w-1/2 flex items-end justify-start">
+                  <Card
+                    imageSrc={img3}
+                    width="w-full lg:w-[475px]"
+                    height="h-[518px] lg:h-[740px]"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <Form />
           </div>
 
-          <Form />
-        </div>
-
-        <Footer />
-      </Suspense>
-    </div>
+          <Footer />
+        </Suspense>
+      </div>
+    </>
   );
 }
 

@@ -1,4 +1,6 @@
 import React, { Suspense } from "react";
+import { Helmet } from "react-helmet";
+
 import { useLanguage } from "../context/LanguageContext";
 
 // Imagens
@@ -60,111 +62,154 @@ function EventosJantares() {
   };
 
   return (
-    <div>
-      <Suspense
-        fallback={
-          <div className="text-center py-10">Carregando cabeçalho...</div>
-        }
-      >
-        <Header
-          imgSrc={imgHeader}
-          titlePt="Restaurante para Grupos em Lisboa: Eventos e Jantares Especiais"
-          titleEn="Restaurant for Groups in Lisbon: Events and Special Dinners"
+    <>
+      <Helmet>
+        <title>
+          {isPT
+            ? "Eventos e Jantares em Grupo – Sacramento Chiado"
+            : "Group Dinners and Events – Sacramento Chiado"}
+        </title>
+        <meta
+          name="description"
+          content={
+            isPT
+              ? "Organize jantares e eventos memoráveis em um palácio histórico no Chiado. Espaços elegantes, menus personalizados e ambiente sofisticado no Sacramento."
+              : "Host memorable dinners and events in a historic palace in Chiado. Elegant spaces, personalized menus, and a sophisticated atmosphere at Sacramento."
+          }
         />
-      </Suspense>
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content={
+            isPT
+              ? "Eventos e Jantares em Grupo – Sacramento Chiado"
+              : "Group Dinners and Events – Sacramento Chiado"
+          }
+        />
+        <meta
+          property="og:description"
+          content={
+            isPT
+              ? "Cinco salas interligadas, menus exclusivos e um ambiente único para jantares de grupo em Lisboa. Descubra o Sacramento no Chiado."
+              : "Five connected rooms, exclusive menus, and a unique setting for group dinners in Lisbon. Discover Sacramento in Chiado."
+          }
+        />
+        <meta
+          property="og:image"
+          content="https://sacramento-taupe.vercel.app/assets/og-sacramento-banner.png"
+        />
+        <meta
+          property="og:url"
+          content="https://sacramento-taupe.vercel.app/eventos"
+        />
+      </Helmet>
 
-      <div className="p-6">
-        {/* Texto + Imagem */}
-        <div className="flex flex-col-reverse lg:flex-row-reverse items-center w-full justify-center lg:gap-40 gap-20 py-20">
-          <div className="flex flex-col justify-center lg:max-w-1/3">
-            <h2 className="font-caudex text-3xl lg:text-5xl uppercase">
-              {t.h1}
-            </h2>
-            <p className="mt-4 text-justify">{t.p1}</p>
-            <div className="mt-6 flex flex-row items-start">
-              <Suspense fallback={<div>Carregando botão...</div>}>
-                <Arrow title={t.cta} />
+      <div>
+        <Suspense
+          fallback={
+            <div className="text-center py-10">Carregando cabeçalho...</div>
+          }
+        >
+          <Header
+            imgSrc={imgHeader}
+            titlePt="Restaurante para Grupos em Lisboa: Eventos e Jantares Especiais"
+            titleEn="Restaurant for Groups in Lisbon: Events and Special Dinners"
+          />
+        </Suspense>
+
+        <div className="p-6">
+          {/* Texto + Imagem */}
+          <div className="flex flex-col-reverse lg:flex-row-reverse items-center w-full justify-center lg:gap-40 gap-20 py-20">
+            <div className="flex flex-col justify-center lg:max-w-1/3">
+              <h2 className="font-caudex text-3xl lg:text-5xl uppercase">
+                {t.h1}
+              </h2>
+              <p className="mt-4 text-justify">{t.p1}</p>
+              <div className="mt-6 flex flex-row items-start">
+                <Suspense fallback={<div>Carregando botão...</div>}>
+                  <Arrow title={t.cta} />
+                </Suspense>
+              </div>
+            </div>
+
+            <div className="w-full lg:w-1/3 flex justify-end">
+              <Suspense fallback={<div>Carregando imagem...</div>}>
+                <Card
+                  imageSrc={img1}
+                  width="w-full lg:w-[600px]"
+                  height="h-[504px] lg:h-[900px]"
+                />
               </Suspense>
             </div>
           </div>
 
-          <div className="w-full lg:w-1/3 flex justify-end">
+          {/* Grid de imagens */}
+          <div className="mt-10 space-y-4 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-4">
+            <div className="flex flex-col gap-4">
+              <div className="grid grid-cols-2 gap-4">
+                <Suspense fallback={<div>Carregando imagem...</div>}>
+                  <Card imageSrc={imgCima2} height="h-52 lg:h-96" />
+                </Suspense>
+                <Suspense fallback={<div>Carregando imagem...</div>}>
+                  <Card imageSrc={imgCima1} height="h-52 lg:h-96" />
+                </Suspense>
+              </div>
+
+              <Suspense fallback={<div>Carregando imagem...</div>}>
+                <Card imageSrc={imgBaixo} height="h-80 lg:h-[525px]" />
+              </Suspense>
+            </div>
+
             <Suspense fallback={<div>Carregando imagem...</div>}>
+              <Card imageSrc={imgDir} height="h-[468px] lg:h-[928px]" />
+            </Suspense>
+          </div>
+
+          {/* Seção de cocktails */}
+          <div className="flex flex-col items-center justify-center lg:my-60">
+            <h2 className="w-full h1-title text-left lg:text-center">
+              {t.h2Cocktails}
+            </h2>
+            <p className="lg:max-w-1/2">{t.p2Cocktails}</p>
+            <Suspense fallback={<div>Carregando botão...</div>}>
+              <Arrow title={t.cta3} />
+            </Suspense>
+          </div>
+
+          {/* Seção final */}
+          <div className="lg:px-40 lg:my-40">
+            <Suspense fallback={<div>Carregando card...</div>}>
               <Card
-                imageSrc={img1}
-                width="w-full lg:w-[600px]"
-                height="h-[504px] lg:h-[900px]"
+                imageSrc={imgCard}
+                height="h-80 lg:h-[570px]"
+                width="w-full"
+                title="Celebrações com História e Alma"
               />
             </Suspense>
-          </div>
-        </div>
 
-        {/* Grid de imagens */}
-        <div className="mt-10 space-y-4 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-4">
-          <div className="flex flex-col gap-4">
-            <div className="grid grid-cols-2 gap-4">
-              <Suspense fallback={<div>Carregando imagem...</div>}>
-                <Card imageSrc={imgCima2} height="h-52 lg:h-96" />
-              </Suspense>
-              <Suspense fallback={<div>Carregando imagem...</div>}>
-                <Card imageSrc={imgCima1} height="h-52 lg:h-96" />
-              </Suspense>
+            <div className="flex flex-col lg:flex-row items-start justify-center gap-10 lg:px-40 lg:py-20 py-10">
+              <div className="lg:max-w-1/2">
+                <p className="text-justify">{t.pFinal1}</p>
+              </div>
+              <div className="flex flex-col items-start lg:max-w-1/2 lg:justify-between">
+                <p className="text-justify">{t.pFinal2}</p>
+                <Suspense fallback={<div>Carregando botão...</div>}>
+                  <Arrow title={t.cta2} />
+                </Suspense>
+              </div>
             </div>
-
-            <Suspense fallback={<div>Carregando imagem...</div>}>
-              <Card imageSrc={imgBaixo} height="h-80 lg:h-[525px]" />
-            </Suspense>
           </div>
 
-          <Suspense fallback={<div>Carregando imagem...</div>}>
-            <Card imageSrc={imgDir} height="h-[468px] lg:h-[928px]" />
+          <Suspense fallback={<div>Carregando formulário...</div>}>
+            <Form />
           </Suspense>
         </div>
 
-        {/* Seção de cocktails */}
-        <div className="flex flex-col items-center justify-center lg:my-60">
-          <h2 className="w-full h1-title text-left lg:text-center">
-            {t.h2Cocktails}
-          </h2>
-          <p className="lg:max-w-1/2">{t.p2Cocktails}</p>
-          <Suspense fallback={<div>Carregando botão...</div>}>
-            <Arrow title={t.cta3} />
-          </Suspense>
-        </div>
-
-        {/* Seção final */}
-        <div className="lg:px-40 lg:my-40">
-          <Suspense fallback={<div>Carregando card...</div>}>
-            <Card
-              imageSrc={imgCard}
-              height="h-80 lg:h-[570px]"
-              width="w-full"
-              title="Celebrações com História e Alma"
-            />
-          </Suspense>
-
-          <div className="flex flex-col lg:flex-row items-start justify-center gap-10 lg:px-40 lg:py-20 py-10">
-            <div className="lg:max-w-1/2">
-              <p className="text-justify">{t.pFinal1}</p>
-            </div>
-            <div className="flex flex-col items-start lg:max-w-1/2 lg:justify-between">
-              <p className="text-justify">{t.pFinal2}</p>
-              <Suspense fallback={<div>Carregando botão...</div>}>
-                <Arrow title={t.cta2} />
-              </Suspense>
-            </div>
-          </div>
-        </div>
-
-        <Suspense fallback={<div>Carregando formulário...</div>}>
-          <Form />
+        <Suspense fallback={<div>Carregando rodapé...</div>}>
+          <Footer />
         </Suspense>
       </div>
-
-      <Suspense fallback={<div>Carregando rodapé...</div>}>
-        <Footer />
-      </Suspense>
-    </div>
+    </>
   );
 }
 

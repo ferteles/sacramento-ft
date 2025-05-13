@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import { Helmet } from "react-helmet";
 import { useLanguage } from "../context/LanguageContext";
 
 import imgHeader from "../assets/images/pg2/imgHeader.webp";
@@ -43,48 +44,90 @@ function RestauranteMaisGiro() {
   };
 
   return (
-    <div className="max-w-screen">
-      <Suspense
-        fallback={
-          <div className="text-center py-10">Carregando cabeçalho...</div>
-        }
-      >
-        <Header
-          titlePt="O RESTAURANTE MAIS GIRO DE LISBOA"
-          titleEn="THE COOLEST RESTAURANT IN LISBON"
-          imgSrc={imgHeader}
+    <>
+      <Helmet>
+        <title>
+          {language === "pt"
+            ? "Restaurante Sacramento – O Mais Giro de Lisboa"
+            : "Sacramento Restaurant – The Coolest in Lisbon"}
+        </title>
+        <meta
+          name="description"
+          content={
+            language === "pt"
+              ? "Descubra o restaurante mais giro de Lisboa: cozinha portuguesa tradicional com um toque moderno, vinhos selecionados e ambiente inesquecível no Sacramento Chiado."
+              : "Discover the coolest restaurant in Lisbon: traditional Portuguese cuisine with a modern twist, handpicked wines, and an unforgettable atmosphere at Sacramento Chiado."
+          }
         />
-        <div className="pt-20">
-          <Gastronomy />
-        </div>
-        <TradicionalFlavors />
-        <div className="p-6 gap-2 lg:px-20">
-          <div className="flex flex-col items-start justify-evenly lg:justify-center lg:flex-row gap-20 lg:mb-0">
-            <div className="lg:max-w-100">
-              <p className="font-catamaran">{t.paragraph1}</p>
-            </div>
-            <div className="flex flex-col ">
-              <p className="font-catamaran lg:max-w-100">{t.paragraph2}</p>
-              <Arrow title={t.arrow} />
-            </div>
-          </div>
-          <br />
-          <br />
-          <Card
-            imageSrc={cardImg}
-            title={t.cardTitle}
-            width="w-full"
-            height="h-[500px]"
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content={
+            language === "pt"
+              ? "Restaurante Sacramento – O Mais Giro de Lisboa"
+              : "Sacramento Restaurant – The Coolest in Lisbon"
+          }
+        />
+        <meta
+          property="og:description"
+          content={
+            language === "pt"
+              ? "Sabores autênticos, vinhos portugueses e uma experiência única no coração do Chiado. Reserve já sua mesa no Sacramento!"
+              : "Authentic flavors, Portuguese wines, and a unique experience in the heart of Chiado. Book your table now at Sacramento!"
+          }
+        />
+        <meta
+          property="og:image"
+          content="https://sacramento-taupe.vercel.app/assets/og-sacramento-banner.png"
+        />
+        <meta
+          property="og:url"
+          content="https://sacramento-taupe.vercel.app/restaurante"
+        />
+      </Helmet>
+      <div className="max-w-screen">
+        <Suspense
+          fallback={
+            <div className="text-center py-10">Carregando cabeçalho...</div>
+          }
+        >
+          <Header
+            titlePt="O RESTAURANTE MAIS GIRO DE LISBOA"
+            titleEn="THE COOLEST RESTAURANT IN LISBON"
+            imgSrc={imgHeader}
           />
-          <div className="flex flex-col lg:flex-row items-center justify-evenly gap-10 lg:px-10 lg:my-20">
-            <p className="my-10 lg:w-1/2">{t.paragraph3}</p>
-            <div className="w-1/2"></div>
+          <div className="pt-20">
+            <Gastronomy />
           </div>
-          <Form />
-        </div>
-        <Footer />
-      </Suspense>
-    </div>
+          <TradicionalFlavors />
+          <div className="p-6 gap-2 lg:px-20">
+            <div className="flex flex-col items-start justify-evenly lg:justify-center lg:flex-row gap-20 lg:mb-0">
+              <div className="lg:max-w-100">
+                <p className="font-catamaran">{t.paragraph1}</p>
+              </div>
+              <div className="flex flex-col ">
+                <p className="font-catamaran lg:max-w-100">{t.paragraph2}</p>
+                <Arrow title={t.arrow} />
+              </div>
+            </div>
+            <br />
+            <br />
+            <Card
+              imageSrc={cardImg}
+              title={t.cardTitle}
+              width="w-full"
+              height="h-[500px]"
+            />
+            <div className="flex flex-col lg:flex-row items-center justify-evenly gap-10 lg:px-10 lg:my-20">
+              <p className="my-10 lg:w-1/2">{t.paragraph3}</p>
+              <div className="w-1/2"></div>
+            </div>
+            <Form />
+          </div>
+          <Footer />
+        </Suspense>
+      </div>
+    </>
   );
 }
 

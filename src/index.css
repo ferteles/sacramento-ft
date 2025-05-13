@@ -58,13 +58,3 @@ html {
     width: 100%;
   }
 }
-
-@media (max-width: 767px) {
-  /* Ajuste o breakpoint conforme necessário */
-  .z-[-1] > video {
-    display: none !important; /* Esconde o vídeo em telas menores */
-  }
-  .z-[-1] > img {
-    display: block !important; /* Exibe o GIF em telas menores */
-  }
-}

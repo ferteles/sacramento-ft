@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sacramento-taupe.vercel.app/sitemap.xml
