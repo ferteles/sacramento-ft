@@ -1,7 +1,7 @@
 # Sacramento do Chiado 🍷🇵🇹
 
 Este é o repositório oficial do website do restaurante **Sacramento do Chiado**, localizado no coração de Lisboa. O projeto apresenta uma experiência visual sofisticada, bilíngue e otimizada para apresentar a história, gastronomia e ambiente únicos do restaurante.
-![image](https://github.com/user-attachments/assets/e108a319-f228-4867-bd11-0368ce61ea88)
+![image](https://github.com/user-attachments/assets/a684aaf0-b6bd-44f8-9a33-6ad41cefbda9)
 
 
 ## 🔗 Acesse o site
