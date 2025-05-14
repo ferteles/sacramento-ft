@@ -31,7 +31,6 @@ Este é o repositório oficial do website do restaurante **Sacramento do Chiado*
 - **Vite**
 - **Vercel** (Deploy)
 - **Figma** (Design base)
-- **Lucide-react** (ícones SVG)
 - **React Context API** (gerenciamento de idioma)
 
 ---
