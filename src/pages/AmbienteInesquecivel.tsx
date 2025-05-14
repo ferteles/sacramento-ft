@@ -32,7 +32,7 @@ function AmbienteInesquecivel() {
 
     bloco1Texto: isPT
       ? "Música ao vivo, com DJ sets que animam as noites de sexta e sábado, oferecemos uma experiência única que combina gastronomia, história e boa música. O nosso clube, localizado dentro do palácio histórico, é o destino perfeito para quem procura prolongar a noite em Lisboa. Com uma atmosfera vibrante e uma programação musical diversificada, o Sacramento transforma-se num espaço de festa e convívio a partir das 22h. O dress code é casual chic, e a guestlist é limitada a 250 pessoas por noite, garantindo uma experiência exclusiva e intimista."
-      : "Live musics, with DJ sets livening up Friday and Saturday nights, we offer a unique experience that blends gastronomy, history, and great music. Our club, located within the historic palace, is the perfect destination for those looking to extend their night in Lisbon. With a vibrant atmosphere and a diverse musical lineup, Sacramento becomes a space for partying and socializing starting at 11 PM. The dress code is casual chic, and the guest list is limited to 250 people per night, ensuring an exclusive and intimate experience.",
+      : "Live musics, with DJ sets livening up Friday and Saturday nights, we offer a unique experience that blends gastronomy, history, and great music. Our club, located within the historic palace, is the perfect destination for those looking to extend their night in Lisbon. With a vibrant atmosphere and a diverse musical lineup, Sacramento becomes a space for partying and socializing starting at 10 PM. The dress code is casual chic, and the guest list is limited to 250 people per night, ensuring an exclusive and intimate experience.",
 
     bloco2Titulo: isPT
       ? "Noites Animadas num Cenário Histórico"
