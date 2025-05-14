@@ -7,11 +7,11 @@ function InfoHeader() {
   const texts = {
     openingHours:
       language === "pt"
-        ? "Horário de Abertura: 18h00 - 01h00"
+        ? "Horário de Funcionamento: 18h00 - 01h00"
         : "Opening Hours: 6:00 PM – 1:00 AM",
     terrace:
       language === "pt"
-        ? "Esplanada: 16h00 - 23h00"
+        ? "Explanada: 16h00 - 23h00"
         : "Terrace: 4:00 PM – 11:00 PM",
     address:
       language === "pt"
