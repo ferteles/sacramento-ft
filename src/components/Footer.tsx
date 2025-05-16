@@ -34,7 +34,7 @@ function Footer() {
       "Calçada do Sacramento, 44",
       "1200-394 Lisboa, Portugal",
       "+351 213 420 572",
-      "reservas@sacramentodochiado.com",
+      "reservas@tablegroup.pt",
     ],
     social: ["Instagram", "Facebook"],
   };

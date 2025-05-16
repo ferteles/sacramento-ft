@@ -26,7 +26,7 @@ function MelhorAlternativa() {
       : "THE BEST ALTERNATIVE TO ROOFTOPS",
 
     pEsplanada1: isPT
-      ? "A esplanada do Sacramento é o local ideal para desfrutar de refeições ao ar livre, num cenário que combina a história de Lisboa com a beleza do Chiado.É a alternativa perfeita aos rooftops com vista única. Com uma vista única sobre o Chiado, a nossa esplanada oferece um ambiente acolhedor e sofisticado, ideal para jantares românticos ou eventos especiais.A esplanada do Sacramento é o destino perfeito para quem procura uma experiência gastronômica ao ar livre em Lisboa."
+      ? "A esplanada do Sacramento é o local ideal para desfrutar de refeições ao ar livre, num cenário que combina a história de Lisboa com a beleza do Chiado. É a alternativa perfeita aos rooftops com vista única. Com uma vista única sobre o Chiado, a nossa esplanada oferece um ambiente acolhedor e sofisticado, ideal para jantares românticos ou eventos especiais. A esplanada do Sacramento é o destino perfeito para quem procura uma experiência gastronômica ao ar livre em Lisboa."
       : "The Sacramento terrace is the ideal spot to enjoy outdoor meals in a setting that blends Lisbon’s history with the beauty of Chiado. It’s the perfect alternative to rooftops with a unique view. With a unique view over Chiado, our terrace offers a cozy and sophisticated atmosphere—perfect for romantic dinners, or special events. The Sacramento terrace is the perfect destination for those seeking an outdoor dining experience in Lisbon.",
 
     pEsplanada2: isPT

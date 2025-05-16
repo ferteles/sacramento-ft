@@ -40,8 +40,8 @@ function SaboreieNoite() {
         : "Nighttime Flavors in a Historic Setting",
     p2:
       language === "pt"
-        ? "Desfrute de uma refeição completa ou de petiscos deliciosos até altas horas. Oferecemos uma variedade de pratos que celebram a gastronomia portuguesa, desde clássicos como arroz de polvo com gambas à brás até opções mais leves, perfeitas para o final da noite."
-        : "Enjoy a full meal or delicious snacks late into the night. We offer a variety of dishes that celebrate Portuguese gastronomy, from classics like Octopus rice with prawns à brás to lighter options, perfect for late-night dining.",
+        ? "Desfrute de uma refeição completa ou de petiscos deliciosos até altas horas. Oferecemos uma variedade de pratos que celebram a gastronomia portuguesa, desde clássicos como arroz de polvo com gambas e bacalhau à brás até opções mais leves, perfeitas para o final da noite."
+        : "Enjoy a full meal or delicious snacks late into the night. We offer a variety of dishes that celebrate Portuguese gastronomy, from classics like Octopus rice with prawns and bacalhau à brás to lighter options, perfect for late-night dining.",
     h3:
       language === "pt"
         ? "Noites Inesquecíveis no Coração de Lisboa"
