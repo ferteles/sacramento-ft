@@ -125,8 +125,8 @@ function Form() {
       });
 
       // GTM tracking se disponível
-      if (typeof window !== "undefined" && window.dataLayer) {
-        window.dataLayer.push({
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({
           event: "form_submission",
           form_type: "contact",
           success: true,
@@ -138,8 +138,8 @@ function Form() {
       setErrors([texts.error]);
 
       // GTM error tracking
-      if (typeof window !== "undefined" && window.dataLayer) {
-        window.dataLayer.push({
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({
           event: "form_error",
           form_type: "contact",
         });
