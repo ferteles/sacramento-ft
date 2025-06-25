@@ -1,3 +1,15 @@
+
+
 User-agent: *
 Allow: /
-Sitemap: https://sacramento-taupe.vercel.app/sitemap.xml
+
+
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.json$
+
+Sitemap: Sitemap: https://sacramentolisboa.com/sitemap.xml
+
+Crawl-delay: 1
