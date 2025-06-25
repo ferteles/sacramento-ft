@@ -102,7 +102,7 @@ function Form() {
       };
 
       // Envia para Formspark
-      const response = await fetch("https://submit-form.com/B6eirfZJ0", {
+      const response = await fetch("https://submit-form.com/uQv3gSkOe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
