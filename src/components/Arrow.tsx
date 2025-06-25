@@ -1,5 +1,4 @@
 import arrow from "../assets/Arrow.svg";
-import TagManager from "react-gtm-module";
 
 type ArrowProps = {
   title: React.ReactNode;

@@ -4,6 +4,12 @@ import { useSecureForm, validateInput } from "../utils/security";
 import Card from "./Card";
 import imgForm from "../assets/imgForm.webp";
 
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+  honeypot: string;
+}
 function Form() {
   const { language } = useLanguage();
   const { validateForm, isBlocked } = useSecureForm();
@@ -14,12 +20,6 @@ function Form() {
     message: "",
     honeypot: "",
   });
-  interface FormData {
-    name: string;
-    email: string;
-    message: string;
-    honeypot: string;
-  }
 
   const [errors, setErrors] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { initBasicSecurity } from "./utils/security";
 import AppRoutes from "./routes";
 import { LanguageProvider } from "./context/LanguageContext";
