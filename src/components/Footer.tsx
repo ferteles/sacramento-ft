@@ -30,11 +30,13 @@ function Footer() {
       ? ["Jantar: 18h00 às 01h00", "Esplanada: 16h00 às 23h00"]
       : ["Dinner: 6:00 PM – 1:00 AM", "Terrace: 4:00 PM – 11:00 PM"],
     address: [
-      "Sacramento do Chiado",
-      "Calçada do Sacramento, 44",
-      "1200-394 Lisboa, Portugal",
-      "+351 213 420 572",
-      "reservas@tablegroup.pt",
+      { type: "map", value: [
+        "Sacramento do Chiado",
+        "Calçada do Sacramento, 44",
+        "1200-394 Lisboa, Portugal"
+      ] },
+      { type: "phone", value: "+351 213 420 572" },
+      { type: "email", value: "reservas@tablegroup.pt" },
     ],
     social: ["Instagram", "Facebook"],
   };
@@ -74,9 +76,41 @@ function Footer() {
 
         {/* Endereço */}
         <div className="flex flex-col  items-top text-sm lg:text-xl w ">
-          {t.address.map((line, i) => (
-            <p key={i}>{line}</p>
-          ))}
+          {t.address.map((line, i) => {
+            if (typeof line === "string") {
+              return <p key={i}>{line}</p>;
+            } else if (line.type === "map" && Array.isArray(line.value)) {
+              return (
+                <a
+                  key={i}
+                  href="https://maps.app.goo.gl/vxAt4pjoHFPRP1LA7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-yellow-400"
+                >
+                  {line.value.map((l: string, idx: number) => (
+                    <span key={idx}>
+                      {l}
+                      {idx < line.value.length - 1 && <br />}
+                    </span>
+                  ))}
+                </a>
+              );
+            } else if (line.type === "phone" && typeof line.value === "string") {
+              return (
+                <p key={i}>
+                  <a href={`tel:${(line.value as string).replace(/\s+/g, "")}`} className="hover:text-yellow-400">{line.value}</a>
+                </p>
+              );
+            } else if (line.type === "email" && typeof line.value === "string") {
+              return (
+                <p key={i}>
+                  <a href={`mailto:${line.value}`} className="hover:text-yellow-400">{line.value}</a>
+                </p>
+              );
+            }
+            return null;
+          })}
         </div>
       </div>
       {/* Redes Sociais */}
@@ -85,7 +119,7 @@ function Footer() {
           href="https://www.instagram.com/sacramentodochiado"
           target="_blank"
           rel="noopener noreferrer"
-          className=""
+          className="hover:text-yellow-400"
         >
           {t.social[0]}
         </a>
@@ -93,6 +127,7 @@ function Footer() {
           href="https://www.facebook.com/restaurantesacramentodochiado"
           target="_blank"
           rel="noopener noreferrer"
+          className="hover:text-yellow-400"
         >
           {t.social[1]}
         </a>
