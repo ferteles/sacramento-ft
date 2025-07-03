@@ -1,8 +1,13 @@
-
+User-agent: *
+Allow: /
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.json$
 
 User-agent: *
 Allow: /
-
 
 Disallow: /src/
 Disallow: /node_modules/
@@ -10,6 +15,6 @@ Disallow: /*.js$
 Disallow: /*.css$
 Disallow: /*.json$
 
-Sitemap: Sitemap: https://sacramentolisboa.com/sitemap.xml
+Sitemap: https://sacramentolisboa.com/sitemap.xml
 
 Crawl-delay: 1
