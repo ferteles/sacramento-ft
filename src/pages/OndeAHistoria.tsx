@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import React, { useState, useEffect, useRef, Suspense } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 import { useLanguage } from "../context/LanguageContext";
 
