@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from "../context/LanguageContext";
 import Card from "./Card";
 import imgForm from "../assets/imgForm.webp";
@@ -23,24 +24,20 @@ const DishReservationWidget: React.FC = () => {
       ['secondaryButtonBackgroundColor', '#441F0E'], // Cor de fundo do botão secundário (marrom escuro)
     ];
 
-    // Carregar script
-    const script = document.createElement('script');
-    script.src = 'https://reservation.dish.co/widget.js';
-    script.async = true;
-    document.head.appendChild(script);
-
     // Cleanup
     return () => {
-      const existingScript = document.querySelector('script[src="https://reservation.dish.co/widget.js"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
+      // react-helmet-async handles script removal. We only need to clean up the global variable.
       delete (window as any)._hors;
     };
   }, []);
 
   return (
-    <div id="hors-hydra-f7eb4900-ff50-11ea-a5ce-6522f13fc41d" />
+    <>
+      <Helmet>
+        <script src="https://reservation.dish.co/widget.js" async />
+      </Helmet>
+      <div id="hors-hydra-f7eb4900-ff50-11ea-a5ce-6522f13fc41d" />
+    </>
   );
 };
 
