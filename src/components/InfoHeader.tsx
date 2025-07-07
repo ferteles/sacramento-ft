@@ -11,7 +11,7 @@ function InfoHeader() {
         : "Opening Hours: 6:00 PM – 1:00 AM",
     terrace:
       language === "pt"
-        ? "Explanada: 16h00 - 23h00"
+        ? "Esplanada: 16h00 - 23h00"
         : "Terrace: 4:00 PM – 11:00 PM",
     address:
       language === "pt"

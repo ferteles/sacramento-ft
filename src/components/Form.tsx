@@ -80,7 +80,7 @@ function Form() {
         </p>
 
         {/* Widget de Reservas Dish.co */}
-        <div className="bg-[#D6CBBB] p-4 lg:p-6 rounded-2xl shadow-lg">
+        <div className="bg-[#D6CBBB] p-1 lg:p-6 rounded-2xl shadow-lg">
           <DishReservationWidget />
         </div>
 
