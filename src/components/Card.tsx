@@ -6,6 +6,7 @@ type CardProps = {
   title?: string | { pt: string; en: string };
   width?: string;
   height?: string;
+  hasOverlay?: boolean;
 };
 
 function useInView(threshold = 0.3) {
@@ -35,12 +36,17 @@ const Card = ({
   title,
   width = "w-full",
   height = "h-[440px]",
+  hasOverlay = true,
 }: CardProps) => {
   const { ref, isVisible } = useInView();
   const { language } = useLanguage();
 
   const translatedTitle =
     typeof title === "string" ? title : title?.[language] ?? "";
+
+  const backgroundImageStyle = hasOverlay
+    ? `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${imageSrc})`
+    : `url(${imageSrc})`;
 
   return (
     <div
@@ -49,8 +55,7 @@ const Card = ({
         isVisible ? "animate-fade-in-up" : "opacity-0"
       } ${width} ${height}`}
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4))
-, url(${imageSrc})`,
+        backgroundImage: backgroundImageStyle,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

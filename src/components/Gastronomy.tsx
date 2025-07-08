@@ -38,9 +38,9 @@ function Gastronomy() {
 
       {/* Cards com imagens */}
       <div className="flex flex-col gap-3 w-full items-center mt-10 lg:flex-row">
-        <Card imageSrc={section1Img1} height="h-48 lg:h-96" width="w-full" />
-        <Card imageSrc={section1Img2} height="h-48 lg:h-96" width="w-full" />
-        <Card imageSrc={section1Img3} height="h-48 lg:h-96" width="w-full" />
+        <Card imageSrc={section1Img1} height="h-48 lg:h-96" width="w-full" hasOverlay={false} />
+        <Card imageSrc={section1Img2} height="h-48 lg:h-96" width="w-full" hasOverlay={false} />
+        <Card imageSrc={section1Img3} height="h-48 lg:h-96" width="w-full" hasOverlay={false} />
       </div>
     </div>
   );

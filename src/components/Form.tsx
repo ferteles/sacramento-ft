@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from "../context/LanguageContext";
 import Card from "./Card";
@@ -6,7 +6,9 @@ import imgForm from "../assets/imgForm.webp";
 
 // Componente do Widget Dish.co
 const DishReservationWidget: React.FC = () => {
+  const [scriptSrc, setScriptSrc] = useState('');
   useEffect(() => {
+    setScriptSrc(`https://reservation.dish.co/widget.js?v=${Date.now()}`);
     // Configurar variáveis globais para o widget Dish.co
     (window as any)._hors = [
       ['eid', 'hydra-f7eb4900-ff50-11ea-a5ce-6522f13fc41d'],
@@ -26,16 +28,22 @@ const DishReservationWidget: React.FC = () => {
 
     // Cleanup
     return () => {
-      // react-helmet-async handles script removal. We only need to clean up the global variable.
+      // Limpa o container do widget e a variável global para garantir que ele possa ser recarregado.
+      const widgetContainer = document.getElementById('hors-hydra-f7eb4900-ff50-11ea-a5ce-6522f13fc41d');
+      if (widgetContainer) {
+        widgetContainer.innerHTML = '';
+      }
       delete (window as any)._hors;
     };
   }, []);
 
   return (
     <>
-      <Helmet>
-        <script src="https://reservation.dish.co/widget.js" async />
-      </Helmet>
+      {scriptSrc && (
+        <Helmet>
+          <script src={scriptSrc} async />
+        </Helmet>
+      )}
       <div id="hors-hydra-f7eb4900-ff50-11ea-a5ce-6522f13fc41d" />
     </>
   );
@@ -63,6 +71,7 @@ function Form() {
           imageSrc={imgForm}
           width="w-full max-w-md"
           height="h-96 lg:h-[600px]"
+          hasOverlay={false}
         />
       </div>
 
