@@ -206,7 +206,7 @@ export function useSecureForm() {
 // Inicialização simples
 export function initBasicSecurity() {
   pageProtection.disableConsole();
-  pageProtection.disableRightClick();
+  // pageProtection.disableRightClick(); // Removido para permitir clique direito
   pageProtection.blockDevKeys();
   pageProtection.detectDevTools();
 
