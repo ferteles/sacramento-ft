@@ -1,6 +1,7 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Suspense, lazy, ComponentType } from "react";
 import { ClipLoader } from "react-spinners";
+import { useEffect } from "react";
 
 // Simula delay para efeito de carregamento
 const withDelay = (
@@ -34,6 +35,17 @@ const Ambiente = lazy(() =>
 );
 
 function AppRoutes() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (window && (window as any).dataLayer) {
+      (window as any).dataLayer.push({
+        event: 'pageview',
+        page: location.pathname + location.search,
+      });
+    }
+  }, [location]);
+
   return (
     <Suspense
       fallback={
