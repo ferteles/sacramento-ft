@@ -92,7 +92,7 @@ function EventosJantares() {
         />
         <meta
           property="og:url"
-          content="https://sacramento-taupe.vercel.app/eventos"
+          content="https://sacramento-taupe.vercel.app/grupos"
         />
       </Helmet>
 
@@ -130,6 +130,7 @@ function EventosJantares() {
                   imageSrc={img1}
                   width="w-full lg:w-[600px]"
                   height="h-[504px] lg:h-[900px]"
+                  hasOverlay={false}
                 />
               </Suspense>
             </div>
@@ -140,20 +141,20 @@ function EventosJantares() {
             <div className="flex flex-col gap-4">
               <div className="grid grid-cols-2 gap-4">
                 <Suspense fallback={<div>Carregando imagem...</div>}>
-                  <Card imageSrc={imgCima2} height="h-52 lg:h-96" />
+                  <Card imageSrc={imgCima2} height="h-52 lg:h-96" hasOverlay={false} />
                 </Suspense>
                 <Suspense fallback={<div>Carregando imagem...</div>}>
-                  <Card imageSrc={imgCima1} height="h-52 lg:h-96" />
+                  <Card imageSrc={imgCima1} height="h-52 lg:h-96" hasOverlay={false} />
                 </Suspense>
               </div>
 
               <Suspense fallback={<div>Carregando imagem...</div>}>
-                <Card imageSrc={imgBaixo} height="h-80 lg:h-[525px]" />
+                <Card imageSrc={imgBaixo} height="h-80 lg:h-[525px]" hasOverlay={false} />
               </Suspense>
             </div>
 
             <Suspense fallback={<div>Carregando imagem...</div>}>
-              <Card imageSrc={imgDir} height="h-[468px] lg:h-[928px]" />
+              <Card imageSrc={imgDir} height="h-[468px] lg:h-[928px]" hasOverlay={false} />
             </Suspense>
           </div>
 

@@ -49,10 +49,10 @@ function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/restaurante" element={<Restaurante />} />
         <Route path="/cocktails" element={<Cocktails />} />
-        <Route path="/eventos" element={<Eventos />} />
-        <Route path="/saboreie-noite" element={<SaboreieNoite />} />
-        <Route path="/melhor-alternativa" element={<MelhorAlternativa />} />
-        <Route path="/ambiente" element={<Ambiente />} />
+        <Route path="/grupos" element={<Eventos />} />
+        <Route path="/jantar-tarde" element={<SaboreieNoite />} />
+        <Route path="/esplanada" element={<MelhorAlternativa />} />
+        <Route path="/club" element={<Ambiente />} />
       </Routes>
     </Suspense>
   );

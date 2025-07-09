@@ -115,8 +115,8 @@ function OndeAHistoria() {
     },
   };
 
-  const leftPaths = ["/restaurante", "/cocktails", "/eventos"];
-  const rightPaths = ["/saboreie-noite", "/melhor-alternativa", "/ambiente"];
+  const leftPaths = ["/restaurante", "/cocktails", "/grupos"];
+  const rightPaths = ["/jantar-tarde", "/esplanada", "/club"];
 
   useEffect(() => {
     if (headerRef.current) {
@@ -321,6 +321,7 @@ function OndeAHistoria() {
                   imageSrc={img1}
                   width="w-40 lg:w-[599px]"
                   height="h-48 lg:h-[735px]"
+                  hasOverlay={false}
                 />
               </div>
               <div className="lg:w-1/2 flex flex-col gap-10 justify-start lg:mt-20">

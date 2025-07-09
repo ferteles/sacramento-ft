@@ -13,18 +13,18 @@ function Footer() {
           { name: "Home", path: "/" },
           { name: "Restaurante", path: "/restaurante" },
           { name: "Bar", path: "/cocktails" },
-          { name: "Grupos", path: "/eventos" },
-          { name: "Jantar Tarde", path: "/saboreie-noite" },
-          { name: "Esplanada", path: "/melhor-alternativa" },
-          { name: "Club", path: "/ambiente" },
+          { name: "Grupos", path: "/grupos" },
+          { name: "Jantar Tarde", path: "/jantar-tarde" },
+          { name: "Esplanada", path: "/esplanada" },
+          { name: "Club", path: "/club" },
         ]
       : [
           { name: "Restaurant", path: "/restaurante" },
-          { name: "Gastronomy", path: "/saboreie-noite" },
+          { name: "Gastronomy", path: "/jantar-tarde" },
           { name: "History", path: "/" },
-          { name: "Events", path: "/eventos" },
-          { name: "Contact", path: "/ambiente" },
-          { name: "Reservations", path: "/melhor-alternativa" },
+          { name: "Events", path: "/grupos" },
+          { name: "Contact", path: "/club" },
+          { name: "Reservations", path: "/esplanada" },
         ],
     hours: isPT
       ? ["Jantar: 18h00 às 01h00", "Esplanada: 16h00 às 23h00"]

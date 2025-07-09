@@ -111,7 +111,7 @@ function AmbienteInesquecivel() {
         />
         <meta
           property="og:url"
-          content="https://sacramento-taupe.vercel.app/ambiente"
+          content="https://sacramento-taupe.vercel.app/club"
         />
       </Helmet>
 
@@ -147,6 +147,7 @@ function AmbienteInesquecivel() {
                   imageSrc={img1}
                   width="w-full lg:w-[417px]"
                   height="h-[504px] lg:h-[718px]"
+                  hasOverlay={false}
                 />
               </div>
             </div>
@@ -163,6 +164,7 @@ function AmbienteInesquecivel() {
                 imageSrc={img2}
                 width="w-full lg:w-[534px]"
                 height="h-[670px] "
+                hasOverlay={false}
               />
             </div>
             <div className="lg:px-10 px-6 flex flex-col items-center w-full gap-20">
@@ -204,6 +206,7 @@ function AmbienteInesquecivel() {
                     imageSrc={img3}
                     width="w-full lg:w-[475px]"
                     height="h-[518px] lg:h-[740px]"
+                    hasOverlay={false}
                   />
                 </div>
               </div>

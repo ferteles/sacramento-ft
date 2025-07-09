@@ -64,7 +64,7 @@ function Header({
           <Link to="/cocktails" className="cursor-pointer hover:underline">
             {texts.bar}
           </Link>
-          <Link to="/eventos" className="cursor-pointer hover:underline">
+          <Link to="/grupos" className="cursor-pointer hover:underline">
             {texts.grupos}
           </Link>
         </div>
@@ -87,16 +87,16 @@ function Header({
         </motion.div>
 
         <div className="flex gap-4 text-black text-sm lg:text-base">
-          <Link to="/saboreie-noite" className="cursor-pointer hover:underline">
+          <Link to="/jantar-tarde" className="cursor-pointer hover:underline">
             {texts.jantar}
           </Link>
           <Link
-            to="/melhor-alternativa"
+            to="/esplanada"
             className="cursor-pointer hover:underline"
           >
             {texts.esplanada}
           </Link>
-          <Link to="/ambiente" className="cursor-pointer hover:underline">
+          <Link to="/club" className="cursor-pointer hover:underline">
             {texts.club}
           </Link>
         </div>

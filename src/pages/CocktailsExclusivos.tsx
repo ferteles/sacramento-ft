@@ -83,7 +83,7 @@ function CocktailsExclusivos() {
         />
         <meta
           property="og:url"
-          content="https://sacramento-taupe.vercel.app/eventos"
+          content="https://sacramento-taupe.vercel.app/grupos"
         />
       </Helmet>
 
@@ -108,6 +108,7 @@ function CocktailsExclusivos() {
                   imageSrc={img1}
                   height="h-96 lg:h-[561px]"
                   width="w-full lg:w-130"
+                  hasOverlay={false}
                 />
               </Suspense>
             </div>
@@ -121,7 +122,7 @@ function CocktailsExclusivos() {
 
           <div className="flex flex-col lg:flex-row-reverse w-full p-6 lg:p-0 gap-10">
             <Suspense fallback={<div>Carregando imagem...</div>}>
-              <Card imageSrc={img2} width="w-full" height="h-80 lg:h-[571px]" />
+              <Card imageSrc={img2} width="w-full" height="h-80 lg:h-[571px]" hasOverlay={false} />
             </Suspense>
             <div className="lg:max-w-1/2 flex flex-col items-start justify-center gap-3 lg:p-30">
               <h2 className="font-caudex text-3xl lg:text-5xl uppercase">

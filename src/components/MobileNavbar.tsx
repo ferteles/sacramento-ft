@@ -24,10 +24,10 @@ const MobileNavBar = ({ onClose }: MobileNavBarProps) => {
     { to: "/", label: "Home" },
     { to: "/restaurante", label: "Restaurante" },
     { to: "/cocktails", label: "Bar" },
-    { to: "/eventos", label: "Grupos" },
-    { to: "/saboreie-noite", label: "Jantar Tarde" },
-    { to: "/melhor-alternativa", label: "Esplanada" },
-    { to: "/ambiente", label: "Club" },
+    { to: "/grupos", label: "Grupos" },
+    { to: "/jantar-tarde", label: "Jantar Tarde" },
+    { to: "/esplanada", label: "Esplanada" },
+    { to: "/club", label: "Club" },
   ];
 
   return (

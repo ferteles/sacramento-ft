@@ -95,7 +95,7 @@ function SaboreieNoite() {
         />
         <meta
           property="og:url"
-          content="https://sacramento-taupe.vercel.app/saboreie-noite"
+          content="https://sacramento-taupe.vercel.app/jantar-tarde"
         />
       </Helmet>
       <div className="">
@@ -124,6 +124,7 @@ function SaboreieNoite() {
                   imageSrc={img1}
                   height="h-96 lg:h-[624px]"
                   width="w-full lg:w-[509px] "
+                  hasOverlay={false}
                 />
               </Suspense>
             </div>
@@ -142,6 +143,7 @@ function SaboreieNoite() {
                     imageSrc={img2}
                     height="h-96 lg:h-[624px]"
                     width="w-full lg:w-[640px]"
+                    hasOverlay={false}
                   />
                 </Suspense>
               </div>
@@ -180,7 +182,7 @@ function SaboreieNoite() {
           </div>
 
           <Suspense fallback={<div>Carregando imagem...</div>}>
-            <Card imageSrc={imgCimaEsq} height="h-150" width="w-full" />
+            <Card imageSrc={imgCimaEsq} height="h-150" width="w-full" hasOverlay={false} />
           </Suspense>
         </div>
 
@@ -193,10 +195,10 @@ function SaboreieNoite() {
 
           <div className="flex flex-col items-start justify-center p-6 gap-5 lg:w-1/2">
             <Suspense fallback={<div>Carregando imagem...</div>}>
-              <Card imageSrc={imgMeio} width="w-full" height="h-150" />
+              <Card imageSrc={imgMeio} width="w-full" height="h-150" hasOverlay={false} />
             </Suspense>
             <Suspense fallback={<div>Carregando imagem...</div>}>
-              <Card imageSrc={imgDir} width="w-full" height="h-[499px]" />
+              <Card imageSrc={imgDir} width="w-full" height="h-[499px]" hasOverlay={false} />
             </Suspense>
           </div>
         </div>
