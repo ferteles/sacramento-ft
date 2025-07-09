@@ -17,7 +17,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://submit-form.com https://reservation.dish.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' data: blob:; connect-src 'self' https://submit-form.com https://www.google-analytics.com https://www.google.com; frame-src https://www.googletagmanager.com https://reservation.dish.co; object-src 'none'; base-uri 'self'; form-action 'self' https://submit-form.com;"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://submit-form.com https://reservation.dish.co https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; media-src 'self' data: blob:; connect-src 'self' https://submit-form.com https://www.google-analytics.com https://www.google.com; frame-src https://www.googletagmanager.com https://reservation.dish.co https://td.doubleclick.net; object-src 'none'; base-uri 'self'; form-action 'self' https://submit-form.com;"
         }
       ]
     }
