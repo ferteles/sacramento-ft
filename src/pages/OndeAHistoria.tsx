@@ -158,7 +158,7 @@ function OndeAHistoria() {
         />
         <meta
           property="og:image"
-          content="https://sacramento-taupe.vercel.app/assets/og-sacramento-banner.png"
+          content="https://sacramentolisboa.com/assets/og-sacramento-banner.png"
         />
         <meta property="og:type" content="website" />
         <meta
@@ -169,6 +169,7 @@ function OndeAHistoria() {
           property="og:description"
           content="Refeições ao ar livre com vista única no Chiado. Gastronomia portuguesa num ambiente sofisticado e histórico."
         />
+        <meta property="og:url" content="https://sacramentolisboa.com/" />
       </Helmet>
       <div className="w-full overflow-x-hidden">
         {/* Header */}

@@ -78,11 +78,11 @@ function RestauranteMaisGiro() {
         />
         <meta
           property="og:image"
-          content="https://sacramento-taupe.vercel.app/assets/og-sacramento-banner.png"
+          content="https://sacramentolisboa.com/assets/og-sacramento-banner.png"
         />
         <meta
           property="og:url"
-          content="https://sacramento-taupe.vercel.app/restaurante"
+          content="https://sacramentolisboa.com/restaurante"
         />
       </Helmet>
       <div className="max-w-screen">

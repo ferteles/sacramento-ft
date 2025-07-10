@@ -91,11 +91,11 @@ function SaboreieNoite() {
         />
         <meta
           property="og:image"
-          content="https://sacramento-taupe.vercel.app/assets/og-sacramento-banner.png"
+          content="https://sacramentolisboa.com/assets/og-sacramento-banner.png"
         />
         <meta
           property="og:url"
-          content="https://sacramento-taupe.vercel.app/jantar-tarde"
+          content="https://sacramentolisboa.com/jantar-tarde"
         />
       </Helmet>
       <div className="">

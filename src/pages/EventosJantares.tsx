@@ -88,11 +88,11 @@ function EventosJantares() {
         />
         <meta
           property="og:image"
-          content="https://sacramento-taupe.vercel.app/assets/og-sacramento-banner.png"
+      content="https://sacramentolisboa.com/assets/og-sacramento-banner.png"
         />
         <meta
           property="og:url"
-          content="https://sacramento-taupe.vercel.app/grupos"
+      content="https://sacramentolisboa.com/grupos"
         />
       </Helmet>
 
