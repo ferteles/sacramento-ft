@@ -223,5 +223,3 @@ function AmbienteInesquecivel() {
 }
 
 export default AmbienteInesquecivel;
-
-/* A DIREÇÃO DO SACRAMENTO, SE VOCE CHEGOU ATÉ AQUI, VAI TOMAR NO C* */

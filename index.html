@@ -93,14 +93,6 @@
       location.hostname !== "127.0.0.1"
     ) {
       console.clear();
-      console.log(
-        "%c🛡️ Sistema Protegido",
-        "color: red; font-size: 20px; font-weight: bold;"
-      );
-      console.log(
-        "%cEste é um sistema protegido. Acesso não autorizado é proibido.",
-        "color: red; font-size: 14px;"
-      );
     }
 
     let devtools = { open: false, orientation: null };
@@ -109,14 +101,7 @@
         window.outerHeight - window.innerHeight > 200 ||
         window.outerWidth - window.innerWidth > 200
       ) {
-        if (!devtools.open) {
-          devtools.open = true;
-          console.clear();
-          console.log(
-            "%c🚨 Acesso Restrito",
-            "color: red; font-size: 16px; font-weight: bold;"
-          );
-        }
+        devtools.open = true;
       } else {
         devtools.open = false;
       }
@@ -146,13 +131,6 @@
         }
       });
     }
-
-    window.addEventListener("error", function (e) {
-      if (e.message && e.message.includes("Script error")) {
-        console.warn("🚨 Script suspeito bloqueado");
-        return true;
-      }
-    });
   </script>
 </head>
 
