@@ -1,14 +1,4 @@
 {
-  "trailingSlash": false,
-  "cleanUrls": true,
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.sacramentolisboa.com" }],
-      "destination": "https://sacramentolisboa.com/:path*",
-      "permanent": true
-    }
-  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
