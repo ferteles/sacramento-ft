@@ -3,6 +3,12 @@ import { motion, useAnimation } from "framer-motion";
 import React, { useState, useEffect, useRef, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
 
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
+
 import { useLanguage } from "../context/LanguageContext";
 
 import topheader from "../assets/backgroundHeaderFooter.svg";
@@ -147,6 +153,18 @@ function OndeAHistoria() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    // Garante que o dataLayer existe antes de enviar o evento
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "page_view_virtual",
+      page_path: "/",
+      page_title: "Sacramento Chiado – História e Gastronomia em Lisboa",
+      // Pode adicionar mais informações úteis aqui
+      h1_text: texts.title,
+    });
+  }, [texts.title]); // Dispara quando o texto (e o idioma) mudam
 
   return (
     <>
