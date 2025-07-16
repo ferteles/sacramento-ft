@@ -27,7 +27,7 @@ const HistoriaSection = React.lazy(
 const GaleryFlex = React.lazy(() => import("../components/GaleriaFlex"));
 const Arrow = React.lazy(() => import("../components/Arrow"));
 const Footer = React.lazy(() => import("../components/Footer"));
-const Form = React.lazy(() => import("../components/Form"));
+import Form from "../components/Form";
 const MobileNavBar = React.lazy(() => import("../components/MobileNavbar"));
 
 // Hook de scroll (mantido)
@@ -299,17 +299,38 @@ function OndeAHistoria() {
               <h1 className="text-4xl lg:text-7xl font-caudex text-white uppercase max-w-5xl">
                 {texts.title}
               </h1>
-              <motion.a
-                href="#form"
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 className="mt-8"
               >
-                <button className="border border-white px-5 py-3 text-sm uppercase tracking-widest text-white hover:bg-white hover:text-black transition duration-300">
+                <button 
+                  onClick={() => {
+                    // Ativa o estado scrolled para permitir o scroll
+                    Object.defineProperty(window, 'scrollY', {
+                      value: window.innerHeight * 0.3,
+                      writable: true
+                    });
+                    
+                    window.dispatchEvent(new Event('scroll'));
+                    
+                    // Aguarda a animação do header e faz scroll para o formulário
+                    setTimeout(() => {
+                      const formElement = document.getElementById('form');
+                      if (formElement) {
+                        window.scrollTo({
+                          top: formElement.offsetTop - 100,
+                          behavior: 'smooth'
+                        });
+                      }
+                    }, 600);
+                  }}
+                  className="border border-white px-5 py-3 text-sm uppercase tracking-widest text-white hover:bg-white hover:text-black transition duration-300"
+                >
                   {texts.cta}
                 </button>
-              </motion.a>
+              </motion.div>
             </div>
           )}
           {menuOpen && (

@@ -64,7 +64,7 @@ function Form() {
   };
 
   return (
-    <div id="form" className="py-20 w-full flex flex-col lg:flex-row items-start justify-center gap-10 lg:gap-20 px-6 lg:px-20">
+    <div id="form" className="py-20 w-full flex flex-col lg:flex-row items-start justify-center gap-10 lg:gap-20 px-6 lg:px-20" style={{ scrollMarginTop: '100px' }}>
       {/* Imagem */}
       <div className="w-full lg:w-1/3 flex justify-center">
         <Card
