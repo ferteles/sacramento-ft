@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+import { Helmet } from "react-helmet-async";
 import { useLanguage } from "../context/LanguageContext";
 
 import imgHeader from "../assets/images/pg6/imgHeader.webp";
@@ -57,7 +58,49 @@ function MelhorAlternativa() {
   };
 
   return (
-    <div>
+    <>
+      <Helmet>
+        <title>
+          {isPT
+            ? "Esplanada em Lisboa – Melhor Alternativa aos Rooftops"
+            : "Terrace in Lisbon – Best Alternative to Rooftops"}
+        </title>
+        <meta
+          name="description"
+          content={
+            isPT
+              ? "Descubra a esplanada do Sacramento no Chiado: a melhor alternativa aos rooftops com vista única, gastronomia portuguesa e ambiente histórico."
+              : "Discover Sacramento's terrace in Chiado: the best alternative to rooftops with a unique view, Portuguese cuisine, and a historic atmosphere."
+          }
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content={
+            isPT
+              ? "Esplanada em Lisboa – Melhor Alternativa aos Rooftops"
+              : "Terrace in Lisbon – Best Alternative to Rooftops"
+          }
+        />
+        <meta
+          property="og:description"
+          content={
+            isPT
+              ? "Vista deslumbrante sobre o Chiado, ambiente aquecido no inverno e gastronomia portuguesa autêntica na esplanada do Sacramento."
+              : "Stunning view over Chiado, heated atmosphere in winter, and authentic Portuguese cuisine at Sacramento's terrace."
+          }
+        />
+        <meta
+          property="og:image"
+          content="https://sacramentolisboa.com/assets/og-sacramento-banner.png"
+        />
+        <meta
+          property="og:url"
+          content="https://sacramentolisboa.com/esplanada"
+        />
+        <link rel="canonical" href="https://sacramentolisboa.com/esplanada" />
+      </Helmet>
+      <div>
       <Suspense
         fallback={
           <div className="text-center py-8">Carregando cabeçalho...</div>
@@ -158,7 +201,8 @@ function MelhorAlternativa() {
       <Suspense fallback={<div>Carregando rodapé...</div>}>
         <Footer />
       </Suspense>
-    </div>
+      </div>
+    </>
   );
 }
 

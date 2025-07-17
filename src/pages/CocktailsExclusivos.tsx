@@ -85,6 +85,7 @@ function CocktailsExclusivos() {
           property="og:url"
           content="https://sacramentolisboa.com/cocktails"
         />
+        <link rel="canonical" href="https://sacramentolisboa.com/cocktails" />
       </Helmet>
 
       <div className="">

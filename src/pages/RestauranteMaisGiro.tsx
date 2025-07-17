@@ -84,6 +84,7 @@ function RestauranteMaisGiro() {
           property="og:url"
           content="https://sacramentolisboa.com/restaurante"
         />
+        <link rel="canonical" href="https://sacramentolisboa.com/restaurante" />
       </Helmet>
       <div className="max-w-screen">
         <Suspense

@@ -188,6 +188,7 @@ function OndeAHistoria() {
           content="Refeições ao ar livre com vista única no Chiado. Gastronomia portuguesa num ambiente sofisticado e histórico."
         />
         <meta property="og:url" content="https://sacramentolisboa.com/" />
+        <link rel="canonical" href="https://sacramentolisboa.com/" />
       </Helmet>
       <div className="w-full overflow-x-hidden">
         {/* Header */}
