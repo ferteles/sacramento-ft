@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Suspense, lazy, ComponentType } from "react";
+import TagManager from "react-gtm-module";
 import { ClipLoader } from "react-spinners";
 import { useEffect } from "react";
 
@@ -38,12 +39,13 @@ function AppRoutes() {
   const location = useLocation();
 
   useEffect(() => {
-    if (window && (window as any).dataLayer) {
-      (window as any).dataLayer.push({
-        event: 'pageview',
+    // Dispara o evento de pageview usando a biblioteca do GTM
+    TagManager.dataLayer({
+      dataLayer: {
+        event: "pageview",
         page: location.pathname + location.search,
-      });
-    }
+      },
+    });
   }, [location]);
 
   return (

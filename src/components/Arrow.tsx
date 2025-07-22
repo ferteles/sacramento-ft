@@ -1,4 +1,5 @@
 import arrow from "../assets/Arrow.svg";
+import TagManager from "react-gtm-module";
 
 type ArrowProps = {
   title: React.ReactNode;
@@ -13,18 +14,15 @@ function Arrow({
 }: ArrowProps) {
   // Função para enviar evento para o GTM
   const handleCTAClick = () => {
-    // Declara o dataLayer se não existir
-    if (typeof window !== "undefined") {
-      // Type assertion para o TypeScript
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      (window as any).dataLayer.push({
+    TagManager.dataLayer({
+      dataLayer: {
         event: "cta_click",
         cta_text: typeof title === "string" ? title : "CTA Arrow",
         cta_location: section,
         destination: "form",
         restaurant_name: "Sacramento Chiado",
-      });
-    }
+      },
+    });
   };
 
   return (
