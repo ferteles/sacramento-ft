@@ -97,6 +97,7 @@ function SaboreieNoite() {
           property="og:url"
           content="https://sacramentolisboa.com/jantar-tarde"
         />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://sacramentolisboa.com/jantar-tarde" />
       </Helmet>
       <div className="">

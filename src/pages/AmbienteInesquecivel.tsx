@@ -114,6 +114,7 @@ function AmbienteInesquecivel() {
           content="https://sacramentolisboa.com/club"
         />
         <link rel="canonical" href="https://sacramentolisboa.com/club" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
 
       <div className="bg-[#E4D9CD]">

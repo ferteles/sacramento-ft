@@ -189,6 +189,7 @@ function OndeAHistoria() {
         />
         <meta property="og:url" content="https://sacramentolisboa.com/" />
         <link rel="canonical" href="https://sacramentolisboa.com/" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <div className="w-full overflow-x-hidden">
         {/* Header */}

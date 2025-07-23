@@ -95,6 +95,7 @@ function EventosJantares() {
       content="https://sacramentolisboa.com/grupos"
         />
         <link rel="canonical" href="https://sacramentolisboa.com/grupos" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
 
       <div>

@@ -99,6 +99,7 @@ function MelhorAlternativa() {
           content="https://sacramentolisboa.com/esplanada"
         />
         <link rel="canonical" href="https://sacramentolisboa.com/esplanada" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <div>
       <Suspense
