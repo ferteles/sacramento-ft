@@ -4,50 +4,19 @@ import { useLanguage } from "../context/LanguageContext";
 import Card from "./Card";
 import imgForm from "../assets/imgForm.webp";
 
+// Componente do Widget Dish.co
 const DishReservationWidget: React.FC = () => {
   const [scriptSrc, setScriptSrc] = useState('');
-  
-  const isPortugueseSpeakingCountry = (): boolean => {
-    const locale = navigator.language || navigator.languages[0] || 'en-US';
-    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    
-    const portugueseCountries = [
-      'pt', 'pt-PT', 'pt-BR', 'pt-AO', 'pt-MZ', 'pt-CV', 'pt-GW', 'pt-ST', 'pt-TL'
-    ];
-    
-    const portugueseTimezones = [
-      'Europe/Lisbon', 'Atlantic/Madeira', 'Atlantic/Azores',
-      'America/Sao_Paulo', 'America/Recife', 'America/Manaus', 'America/Fortaleza', 'America/Belem', 'America/Campo_Grande', 'America/Cuiaba', 'America/Porto_Velho', 'America/Boa_Vista', 'America/Rio_Branco', 'America/Bahia', 'America/Maceio', 'America/Santarem', 'America/Araguaina', 'America/Noronha',
-      'Africa/Luanda',
-      'Africa/Maputo',
-      'Atlantic/Cape_Verde',
-      'Africa/Bissau',
-      'Africa/Sao_Tome',
-      'Asia/Dili'
-    ];
-    
-    if (portugueseCountries.some(country => locale.toLowerCase().startsWith(country))) {
-      return true;
-    }
-    
-    if (portugueseTimezones.includes(timezone)) {
-      return true;
-    }
-    
-    return false;
-  };
 
   useEffect(() => {
     setScriptSrc(`https://reservation.dish.co/widget.js?v=${Date.now()}`);
     
-    const widgetLanguage = isPortugueseSpeakingCountry() ? 'pt' : 'en';
-    
+    // Configurar variáveis globais para o widget Dish.co
     (window as any)._hors = [
       ['eid', 'hydra-f7eb4900-ff50-11ea-a5ce-6522f13fc41d'],
       ['tagid', 'hors-hydra-f7eb4900-ff50-11ea-a5ce-6522f13fc41d'],
       ['width', '100%'],
       ['height', ''],
-      ['language', widgetLanguage],
       ['foregroundColor', '#441F0E'],
       ['backgroundColor', 'transparent'],
       ['linkColor', '#441F0E'],
@@ -99,6 +68,7 @@ function Form() {
 
   return (
     <div id="form" className="py-20 w-full flex flex-col lg:flex-row items-start justify-center gap-10 lg:gap-20 px-6 lg:px-20" style={{ scrollMarginTop: '100px' }}>
+      {/* Imagem */}
       <div className="w-full lg:w-1/3 flex justify-center">
         <Card
           imageSrc={imgForm}
@@ -108,6 +78,7 @@ function Form() {
         />
       </div>
 
+      {/* Widget de Reservas */}
       <div className="w-full lg:w-1/2 max-w-lg">
         <h3
           className="text-3xl lg:text-5xl font-caudex max-w-lg uppercase"
@@ -120,10 +91,12 @@ function Form() {
           {texts.paragraph}
         </p>
 
+        {/* Widget de Reservas Dish.co */}
         <div className="bg-[#D6CBBB] p-1 lg:p-6 rounded-2xl shadow-lg">
           <DishReservationWidget />
         </div>
 
+        {/* Aviso de privacidade */}
         <p className="text-xs text-[#6B5B50] mt-4">
           {language === "pt"
             ? "Ao fazer uma reserva, concorda com a nossa política de privacidade."
