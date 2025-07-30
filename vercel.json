@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/render.ts": {
+      "runtime": "@vercel/node@3"
+    }
+  },
   "rewrites": [
     { "source": "/(.*)", "destination": "/api/render.ts" }
   ]
