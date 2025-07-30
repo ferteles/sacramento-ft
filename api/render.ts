@@ -14,12 +14,12 @@ export default function handler(
     // 2. Construir a string da CSP com o nonce gerado
     const cspHeader = `
       default-src 'self';
-      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.clarity.ms https://reservation.dish.co;
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.clarity.ms https://reservation.dish.co https://googleads.g.doubleclick.net;
       style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
       font-src 'self' https://fonts.gstatic.com;
-      img-src 'self' data: https://www.clarity.ms https://c.clarity.ms https://www.googletagmanager.com;
-      connect-src 'self' https://*.clarity.ms https://www.clarity.ms https://c.clarity.ms https://www.googletagmanager.com https://reservation.dish.co;
-      frame-src 'self' https://www.googletagmanager.com https://reservation.dish.co;
+      img-src 'self' data: https://www.clarity.ms https://c.clarity.ms https://c.bing.com https://www.googletagmanager.com https://googleads.g.doubleclick.net;
+      connect-src 'self' https://*.clarity.ms https://www.clarity.ms https://c.clarity.ms https://www.googletagmanager.com https://reservation.dish.co https://www.google.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://*.doubleclick.net;
+      frame-src 'self' https://www.googletagmanager.com https://reservation.dish.co https://td.doubleclick.net https://*.doubleclick.net;
       object-src 'none';
       base-uri 'self';
       form-action 'self';
