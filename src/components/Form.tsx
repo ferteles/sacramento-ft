@@ -78,7 +78,7 @@ function Form() {
         />
       </div>
 
-      {/* Widget de Reservas */}
+      {/* Botão de Reserva Externa */}
       <div className="w-full lg:w-1/2 max-w-lg">
         <h3
           className="text-3xl lg:text-5xl font-caudex max-w-lg uppercase"
@@ -91,16 +91,21 @@ function Form() {
           {texts.paragraph}
         </p>
 
-        {/* Widget de Reservas Dish.co */}
-        <div className="bg-[#D6CBBB] p-1 lg:p-6 rounded-2xl shadow-lg">
-          <DishReservationWidget />
-        </div>
+        <a
+          href="https://reserve.dish.co/258346"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-[#441F0E] text-white px-8 py-4 rounded-xl text-lg font-bold uppercase tracking-widest hover:bg-[#6B5B50] transition-colors duration-300"
+          tabIndex={0}
+        >
+          {language === "pt" ? "Reservar Mesa" : "Reserve Table"}
+        </a>
 
         {/* Aviso de privacidade */}
         <p className="text-xs text-[#6B5B50] mt-4">
           {language === "pt"
-            ? "Ao fazer uma reserva, concorda com a nossa política de privacidade."
-            : "By making a reservation, you agree to our privacy policy."}
+            ? "Ao fazer uma reserva, será redirecionado para o sistema externo Dish.co."
+            : "By making a reservation, you will be redirected to the external Dish.co system."}
         </p>
       </div>
     </div>

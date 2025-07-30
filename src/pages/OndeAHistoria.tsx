@@ -307,31 +307,14 @@ function OndeAHistoria() {
                 transition={{ duration: 0.6 }}
                 className="mt-8"
               >
-                <button 
-                  onClick={() => {
-                    // Ativa o estado scrolled para permitir o scroll
-                    Object.defineProperty(window, 'scrollY', {
-                      value: window.innerHeight * 0.3,
-                      writable: true
-                    });
-                    
-                    window.dispatchEvent(new Event('scroll'));
-                    
-                    // Aguarda a animação do header e faz scroll para o formulário
-                    setTimeout(() => {
-                      const formElement = document.getElementById('form');
-                      if (formElement) {
-                        window.scrollTo({
-                          top: formElement.offsetTop - 100,
-                          behavior: 'smooth'
-                        });
-                      }
-                    }, 600);
-                  }}
-                  className="border border-white px-5 py-3 text-sm uppercase tracking-widest text-white hover:bg-white hover:text-black transition duration-300"
+                <a
+                  href="https://reserve.dish.co/258346"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-white px-5 py-3 text-sm uppercase tracking-widest text-white hover:bg-white hover:text-black transition duration-300 inline-block"
                 >
                   {texts.cta}
-                </button>
+                </a>
               </motion.div>
             </div>
           )}
