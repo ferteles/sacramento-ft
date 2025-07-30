@@ -17,7 +17,7 @@ export default function handler(
       script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.clarity.ms https://reservation.dish.co https://googleads.g.doubleclick.net;
       style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
       font-src 'self' https://fonts.gstatic.com;
-      img-src 'self' data: https://www.clarity.ms https://c.clarity.ms https://c.bing.com https://www.googletagmanager.com https://googleads.g.doubleclick.net;
+      img-src 'self' data: https://www.clarity.ms https://c.clarity.ms https://c.bing.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.br;
       connect-src 'self' https://*.clarity.ms https://www.clarity.ms https://c.clarity.ms https://www.googletagmanager.com https://reservation.dish.co https://www.google.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://*.doubleclick.net;
       frame-src 'self' https://www.googletagmanager.com https://reservation.dish.co https://td.doubleclick.net https://*.doubleclick.net;
       object-src 'none';
