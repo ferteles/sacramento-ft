@@ -14,11 +14,11 @@ export default function handler(
     // 2. Construir a string da CSP com o nonce gerado
     const cspHeader = `
       default-src 'self';
-      script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://www.googletagmanager.com;
+      script-src 'self' 'nonce-${nonce}' 'unsafe-inline' https://www.googletagmanager.com;
       style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
       font-src 'self' https://fonts.gstatic.com;
-      img-src 'self' data: https://www.clarity.ms https://www.googletagmanager.com;
-      connect-src 'self' https://*.clarity.ms https://www.clarity.ms https://www.googletagmanager.com;
+      img-src 'self' data: https://www.clarity.ms https://c.clarity.ms https://www.googletagmanager.com;
+      connect-src 'self' https://*.clarity.ms https://www.clarity.ms https://c.clarity.ms https://www.googletagmanager.com;
       frame-src 'self' https://www.googletagmanager.com;
       object-src 'none';
       base-uri 'self';
@@ -35,8 +35,20 @@ export default function handler(
     const buildDir = path.join(process.cwd(), 'dist');
     const html = fs.readFileSync(path.join(buildDir, 'index.html'), 'utf8');
 
-    // 5. Substituir o placeholder "r4nd0m" pelo nonce real
-    const modifiedHtml = html.replace(/nonce="r4nd0m"/g, `nonce="${nonce}"`);
+    // 5. Substituir o placeholder "r4nd0m" pelo nonce real e adicionar nonce aos scripts do Vite
+    let modifiedHtml = html.replace(/nonce="r4nd0m"/g, `nonce="${nonce}"`);
+    
+    // Adicionar nonce a todos os scripts que não têm nonce
+    modifiedHtml = modifiedHtml.replace(
+      /<script(?![^>]*nonce)([^>]*src="[^"]*"[^>]*)>/g,
+      `<script nonce="${nonce}"$1>`
+    );
+    
+    // Adicionar nonce a scripts inline que não têm nonce
+    modifiedHtml = modifiedHtml.replace(
+      /<script(?![^>]*nonce)([^>]*>)/g,
+      `<script nonce="${nonce}"$1`
+    );
 
     // 6. Enviar o HTML modificado
     response.setHeader('Content-Type', 'text/html');
