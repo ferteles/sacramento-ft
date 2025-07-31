@@ -46,7 +46,7 @@ function Form() {
           className="inline-block bg-[#441F0E] text-white px-8 py-4 rounded-xl text-lg font-bold uppercase tracking-widest hover:bg-[#6B5B50] transition-colors duration-300"
           tabIndex={0}
         >
-          {language === "pt" ? "Reservar Mesa" : "Reserve Table"}
+          {language === "pt" ? "Reservar Mesa" : "Book a Table"}
         </a>
 
         <p className="text-xs text-[#6B5B50] mt-4">
