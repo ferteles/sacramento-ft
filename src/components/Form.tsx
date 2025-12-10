@@ -51,7 +51,7 @@ function Form() {
 
         <p className="text-xs text-[#6B5B50] mt-4">
           {language === "pt"
-            ? "Ao fazer uma reserva, será redirecionado para o sistema externo Dish.co."
+            ? "Ao fazer uma reserva, será redirecionado para o sistema externo Dish.co"
             : "By making a reservation, you will be redirected to the external Dish.co system."}
         </p>
       </div>
