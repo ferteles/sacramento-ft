@@ -86,7 +86,7 @@ function Header({
           </Link>
         </motion.div>
 
-        <div className="flex gap-4 text-black text-sm lg:text-base">
+        <div className="flex gap-4 text-black text-sm lg:text-base items-center">
           <Link to="/jantar-tarde" className="cursor-pointer hover:underline">
             {texts.jantar}
           </Link>
@@ -98,6 +98,13 @@ function Header({
           </Link>
           <Link to="/club" className="cursor-pointer hover:underline">
             {texts.club}
+          </Link>
+          <Link
+            to="/reveillon"
+            className="ml-6 px-4 py-2 rounded-full font-bold text-white bg-[#C19A6B] hover:bg-[#b88a4c] transition-colors duration-200 shadow-lg border-2 border-[#C19A6B] text-base uppercase hidden lg:inline-block"
+            style={{ letterSpacing: 1 }}
+          >
+            Réveillon
           </Link>
         </div>
       </motion.div>

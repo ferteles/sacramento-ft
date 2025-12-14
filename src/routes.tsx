@@ -31,8 +31,12 @@ const SaboreieNoite = lazy(() =>
 const MelhorAlternativa = lazy(() =>
   withDelay(() => import("./pages/MelhorAlternativa"))
 );
+
 const Ambiente = lazy(() =>
   withDelay(() => import("./pages/AmbienteInesquecivel"))
+);
+const Reveillon = lazy(() =>
+  withDelay(() => import("./pages/Reveillon"))
 );
 
 function AppRoutes() {
@@ -67,6 +71,7 @@ function AppRoutes() {
         <Route path="/jantar-tarde" element={<SaboreieNoite />} />
         <Route path="/esplanada" element={<MelhorAlternativa />} />
         <Route path="/club" element={<Ambiente />} />
+        <Route path="/reveillon" element={<Reveillon />} />
       </Routes>
     </Suspense>
   );
