@@ -7,6 +7,7 @@ type CardProps = {
   width?: string;
   height?: string;
   hasOverlay?: boolean;
+  backgroundPosition?: string;
 };
 
 function useInView(threshold = 0.3) {
@@ -37,6 +38,7 @@ const Card = ({
   width = "w-full",
   height = "h-[440px]",
   hasOverlay = true,
+  backgroundPosition = "center",
 }: CardProps) => {
   const { ref, isVisible } = useInView();
   const { language } = useLanguage();
@@ -57,7 +59,7 @@ const Card = ({
       style={{
         backgroundImage: backgroundImageStyle,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition,
       }}
     >
       {translatedTitle && (
