@@ -15,16 +15,16 @@ import topheader from "../assets/backgroundHeaderFooter.svg";
 import logo from "../assets/LogoBranca.svg";
 import menuIcon from "../assets/MenuIcoWhite.svg";
 
-// Reveillon assets - agora usando imagens locais
-const reveillonBg = "/assets/reveillon/hero-bg.png";
-const fullPackImg = "/assets/reveillon/full-pack-main.png";
-const jantarFestaImg = "/assets/reveillon/jantar-festa-left.png";
-const clubDiscoImg = "/assets/reveillon/club-main.png";
-const menuImg1 = "/assets/reveillon/menu-img-1.png";
-const menuImg2 = "/assets/reveillon/menu-img-2.png";
-const menuImg3 = "/assets/reveillon/menu-img-3.png";
-const menuTitle = "/assets/reveillon/menu-banner.png";
-const menuFood = "/assets/reveillon/menu-food.png";
+// Reveillon assets - agora usando imagens WebP otimizadas
+const reveillonBg = "/assets/reveillon/hero-bg.webp";
+const fullPackImg = "/assets/reveillon/full-pack-main.webp";
+const jantarFestaImg = "/assets/reveillon/jantar-festa-left.webp";
+const clubDiscoImg = "/assets/reveillon/club-main.webp";
+const menuImg1 = "/assets/reveillon/menu-img-1.webp";
+const menuImg2 = "/assets/reveillon/menu-img-2.webp";
+const menuImg3 = "/assets/reveillon/menu-img-3.webp";
+const menuTitle = "/assets/reveillon/menu-banner.webp";
+const menuFood = "/assets/reveillon/menu-food.webp";
 const bulletIcon = "/assets/reveillon/bullet-icon.svg";
 
 // Lazy load dos componentes
