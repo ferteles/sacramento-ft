@@ -15,8 +15,9 @@ import topheader from "../assets/backgroundHeaderFooter.svg";
 import logo from "../assets/LogoBranca.svg";
 import menuIcon from "../assets/MenuIcoWhite.svg";
 
-// Reveillon assets - agora usando imagens WebP otimizadas
-const reveillonBg = "/assets/reveillon/hero-bg.webp";
+// Reveillon assets - agora usando imagens desktop/mobile
+const reveillonBgDesk = "/assets/reveillon/fundo-rev-desk.gif";
+const reveillonBgMobile = "/assets/reveillon/fundo-rev-mobile.gif";
 const fullPackImg = "/assets/reveillon/full-pack-main.webp";
 const jantarFestaImg = "/assets/reveillon/jantar-festa-left.webp";
 const clubDiscoImg = "/assets/reveillon/club-main.webp";
@@ -199,12 +200,15 @@ function Reveillon() {
           {/* Vídeo/GIF de fundo */}
           {!scrolled && (
             <div className="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
-              <img
-                src={reveillonBg}
-                alt="Reveillon Background"
-                className="w-full h-full object-cover"
-                style={{ opacity: 0.5 }}
-              />
+              <picture className="w-full h-full block">
+                <source media="(min-width:1024px)" srcSet={reveillonBgDesk} />
+                <img
+                  src={reveillonBgMobile}
+                  alt="Reveillon Background"
+                  className="w-full h-full object-cover"
+                  style={{ opacity: 0.5 }}
+                />
+              </picture>
             </div>
           )}
 
