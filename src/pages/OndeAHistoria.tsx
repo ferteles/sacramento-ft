@@ -29,6 +29,7 @@ const Arrow = React.lazy(() => import("../components/Arrow"));
 const Footer = React.lazy(() => import("../components/Footer"));
 import Form from "../components/Form";
 const MobileNavBar = React.lazy(() => import("../components/MobileNavbar"));
+import ReveillonModal from "../components/ReveillonModal";
 
 // Hook de scroll (mantido)
 function useScrolled(threshold = 0.2) {
@@ -100,6 +101,7 @@ const NavLinks = ({
 
 function OndeAHistoria() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const controls = useAnimation();
   const headerRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false); // Novo estado para controlar se é mobile
@@ -166,6 +168,14 @@ function OndeAHistoria() {
     });
   }, [texts.title]); // Dispara quando o texto (e o idioma) mudam
 
+  // Abre o modal automaticamente quando a página carrega
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowModal(true);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -191,6 +201,10 @@ function OndeAHistoria() {
         <link rel="canonical" href="https://sacramentolisboa.com/" />
         <meta name="robots" content="index, follow" />
       </Helmet>
+
+      {/* Reveillon Modal */}
+      <ReveillonModal isOpen={showModal} onClose={() => setShowModal(false)} />
+
       <div className="w-full overflow-x-hidden">
         {/* Header */}
         <motion.div

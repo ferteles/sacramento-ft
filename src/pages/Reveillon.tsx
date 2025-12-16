@@ -18,7 +18,7 @@ import menuIcon from "../assets/MenuIcoWhite.svg";
 // Reveillon assets - agora usando imagens desktop/mobile
 const reveillonBgDesk = "/assets/reveillon/fundo-rev-desk.gif";
 const reveillonBgMobile = "/assets/reveillon/fundo-rev-mobile.gif";
-const fullPackImg = "/assets/reveillon/club-nude-project.png";
+const fullPackImg = "/assets/reveillon/club-nude-project.webp";
 const jantarFestaImg = "/assets/reveillon/jantar-festa-left.webp";
 const clubDiscoImg = "/assets/reveillon/club-main.webp";
 const menuImg2 = "/assets/reveillon/menu-img-2.webp";
@@ -27,7 +27,7 @@ const bulletIcon = "/assets/reveillon/bullet-icon.svg";
 const sacramentoStories2512 = "/assets/reveillon/sacramento-stories-2512.png";
 const sacramentoStories2513 = "/assets/reveillon/sacramento-stories-2513.png";
 const maskShape = "/assets/reveillon/mask-shape.svg";
-const jantarFestaMeninas = "/assets/reveillon/jantar-festa-meninas.png";
+const jantarFestaMeninas = "/assets/reveillon/jantar-festa-meninas.webp";
 
 // Lazy load dos componentes
 const InfoHeader = React.lazy(() => import("../components/InfoHeader"));
@@ -35,6 +35,7 @@ const Card = React.lazy(() => import("../components/Card"));
 const Footer = React.lazy(() => import("../components/Footer"));
 import Form from "../components/Form";
 const MobileNavBar = React.lazy(() => import("../components/MobileNavbar"));
+
 
 // Hook de scroll (mantido)
 function useScrolled(threshold = 0.2) {
