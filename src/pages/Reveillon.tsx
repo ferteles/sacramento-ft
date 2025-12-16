@@ -361,8 +361,10 @@ function Reveillon() {
               </div>
               <div className="flex flex-col gap-6 lg:max-w-1/2 text-[#3b1a1a]">
                 <h3 className="text-2xl lg:text-4xl font-caudex">Jantar + Festa</h3>
-                <div className="inline-flex items-center gap-3 self-start border border-[#3b1a1a] px-4 py-2 rounded-full text-base uppercase tracking-wide text-[#3b1a1a] bg-white/40">
-                  230€ por pessoa
+                <div className="relative">
+                  <div className="bg-[#21283b] h-[60px] rounded-[15.62px] w-[265px] flex items-center justify-center">
+                    <span className="font-caudex text-[26.77px] leading-[28.1px] text-[#fcf7e5] uppercase">230€ por pessoa</span>
+                  </div>
                 </div>
                 <ul className="space-y-3 text-base leading-relaxed">
                   <li className="flex items-start gap-3">
@@ -474,7 +476,13 @@ function Reveillon() {
                   >
                     Compre seus bilhetes agora
                   </a>
-                  <div className="mt-2 w-40 border-b border-[#3b1a1a]"></div>
+                  <div className="mt-2">
+                    <img
+                      src="/assets/reveillon/imgArrow9.png"
+                      alt="Decorative underline"
+                      className="block w-40 h-[4px] object-contain"
+                    />
+                  </div>
                 </div>
               </div>
             </section>

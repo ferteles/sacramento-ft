@@ -247,7 +247,7 @@ function OndeAHistoria() {
 
           {/* Navbar */}
           <div
-            className={`flex items-center justify-between lg:justify-evenly w-full px-5 lg:px-20 py-4 shadow-md${
+            className={`relative flex items-center justify-between lg:justify-evenly w-full px-5 lg:px-20 py-4 shadow-md${
               scrolled ? "bg-[#E4D9CD] shadow-md" : "bg-transparent"
             } transition-all duration-500`}
           >
@@ -271,12 +271,18 @@ function OndeAHistoria() {
               />
             </Link>
 
-            <div className="hidden lg:flex gap-6 text-sm">
+            <div className="hidden lg:flex gap-6 text-sm items-center">
               <NavLinks
                 labels={headerLinks[language].right}
                 paths={rightPaths}
                 scrolled={scrolled}
               />
+
+              <Link to="/reveillon" className="hidden lg:flex lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 z-50">
+                <div className="bg-[#21283b] h-[51px] w-[174px] flex items-center justify-center">
+                  <span className="font-catamaran font-light text-[15px] text-white">Réveillon</span>
+                </div>
+              </Link>
             </div>
 
             {/* Mobile menu */}

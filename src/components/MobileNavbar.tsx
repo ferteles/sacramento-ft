@@ -28,6 +28,7 @@ const MobileNavBar = ({ onClose }: MobileNavBarProps) => {
     { to: "/jantar-tarde", label: "Jantar Tarde" },
     { to: "/esplanada", label: "Esplanada" },
     { to: "/club", label: "Club" },
+    { to: "/reveillon", label: "Réveillon" },
   ];
 
   return (

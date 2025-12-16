@@ -99,14 +99,14 @@ function Header({
           <Link to="/club" className="cursor-pointer hover:underline">
             {texts.club}
           </Link>
-          <Link
-            to="/reveillon"
-            className="ml-6 px-4 py-2 rounded-full font-bold text-white bg-[#C19A6B] hover:bg-[#b88a4c] transition-colors duration-200 shadow-lg border-2 border-[#C19A6B] text-base uppercase hidden lg:inline-block"
-            style={{ letterSpacing: 1 }}
-          >
-            Réveillon
-          </Link>
         </div>
+
+        {/* Réveillon badge - positioned at the right edge of the header */}
+        <Link to="/reveillon" className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 z-50">
+          <div className="bg-[#21283b] h-[51px] w-[174px] flex items-center justify-center">
+            <span className="font-catamaran font-light text-[15px] text-white">Réveillon</span>
+          </div>
+        </Link>
       </motion.div>
 
       {/* Navbar mobile */}
