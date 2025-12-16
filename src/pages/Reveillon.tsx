@@ -21,11 +21,8 @@ const reveillonBgMobile = "/assets/reveillon/fundo-rev-mobile.gif";
 const fullPackImg = "/assets/reveillon/full-pack-main.webp";
 const jantarFestaImg = "/assets/reveillon/jantar-festa-left.webp";
 const clubDiscoImg = "/assets/reveillon/club-main.webp";
-const menuImg1 = "/assets/reveillon/menu-img-1.webp";
 const menuImg2 = "/assets/reveillon/menu-img-2.webp";
-const menuImg3 = "/assets/reveillon/menu-img-3.webp";
 const menuTitle = "/assets/reveillon/menu-banner.webp";
-const menuFood = "/assets/reveillon/menu-food.webp";
 const bulletIcon = "/assets/reveillon/bullet-icon.svg";
 
 // Lazy load dos componentes
