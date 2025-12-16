@@ -18,12 +18,16 @@ import menuIcon from "../assets/MenuIcoWhite.svg";
 // Reveillon assets - agora usando imagens desktop/mobile
 const reveillonBgDesk = "/assets/reveillon/fundo-rev-desk.gif";
 const reveillonBgMobile = "/assets/reveillon/fundo-rev-mobile.gif";
-const fullPackImg = "/assets/reveillon/full-pack-main.webp";
+const fullPackImg = "/assets/reveillon/club-nude-project.png";
 const jantarFestaImg = "/assets/reveillon/jantar-festa-left.webp";
 const clubDiscoImg = "/assets/reveillon/club-main.webp";
 const menuImg2 = "/assets/reveillon/menu-img-2.webp";
 const menuTitle = "/assets/reveillon/menu-banner.webp";
 const bulletIcon = "/assets/reveillon/bullet-icon.svg";
+const sacramentoStories2512 = "/assets/reveillon/sacramento-stories-2512.png";
+const sacramentoStories2513 = "/assets/reveillon/sacramento-stories-2513.png";
+const maskShape = "/assets/reveillon/mask-shape.svg";
+const jantarFestaMeninas = "/assets/reveillon/jantar-festa-meninas.png";
 
 // Lazy load dos componentes
 const InfoHeader = React.lazy(() => import("../components/InfoHeader"));
@@ -327,36 +331,127 @@ function Reveillon() {
           <InfoHeader />
           <div className="flex flex-col items-start">
             {/* Seção Full-Pack Experience */}
-            <section className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10 px-6 lg:px-20 py-20">
-              <div className="flex flex-col justify-center lg:max-w-1/2 gap-6">
-                <h2 className="text-3xl lg:text-6xl font-caudex uppercase text-[#3b1a1a]">Full-Pack Experience</h2>
-                <p className="text-base lg:text-lg font-catamaran text-[#3b1a1a] text-justify">
-                  Celebre a chegada de 2026 no Sacramento do Chiado com uma experiência pensada ao detalhe. O Full-Pack Experience combina um jantar exclusivo no Restaurante Sacramento com acesso direto à festa de Réveillon no Club Sacramento, garantindo uma noite sofisticada, vibrante e inesquecível.
-                </p>
-              </div>
-              <div className="w-full lg:w-1/2 flex justify-center">
-                <Card
-                  imageSrc={fullPackImg}
-                  width="w-full lg:w-[600px]"
-                  height="h-[320px] lg:h-[420px]"
-                  hasOverlay={false}
-                  backgroundPosition="left -8% top 0%"
-                />
+            <section className="w-screen relative py-20">
+              <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+                  <h2 
+                    className="font-caudex uppercase text-3xl lg:text-5xl" 
+                    style={{
+                      color: '#1e1e1e',
+                      fontStyle: 'normal',
+                      fontWeight: 'normal'
+                    }}
+                  >
+                    Full-Pack<br />Experience
+                  </h2>
+                  <p 
+                    className="font-catamaran text-base lg:text-lg"
+                    style={{
+                      color: '#1e1e1e',
+                      fontWeight: '300'
+                    }}
+                  >
+                    Celebre a chegada de 2026 no Sacramento do Chiado com uma experiência pensada ao detalhe. O Full-Pack Experience combina um jantar exclusivo no Restaurante Sacramento com acesso direto à festa de Réveillon no Club Sacramento, garantindo uma noite sofisticada, vibrante e inesquecível.
+                  </p>
+                </div>
+                
+                <div className="relative w-full" style={{ paddingBottom: '33.13%' }}>
+                  {/* Camada de máscara com imagens de fundo */}
+                  <div className="absolute inset-0 overflow-hidden rounded-[40px]">
+                    <div 
+                      className="absolute rounded-[40px]"
+                      style={{
+                        height: '341.56%',
+                        left: '-45.91%',
+                        top: '119.21%',
+                        width: '215.34%',
+                        WebkitMaskImage: `url(${maskShape})`,
+                        maskImage: `url(${maskShape})`,
+                        WebkitMaskSize: '1219px 479px',
+                        maskSize: '1219px 479px',
+                        WebkitMaskPosition: '702.696px 569.285px',
+                        maskPosition: '702.696px 569.285px',
+                        WebkitMaskRepeat: 'no-repeat',
+                        maskRepeat: 'no-repeat'
+                      }}
+                    >
+                      <img 
+                        src={sacramentoStories2512}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover rounded-[40px]"
+                        style={{
+                          objectPosition: '50% 50%'
+                        }}
+                      />
+                    </div>
+                    <div 
+                      className="absolute rounded-[40px]"
+                      style={{
+                        height: '285.17%',
+                        left: '-45.37%',
+                        top: '172.86%',
+                        width: '179.69%',
+                        WebkitMaskImage: `url(${maskShape})`,
+                        maskImage: `url(${maskShape})`,
+                        WebkitMaskSize: '1219px 479px',
+                        maskSize: '1219px 479px',
+                        WebkitMaskPosition: '696.082px 443.823px',
+                        maskPosition: '696.082px 443.823px',
+                        WebkitMaskRepeat: 'no-repeat',
+                        maskRepeat: 'no-repeat'
+                      }}
+                    >
+                      <img 
+                        src={sacramentoStories2513}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover rounded-[40px]"
+                        style={{
+                          objectPosition: '50% 50%'
+                        }}
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Imagem principal */}
+                  <div 
+                    className="absolute overflow-hidden rounded-[40px]"
+                    style={{
+                      height: '100%',
+                      left: '0',
+                      top: '0',
+                      width: '100%'
+                    }}
+                  >
+                    <img 
+                      src={fullPackImg}
+                      alt="Full Pack Experience"
+                      className="absolute"
+                      style={{
+                        height: '199.37%',
+                        left: '-12.29%',
+                        top: '-56.94%',
+                        width: '117.47%',
+                        maxWidth: 'none'
+                      }}
+                    />
+                  </div>
+                </div>
               </div>
             </section>
 
             {/* Seção Jantar + Festa */}
-            <section className="flex flex-col lg:flex-row items-center justify-evenly gap-10 px-6 lg:px-20 py-20">
-              <div className="w-full lg:w-1/2 flex justify-center">
-                <Card
-                  imageSrc={jantarFestaImg}
-                  width="w-full lg:w-[520px]"
-                  height="h-[360px] lg:h-[520px]"
-                  hasOverlay={false}
-                  backgroundPosition="center"
-                />
-              </div>
-              <div className="flex flex-col gap-6 lg:max-w-1/2 text-[#3b1a1a]">
+            <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-20 py-20">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+                <div className="flex justify-center">
+                  <div className="relative w-full max-w-[520px]">
+                    <img 
+                      src={jantarFestaMeninas}
+                      alt="Jantar + Festa"
+                      className="w-full h-auto rounded-[40px]"
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-6 text-[#3b1a1a]">
                 <h3 className="text-2xl lg:text-4xl font-caudex">Jantar + Festa</h3>
                 <div className="relative">
                   <div className="bg-[#21283b] h-[60px] rounded-[15.62px] w-[265px] flex items-center justify-center">
@@ -390,10 +485,11 @@ function Reveillon() {
                     href="https://reserve.dish.co/258346"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border border-[#3b1a1a] px-5 py-3 text-xs uppercase tracking-wide text-[#3b1a1a] hover:bg-[#3b1a1a] hover:text-white transition duration-200 text-center"
+                    className="group inline-block border border-[#3b1a1a] px-5 py-3 text-xs uppercase tracking-wide text-[#3b1a1a] hover:bg-[#3b1a1a] hover:text-white transition duration-200 text-center"
                   >
                     Faça sua reserva
                   </a>
+                  
                   <a
                     href="#menu"
                     className="border border-transparent px-5 py-3 text-xs uppercase tracking-wide text-[#3b1a1a] hover:underline text-center"
@@ -401,6 +497,7 @@ function Reveillon() {
                     Conheça o menu
                   </a>
                 </div>
+              </div>
               </div>
             </section>
 
@@ -449,35 +546,43 @@ function Reveillon() {
                       desc: "Inclui uma cerveja ou um copo de vinho/sidra, um cocktail e um copo de espumante à meia-noite.",
                     },
                   ].map((item) => (
-                    <div
+                    <a
                       key={item.title}
-                      className="border border-[#3b1a1a] border-dashed px-4 py-4 rounded-md bg-white/50"
+                      href="https://web.fourvenues.com/pt/club-sacramento/events/club-sacramento---new-years-eve-31-12-2025-A4G0"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block border border-[#3b1a1a] border-dashed px-4 py-4 rounded-md bg-white/50"
                     >
                       <div className="text-base font-caudex uppercase mb-2">{item.title}</div>
                       <p className="text-base leading-relaxed">{item.desc}</p>
-                    </div>
+                    </a>
                   ))}
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-[#3b1a1a]">
-                  <div className="md:col-start-2 lg:col-start-2 border border-[#3b1a1a] border-dashed px-4 py-4 rounded-md bg-white/50 text-center">
+                  <a
+                    href="https://web.fourvenues.com/pt/club-sacramento/events/club-sacramento---new-years-eve-31-12-2025-A4G0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="md:col-start-2 lg:col-start-2 block border border-[#3b1a1a] border-dashed px-4 py-4 rounded-md bg-white/50 text-center"
+                  >
                     <div className="text-base font-caudex uppercase mb-2">Open Bar — 100€</div>
                     <p className="text-base leading-relaxed">Inclui acesso ao open bar das 23h00 às 03h00.</p>
-                  </div>
+                  </a>
                 </div>
                 <div className="flex flex-col items-center mt-10 text-[#3b1a1a]">
                   <a
-                    href="https://reserve.dish.co/258346"
+                    href="https://web.fourvenues.com/pt/club-sacramento/events/club-sacramento---new-years-eve-31-12-2025-A4G0"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-caudex uppercase tracking-wide"
+                    className="group inline-block text-base font-caudex uppercase tracking-wide"
                   >
                     Compre seus bilhetes agora
                   </a>
                   <div className="mt-2">
                     <img
-                      src="/assets/reveillon/imgArrow9.png"
-                      alt="Decorative underline"
-                      className="block w-40 h-[4px] object-contain"
+                      src="data:image/svg+xml,%3csvg%20width='154'%20height='8'%20viewBox='0%200%20154%208'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20id='Arrow%204'%20d='M153.286%204.35062C153.479%204.15698%20153.479%203.84302%20153.286%203.64938L150.13%200.493782C149.937%200.300139%20149.623%200.300139%20149.429%200.493782C149.235%200.687425%20149.235%201.00138%20149.429%201.19503L152.234%204L149.429%206.80497C149.235%206.99862%20149.235%207.31257%20149.429%207.50622C149.623%207.69986%20149.937%207.69986%20150.13%207.50622L153.286%204.35062ZM0.708008%204.49585H152.935V3.50415H0.708008V4.49585Z'%20fill='%231E1E1E'/%3e%3c/svg%3e"
+                      alt="Seta"
+                      className="block w-40 h-2 object-contain transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
                     />
                   </div>
                 </div>
@@ -526,7 +631,7 @@ function Reveillon() {
                 </div>
               </div>
               <div className="w-full mt-10">
-                <div className="grid grid-cols-2 gap-6 lg:gap-8">
+                <div className="grid grid-cols-2 gap-10 lg:gap-12">
                     <div>
                       <h3 className="font-caudex text-base lg:text-lg uppercase text-[#1e1e1e] mb-3 font-semibold">Entrada | Starter</h3>
                       <p className="text-sm lg:text-base font-catamaran text-[#1e1e1e] leading-relaxed">Medalhão de queijo de cabra gratinado, realçado por compota artesanal de morango. Gratinated goat cheese medallion, enhanced by homemade strawberry jam.</p>
@@ -548,9 +653,15 @@ function Reveillon() {
                       <p className="text-sm lg:text-base font-catamaran text-[#1e1e1e] leading-relaxed">Trilogia de cogumelos biológicos acompanhada com risotto de espargos e alho francês. Trilogy of organic mushrooms served with asparagus and leek risotto.</p>
                     </div>
                     <div className="col-span-2 mt-4">
-                      <div className="flex items-center gap-3">
+                      <div>
                         <h3 className="font-caudex text-xl lg:text-2xl uppercase text-[#1e1e1e] font-semibold whitespace-nowrap">Faça sua reserva</h3>
-                        <div className="flex-grow border-b border-[#1e1e1e]"></div>
+                      </div>
+                      <div className="mt-2 group">
+                        <img
+                          src="data:image/svg+xml,%3csvg%20width='154'%20height='8'%20viewBox='0%200%20154%208'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20id='Arrow%204'%20d='M153.286%204.35062C153.479%204.15698%20153.479%203.84302%20153.286%203.64938L150.13%200.493782C149.937%200.300139%20149.623%200.300139%20149.429%200.493782C149.235%200.687425%20149.235%201.00138%20149.429%201.19503L152.234%204L149.429%206.80497C149.235%206.99862%20149.235%207.31257%20149.429%207.50622C149.623%207.69986%20149.937%207.69986%20150.13%207.50622L153.286%204.35062ZM0.708008%204.49585H152.935V3.50415H0.708008V4.49585Z'%20fill='%231E1E1E'/%3e%3c/svg%3e"
+                          alt="Seta"
+                          className="block w-40 h-2 object-contain transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                        />
                       </div>
                     </div>
                   </div>
