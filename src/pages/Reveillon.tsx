@@ -411,7 +411,7 @@ function Reveillon() {
             <section className="flex flex-col gap-16 py-20 px-6 lg:px-20">
               <div className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10">
                 <div className="flex flex-col gap-6 text-[#3b1a1a] lg:max-w-1/2">
-                  <h3 className="text-2xl lg:text-5xl font-caudex leading-snug">Club Sacramento<br/>New Year's Eve</h3>
+                  <h3 className="text-2xl lg:text-5xl font-caudex leading-snug">Club Sacramento New Year's Eve</h3>
                   <p className="text-base lg:text-lg leading-relaxed">Para quem prefere celebrar apenas a partir das 23h00, o Club Sacramento oferece várias opções de bilhetes para uma noite de música, dança e celebração no centro de Lisboa.</p>
                   <div className="flex flex-col gap-2 text-base leading-relaxed">
                     <div>
@@ -489,51 +489,29 @@ function Reveillon() {
 
             {/* Menu de Reveillon Section */}
             <section id="menu" className="flex flex-col gap-16 py-20 px-6 lg:px-20">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 auto-rows-fr">
-                <div className="col-span-2 md:col-span-2 md:row-span-2">
-                  <Card
-                    imageSrc={menuImg1}
-                    width="w-full"
-                    height="h-[320px] lg:h-[520px]"
-                    hasOverlay={false}
-                    backgroundPosition="center"
-                  />
-                </div>
-                <div className="col-span-1 md:col-span-1">
-                  <Card
-                    imageSrc={menuImg2}
-                    width="w-full"
-                    height="h-[150px] lg:h-[250px]"
-                    hasOverlay={false}
-                    backgroundPosition="center"
-                  />
-                </div>
-                <div className="col-span-1 md:col-span-1">
-                  <Card
-                    imageSrc={menuImg3}
-                    width="w-full"
-                    height="h-[150px] lg:h-[250px]"
-                    hasOverlay={false}
-                    backgroundPosition="center"
-                  />
-                </div>
-                <div className="col-span-1 md:col-span-1 md:row-span-1">
-                  <Card
-                    imageSrc={menuFood}
-                    width="w-full"
-                    height="h-[150px] lg:h-[250px]"
-                    hasOverlay={false}
-                    backgroundPosition="center"
-                  />
-                </div>
-                <div className="col-span-1 md:col-span-1 md:row-span-1">
-                  <Card
-                    imageSrc={fullPackImg}
-                    width="w-full"
-                    height="h-[150px] lg:h-[250px]"
-                    hasOverlay={false}
-                    backgroundPosition="center"
-                  />
+              <div>
+                {/* Custom gallery layout matching reference screenshot */}
+                {/* uses menuImg2, menuImg3, clubDiscoImg, fullPackImg by default */}
+                <React.Suspense fallback={null}>
+                  {/* lazy import not necessary here, simple component */}
+                </React.Suspense>
+                <div className="w-full flex justify-center px-6 lg:px-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 max-w-[1100px] w-full">
+                    <div className="sm:col-span-1 flex items-start">
+                      <img src={jantarFestaImg} alt="gallery-1" className="rounded-xl w-full object-cover" style={{ height: 160 }} />
+                    </div>
+                    <div className="sm:col-span-1 flex items-center justify-center">
+                      <img src={menuImg2} alt="gallery-2" className="rounded-xl w-full object-cover" style={{ height: 120 }} />
+                    </div>
+                    <div className="sm:col-span-2 flex items-start">
+                      <img src={clubDiscoImg} alt="gallery-3" className="rounded-xl w-full object-cover" style={{ height: 360 }} />
+                    </div>
+
+                    <div className="sm:col-span-2">
+                      <img src={fullPackImg} alt="gallery-4" className="rounded-xl w-full object-cover" style={{ height: 260 }} />
+                    </div>
+                    <div className="sm:col-span-2" />
+                  </div>
                 </div>
               </div>
               <div className="relative mt-10">
@@ -546,20 +524,18 @@ function Reveillon() {
                 />
                 <div className="absolute inset-0 flex items-center justify-start pl-8 lg:pl-16 pointer-events-none">
                   <h2 className="font-caudex text-3xl lg:text-4xl uppercase text-white leading-tight max-w-xs">
-                    Conheça nosso<br />
-                    menu de<br />
-                    réveillon
+                    Conheça nosso menu de réveillon
                   </h2>
                 </div>
               </div>
               <div className="w-full mt-10">
                 <div className="grid grid-cols-2 gap-6 lg:gap-8">
                     <div>
-                      <h3 className="font-caudex text-base lg:text-lg uppercase text-[#1e1e1e] mb-3 font-semibold">Entrada |<br/>Starter</h3>
+                      <h3 className="font-caudex text-base lg:text-lg uppercase text-[#1e1e1e] mb-3 font-semibold">Entrada | Starter</h3>
                       <p className="text-sm lg:text-base font-catamaran text-[#1e1e1e] leading-relaxed">Medalhão de queijo de cabra gratinado, realçado por compota artesanal de morango. Gratinated goat cheese medallion, enhanced by homemade strawberry jam.</p>
                     </div>
                     <div>
-                      <h3 className="font-caudex text-base lg:text-lg uppercase text-[#1e1e1e] mb-3 font-semibold">Sobremesa |<br/>Dessert</h3>
+                      <h3 className="font-caudex text-base lg:text-lg uppercase text-[#1e1e1e] mb-3 font-semibold">Sobremesa | Dessert</h3>
                       <p className="text-sm lg:text-base font-catamaran text-[#1e1e1e] leading-relaxed">Degustação de sobremesas do chef, finalizada com um cálice de Vinho do Porto. Chefs dessert tasting, with a glass of Port Wine.</p>
                     </div>
                     <div>
@@ -567,11 +543,11 @@ function Reveillon() {
                       <p className="text-sm lg:text-base font-catamaran text-[#1e1e1e] leading-relaxed">Camarão tigre selvagem, servido sobre cremoso arroz de alho. Wild tiger prawn served on creamy garlic rice.<br/><br/>Costeletinhas de cordeiro lechal acompanhadas de puré trufado e brócolos biológicos confitados. Suckling lamb chops accompanied by truffle purée and organic broccoli confit.</p>
                     </div>
                     <div>
-                      <h3 className="font-caudex text-base lg:text-lg uppercase text-[#1e1e1e] mb-3 font-semibold">Bebidas<br/>Incluidas |<br/>Drinks<br/>Included</h3>
+                      <h3 className="font-caudex text-base lg:text-lg uppercase text-[#1e1e1e] mb-3 font-semibold">Bebidas Incluidas | Drinks Included</h3>
                       <p className="text-sm lg:text-base font-catamaran text-[#1e1e1e] leading-relaxed">Água (natural ou com gás); Refrigerantes; Vinho Tinto ou Branco Esporão Biológico; Cerveja; Café ou Chá.<br/><br/>Garrafa de espumante para celebrar a entrada do ano novo. Bottle of sparkling wine to celebrate the arrival of the new year.<br/><br/>2 bebidas no Club após a meia noite. 2 drinks at the Club after midnight.</p>
                     </div>
                     <div className="col-span-2">
-                      <h3 className="font-caudex text-base lg:text-lg uppercase text-[#1e1e1e] mb-3 font-semibold">Vegetariano |<br/>Vegetarian</h3>
+                      <h3 className="font-caudex text-base lg:text-lg uppercase text-[#1e1e1e] mb-3 font-semibold">Vegetariano | Vegetarian</h3>
                       <p className="text-sm lg:text-base font-catamaran text-[#1e1e1e] leading-relaxed">Trilogia de cogumelos biológicos acompanhada com risotto de espargos e alho francês. Trilogy of organic mushrooms served with asparagus and leek risotto.</p>
                     </div>
                     <div className="col-span-2 mt-4">
