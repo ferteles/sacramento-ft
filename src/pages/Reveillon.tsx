@@ -20,7 +20,6 @@ const reveillonBgDesk = "/assets/reveillon/fundo-rev-desk.gif";
 const reveillonBgMobile = "/assets/reveillon/fundo-rev-mobile.gif";
 const fullPackImg = "/assets/reveillon/club-nude-project.webp";
 const clubDiscoImg = "/assets/reveillon/club-main.webp";
-const menuTitle = "/assets/reveillon/menu-banner.webp";
 const bulletIcon = "/assets/reveillon/bullet-icon.svg";
 const sacramentoStories2512 = "/assets/reveillon/sacramento-stories-2512.png";
 const sacramentoStories2513 = "/assets/reveillon/sacramento-stories-2513.png";
@@ -607,21 +606,19 @@ function Reveillon() {
 
             {/* Menu de Reveillon Section */}
             <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-20 py-20">
-              <div id="menu" className="relative mt-10">
-                <Card
-                  imageSrc={menuTitle}
-                  width="w-full"
-                  height="h-[280px] lg:h-[380px]"
-                  hasOverlay={true}
-                  backgroundPosition="center"
+              <div id="menu" className="relative mt-10 w-full h-[568px]">
+                <img 
+                  src="/assets/reveillon/fundo-menu.png" 
+                  alt="Menu de Réveillon"
+                  className="w-full h-full object-cover rounded-[40px]"
                 />
-                <div className="absolute inset-0 flex items-center justify-start pl-8 lg:pl-16 pointer-events-none">
-                  <h2 className="font-caudex text-[48px] uppercase text-white leading-tight max-w-xs">
-                    Conheça nosso menu de réveillon
+                <div className="absolute inset-0 flex items-end justify-start pl-8 lg:pl-16 pb-10 lg:pb-16 pointer-events-none">
+                  <h2 className="font-caudex text-[48px] uppercase text-white leading-tight whitespace-nowrap max-w-none">
+                    Conheça nosso menu<br />de réveillon
                   </h2>
                 </div>
               </div>
-              <div className="w-full mt-10">
+              <div className="w-full mt-20">
                 <div className="grid grid-cols-2 gap-10 lg:gap-12">
                     <div>
                       <h3 className="font-caudex text-[48px] uppercase text-[#1e1e1e] mb-3 font-semibold">Entrada | Starter</h3>
