@@ -79,7 +79,7 @@ function CocktailsExclusivos() {
         />
         <meta
           property="og:image"
-          content="https://sacramentolisboa.com/assets/og-sacramento-banner.png"
+          content="https://sacramentolisboa.com/assets/og-sacramento-banner.webp"
         />
         <meta
           property="og:url"

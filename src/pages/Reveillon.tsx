@@ -170,7 +170,7 @@ function Reveillon() {
         />
         <meta
           property="og:image"
-          content="https://sacramentolisboa.com/assets/og-sacramento-banner.png"
+          content="https://sacramentolisboa.com/assets/og-sacramento-banner.webp"
         />
         <meta property="og:type" content="website" />
         <meta
@@ -481,7 +481,7 @@ function Reveillon() {
                 <div className="flex flex-col sm:flex-row gap-8 pt-6">
                   <div className="relative inline-block">
                     <a
-                      href="https://reserve.dish.co/258346"
+                      href="https://wa.me/351213420572"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group inline-flex flex-col items-start gap-2"
@@ -518,7 +518,7 @@ function Reveillon() {
             </section>
 
             {/* Seção Club Sacramento New Year's Eve / Bilhetes */}
-            <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-20 py-20 mb-60">
+            <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-20 py-20 mb-20">
               <div className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10">
                 <div className="flex flex-col gap-6 text-[#3b1a1a] lg:max-w-1/2">
                   <h3 className="font-caudex text-[48px] leading-snug">Club Sacrament<br />New Year's Eve</h3>
@@ -604,11 +604,23 @@ function Reveillon() {
               </div>
             </section>
 
+            {/* Galeria (acima do Menu de Reveillon) */}
+            <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-20 mb-10">
+              <picture className="block w-full">
+                <source media="(min-width:1024px)" srcSet="/assets/reveillon/galeria-desk.webp" />
+                <img
+                  src="/assets/reveillon/galeria-mobile.webp"
+                  alt="Galeria Sacramento"
+                  className="w-full h-auto rounded-[40px]"
+                />
+              </picture>
+            </section>
+
             {/* Menu de Reveillon Section */}
             <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-20 py-20">
               <div id="menu" className="relative mt-10 w-full h-[568px]">
                 <img 
-                  src="/assets/reveillon/fundo-menu.png" 
+                  src="/assets/reveillon/fundo-menu.webp" 
                   alt="Menu de Réveillon"
                   className="w-full h-full object-cover rounded-[40px]"
                 />

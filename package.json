@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "images:convert": "node scripts/convert-png-to-webp.js",
+    "images:optimize-reveillon": "node scripts/optimize-reveillon-images.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.3",
