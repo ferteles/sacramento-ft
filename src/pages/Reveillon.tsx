@@ -108,6 +108,7 @@ const NavLinks = ({
 
 function Reveillon() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
   const controls = useAnimation();
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -138,6 +139,14 @@ function Reveillon() {
         `${headerRef.current.offsetHeight}px`
       );
     }
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
@@ -318,7 +327,7 @@ function Reveillon() {
         </motion.div>
 
         {/* Espaço do Header */}
-        <div style={{ height: "40vh" }} />
+        <div style={{ height: scrolled ? "var(--header-height, 80px)" : "100vh" }} />
 
         {/* Conteúdo principal */}
         <Suspense
@@ -329,11 +338,11 @@ function Reveillon() {
           <InfoHeader />
           <div className="flex flex-col items-start">
             {/* Seção Full-Pack Experience */}
-            <section className="w-screen relative py-60">
+            <section className="w-screen relative py-10 lg:py-60">
               <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-20">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 lg:mb-16">
                   <h2 
-                    className="font-caudex uppercase text-[48px]" 
+                    className="font-caudex uppercase text-[32px] lg:text-[48px]" 
                     style={{
                       color: '#1e1e1e',
                       fontStyle: 'normal',
@@ -343,7 +352,7 @@ function Reveillon() {
                     Full-Pack<br />Experience
                   </h2>
                   <p 
-                    className="font-catamaran text-[20px]"
+                    className="font-catamaran text-[16px] lg:text-[20px]"
                     style={{
                       color: '#1e1e1e',
                       fontWeight: '300'
@@ -353,7 +362,7 @@ function Reveillon() {
                   </p>
                 </div>
                 
-                <div className="relative w-full" style={{ paddingBottom: '33.13%' }}>
+                <div className="relative w-full" style={{ paddingBottom: isMobile ? '80%' : '33.13%' }}>
                   {/* Camada de máscara com imagens de fundo */}
                   <div className="absolute inset-0 overflow-hidden rounded-[40px]">
                     <div 
@@ -438,7 +447,7 @@ function Reveillon() {
             </section>
 
             {/* Seção Jantar + Festa */}
-            <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-20 py-20 mb-40">
+            <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-20 py-10 lg:py-20 mb-20 lg:mb-40">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
                 <div className="flex justify-center">
                   <div className="relative w-full max-w-[480px]">
@@ -450,13 +459,13 @@ function Reveillon() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-6 text-[#3b1a1a]">
-                <h3 className="font-caudex text-[48px]">Jantar + Festa</h3>
+                <h3 className="font-caudex text-[32px] lg:text-[48px]">Jantar + Festa</h3>
                 <div className="relative">
-                  <div className="bg-[#21283b] h-[60px] rounded-[15.62px] w-[265px] flex items-center justify-center">
-                    <span className="font-caudex text-[26.77px] leading-[28.1px] text-[#fcf7e5] uppercase">230€ por pessoa</span>
+                  <div className="bg-[#21283b] h-[50px] lg:h-[60px] rounded-[15.62px] w-full max-w-[265px] flex items-center justify-center px-4">
+                    <span className="font-caudex text-[20px] lg:text-[26.77px] leading-tight text-[#fcf7e5] uppercase">230€ por pessoa</span>
                   </div>
                 </div>
-                <ul className="space-y-10 text-[20px] leading-relaxed ">
+                <ul className="space-y-6 lg:space-y-10 text-[16px] lg:text-[20px] leading-relaxed">
                   <li className="flex items-start gap-3">
                     <img src={bulletIcon} alt="" className="mt-0.5 h-4 w-4" aria-hidden="true" />
                     <span>Menu especial de Réveillon, cuidadosamente elaborado para a ocasião.</span>
@@ -486,7 +495,7 @@ function Reveillon() {
                       rel="noopener noreferrer"
                       className="group inline-flex flex-col items-start gap-2"
                     >
-                      <span className="font-caudex text-[27.048px] leading-[22.54px] text-[#1e1e1e] uppercase not-italic font-normal">
+                      <span className="font-caudex text-[20px] lg:text-[27.048px] leading-tight text-[#1e1e1e] uppercase not-italic font-normal">
                         faça sua reserva
                       </span>
                       <img
@@ -502,7 +511,7 @@ function Reveillon() {
                       href="#menu"
                       className="group inline-flex flex-col items-start gap-2"
                     >
-                      <span className="font-caudex text-[27.048px] leading-[22.54px] text-[#1e1e1e] uppercase not-italic font-normal">
+                      <span className="font-caudex text-[20px] lg:text-[27.048px] leading-tight text-[#1e1e1e] uppercase not-italic font-normal">
                         conheça o menu
                       </span>
                       <img
@@ -518,12 +527,12 @@ function Reveillon() {
             </section>
 
             {/* Seção Club Sacramento New Year's Eve / Bilhetes */}
-            <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-20 py-20 mb-20">
+            <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-20 py-10 lg:py-20 mb-10 lg:mb-20">
               <div className="flex flex-col-reverse lg:flex-row items-center justify-evenly gap-10">
                 <div className="flex flex-col gap-6 text-[#3b1a1a] lg:max-w-1/2">
-                  <h3 className="font-caudex text-[48px] leading-snug">Club Sacrament<br />New Year's Eve</h3>
-                  <p className="text-[20px] leading-relaxed">Para quem prefere celebrar apenas a partir das 23h00, o Club Sacramento oferece várias opções de bilhetes para uma noite de música, dança e celebração no centro de Lisboa.</p>
-                  <div className="flex flex-col gap-2 text-[20px] leading-relaxed">
+                  <h3 className="font-caudex text-[32px] lg:text-[48px] leading-snug">Club Sacrament<br />New Year's Eve</h3>
+                  <p className="text-[16px] lg:text-[20px] leading-relaxed">Para quem prefere celebrar apenas a partir das 23h00, o Club Sacramento oferece várias opções de bilhetes para uma noite de música, dança e celebração no centro de Lisboa.</p>
+                  <div className="flex flex-col gap-2 text-[16px] lg:text-[20px] leading-relaxed">
                     <div>
                       <div className="font-semibold uppercase tracking-wide">Horário</div>
                       <div>31 de dezembro, das 23h00 às 04h00.</div>
@@ -544,8 +553,8 @@ function Reveillon() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col gap-8 mt-60">
-                <div className="bg-[#2f2437] text-[#f2e9e4] px-9 py-3 rounded-full text-[20px] font-caudex uppercase tracking-[0.08em] shadow-sm self-center">Bilhetes Disponíveis</div>
+              <div className="flex flex-col gap-8 mt-20 lg:mt-60">
+                <div className="bg-[#2f2437] text-[#f2e9e4] px-6 lg:px-9 py-2 lg:py-3 rounded-full text-[16px] lg:text-[20px] font-caudex uppercase tracking-[0.08em] shadow-sm self-center">Bilhetes Disponíveis</div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-[#3b1a1a] mt-10">
                   {[
                     {
@@ -568,8 +577,8 @@ function Reveillon() {
                       rel="noopener noreferrer"
                       className="block border border-[#3b1a1a] border-dashed px-4 py-4 rounded-md bg-white/50"
                     >
-                      <div className="font-caudex text-[48px] uppercase mb-2">{item.title}</div>
-                      <p className="text-[20px] leading-relaxed">{item.desc}</p>
+                      <div className="font-caudex text-[28px] lg:text-[48px] uppercase mb-2">{item.title}</div>
+                      <p className="text-[16px] lg:text-[20px] leading-relaxed">{item.desc}</p>
                     </a>
                   ))}
                 </div>
@@ -580,8 +589,8 @@ function Reveillon() {
                     rel="noopener noreferrer"
                     className="md:col-start-2 lg:col-start-2 block border border-[#3b1a1a] border-dashed px-4 py-4 rounded-md bg-white/50 text-center"
                   >
-                    <div className="font-caudex text-[48px] uppercase mb-2">Open Bar — 100€</div>
-                    <p className="text-[20px] leading-relaxed">Inclui acesso ao open bar das 23h00 às 03h00.</p>
+                    <div className="font-caudex text-[28px] lg:text-[48px] uppercase mb-2">Open Bar — 100€</div>
+                    <p className="text-[16px] lg:text-[20px] leading-relaxed">Inclui acesso ao open bar das 23h00 às 03h00.</p>
                   </a>
                 </div>
                 <div className="flex flex-col items-center mt-10 text-[#3b1a1a]">
@@ -591,7 +600,7 @@ function Reveillon() {
                     rel="noopener noreferrer"
                     className="group inline-flex flex-col items-start gap-2"
                   >
-                    <span className="font-caudex text-[27.048px] leading-[22.54px] text-[#1e1e1e] uppercase not-italic font-normal">
+                    <span className="font-caudex text-[20px] lg:text-[27.048px] leading-tight text-[#1e1e1e] uppercase not-italic font-normal">
                       Compre seus bilhetes agora
                     </span>
                     <img
@@ -618,48 +627,48 @@ function Reveillon() {
 
             {/* Menu de Reveillon Section */}
             <section className="w-full max-w-[1440px] mx-auto px-6 lg:px-20 py-20">
-              <div id="menu" className="relative mt-10 w-full h-[568px]">
+              <div id="menu" className="relative mt-10 w-full h-[300px] lg:h-[568px]">
                 <img 
                   src="/assets/reveillon/fundo-menu.webp" 
                   alt="Menu de Réveillon"
                   className="w-full h-full object-cover rounded-[40px]"
                 />
-                <div className="absolute inset-0 flex items-end justify-start pl-8 lg:pl-16 pb-10 lg:pb-16 pointer-events-none">
-                  <h2 className="font-caudex text-[48px] uppercase text-white leading-tight whitespace-nowrap max-w-none">
+                <div className="absolute inset-0 flex items-end justify-start pl-4 lg:pl-16 pb-6 lg:pb-16 pointer-events-none">
+                  <h2 className="font-caudex text-[28px] lg:text-[48px] uppercase text-white leading-tight max-w-none">
                     Conheça nosso menu<br />de réveillon
                   </h2>
                 </div>
               </div>
-              <div className="w-full mt-20">
-                <div className="grid grid-cols-2 gap-10 lg:gap-12">
+              <div className="w-full mt-10 lg:mt-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     <div>
-                      <h3 className="font-caudex text-[48px] uppercase text-[#1e1e1e] mb-3 font-semibold">Entrada | Starter</h3>
-                      <p className="text-[20px] font-catamaran text-[#1e1e1e] leading-relaxed">Medalhão de queijo de cabra gratinado, realçado por compota artesanal de morango. Gratinated goat cheese medallion, enhanced by homemade strawberry jam.</p>
-                    </div>
-                    <div>
-                      <h3 className="font-caudex text-[48px] uppercase text-[#1e1e1e] mb-3 font-semibold">Sobremesa | Dessert</h3>
-                      <p className="text-[20px] font-catamaran text-[#1e1e1e] leading-relaxed">Degustação de sobremesas do chef, finalizada com um cálice de Vinho do Porto. Chefs dessert tasting, with a glass of Port Wine.</p>
+                      <h3 className="font-caudex text-[28px] lg:text-[48px] uppercase text-[#1e1e1e] mb-3 font-semibold">Entrada | Starter</h3>
+                      <p className="text-[16px] lg:text-[20px] font-catamaran text-[#1e1e1e] leading-relaxed">Medalhão de queijo de cabra gratinado, realçado por compota artesanal de morango. Gratinated goat cheese medallion, enhanced by homemade strawberry jam.</p>
                     </div>
                     <div>
-                      <h3 className="font-caudex text-[48px] uppercase text-[#1e1e1e] mb-3 font-semibold">Principal | Main</h3>
-                      <p className="text-[20px] font-catamaran text-[#1e1e1e] leading-relaxed">Camarão tigre selvagem, servido sobre cremoso arroz de alho. Wild tiger prawn served on creamy garlic rice.<br/><br/>Costeletinhas de cordeiro lechal acompanhadas de puré trufado e brócolos biológicos confitados. Suckling lamb chops accompanied by truffle purée and organic broccoli confit.</p>
+                      <h3 className="font-caudex text-[28px] lg:text-[48px] uppercase text-[#1e1e1e] mb-3 font-semibold">Sobremesa | Dessert</h3>
+                      <p className="text-[16px] lg:text-[20px] font-catamaran text-[#1e1e1e] leading-relaxed">Degustação de sobremesas do chef, finalizada com um cálice de Vinho do Porto. Chefs dessert tasting, with a glass of Port Wine.</p>
                     </div>
                     <div>
-                      <h3 className="font-caudex text-[48px] uppercase text-[#1e1e1e] mb-3 font-semibold">Bebidas Incluidas | Drinks Included</h3>
-                      <p className="text-[20px] font-catamaran text-[#1e1e1e] leading-relaxed">Água (natural ou com gás); Refrigerantes; Vinho Tinto ou Branco Esporão Biológico; Cerveja; Café ou Chá.<br/><br/>Garrafa de espumante para celebrar a entrada do ano novo. Bottle of sparkling wine to celebrate the arrival of the new year.<br/><br/>2 bebidas no Club após a meia noite. 2 drinks at the Club after midnight.</p>
+                      <h3 className="font-caudex text-[28px] lg:text-[48px] uppercase text-[#1e1e1e] mb-3 font-semibold">Principal | Main</h3>
+                      <p className="text-[16px] lg:text-[20px] font-catamaran text-[#1e1e1e] leading-relaxed">Camarão tigre selvagem, servido sobre cremoso arroz de alho. Wild tiger prawn served on creamy garlic rice.<br/><br/>Costeletinhas de cordeiro lechal acompanhadas de puré trufado e brócolos biológicos confitados. Suckling lamb chops accompanied by truffle purée and organic broccoli confit.</p>
                     </div>
-                    <div className="col-span-2">
-                      <h3 className="font-caudex text-[48px] uppercase text-[#1e1e1e] mb-3 font-semibold">Vegetariano | Vegetarian</h3>
-                      <p className="text-[20px] font-catamaran text-[#1e1e1e] leading-relaxed">Trilogia de cogumelos biológicos acompanhada com risotto de espargos e alho francês. Trilogy of organic mushrooms served with asparagus and leek risotto.</p>
+                    <div>
+                      <h3 className="font-caudex text-[28px] lg:text-[48px] uppercase text-[#1e1e1e] mb-3 font-semibold">Bebidas Incluidas | Drinks Included</h3>
+                      <p className="text-[16px] lg:text-[20px] font-catamaran text-[#1e1e1e] leading-relaxed">Água (natural ou com gás); Refrigerantes; Vinho Tinto ou Branco Esporão Biológico; Cerveja; Café ou Chá.<br/><br/>Garrafa de espumante para celebrar a entrada do ano novo. Bottle of sparkling wine to celebrate the arrival of the new year.<br/><br/>2 bebidas no Club após a meia noite. 2 drinks at the Club after midnight.</p>
                     </div>
-                    <div className="col-span-2 mt-20">
+                    <div className="col-span-1 lg:col-span-2">
+                      <h3 className="font-caudex text-[28px] lg:text-[48px] uppercase text-[#1e1e1e] mb-3 font-semibold">Vegetariano | Vegetarian</h3>
+                      <p className="text-[16px] lg:text-[20px] font-catamaran text-[#1e1e1e] leading-relaxed">Trilogia de cogumelos biológicos acompanhada com risotto de espargos e alho francês. Trilogy of organic mushrooms served with asparagus and leek risotto.</p>
+                    </div>
+                    <div className="col-span-1 lg:col-span-2 mt-10 lg:mt-20">
                       <a
                         href="https://reserve.dish.co/258346"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group inline-block"
                       >
-                        <h3 className="font-caudex text-[48px] uppercase text-[#1e1e1e] font-semibold whitespace-nowrap">Faça sua reserva</h3>
+                        <h3 className="font-caudex text-[28px] lg:text-[48px] uppercase text-[#1e1e1e] font-semibold">Faça sua reserva</h3>
                         <div className="mt-2">
                           <img
                             src="data:image/svg+xml,%3csvg%20width='154'%20height='8'%20viewBox='0%200%20154%208'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20id='Arrow%204'%20d='M153.286%204.35062C153.479%204.15698%20153.479%203.84302%20153.286%203.64938L150.13%200.493782C149.937%200.300139%20149.623%200.300139%20149.429%200.493782C149.235%200.687425%20149.235%201.00138%20149.429%201.19503L152.234%204L149.429%206.80497C149.235%206.99862%20149.235%207.31257%20149.429%207.50622C149.623%207.69986%20149.937%207.69986%20150.13%207.50622L153.286%204.35062ZM0.708008%204.49585H152.935V3.50415H0.708008V4.49585Z'%20fill='%231E1E1E'/%3e%3c/svg%3e"
