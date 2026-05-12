@@ -10,31 +10,33 @@ function Footer() {
   const t = {
     nav: isPT
       ? [
-          { name: "Home", path: "/" },
-          { name: "Restaurante", path: "/restaurante" },
-          { name: "Bar", path: "/cocktails" },
-          { name: "Grupos", path: "/grupos" },
-          { name: "Jantar Tarde", path: "/jantar-tarde" },
-          { name: "Esplanada", path: "/esplanada" },
-          { name: "Club", path: "/club" },
-        ]
+        { name: "Home", path: "/" },
+        { name: "Restaurante", path: "/restaurante" },
+        { name: "Bar", path: "/cocktails" },
+        { name: "Grupos", path: "/grupos" },
+        { name: "Jantar Tarde", path: "/jantar-tarde" },
+        { name: "Esplanada", path: "/esplanada" },
+        { name: "Club", path: "/club" },
+      ]
       : [
-          { name: "Restaurant", path: "/restaurante" },
-          { name: "Gastronomy", path: "/jantar-tarde" },
-          { name: "History", path: "/" },
-          { name: "Events", path: "/grupos" },
-          { name: "Contact", path: "/club" },
-          { name: "Reservations", path: "/esplanada" },
-        ],
+        { name: "Restaurant", path: "/restaurante" },
+        { name: "Gastronomy", path: "/jantar-tarde" },
+        { name: "History", path: "/" },
+        { name: "Events", path: "/grupos" },
+        { name: "Contact", path: "/club" },
+        { name: "Reservations", path: "/esplanada" },
+      ],
     hours: isPT
       ? ["Jantar: 18h00 às 01h00", "Esplanada: 16h00 às 23h00"]
       : ["Dinner: 6:00 PM – 1:00 AM", "Terrace: 4:00 PM – 11:00 PM"],
     address: [
-      { type: "map", value: [
-        "Sacramento do Chiado",
-        "Calçada do Sacramento, 44",
-        "1200-394 Lisboa, Portugal"
-      ] },
+      {
+        type: "map", value: [
+          "Sacramento do Chiado",
+          "Calçada do Sacramento, 44",
+          "1200-394 Lisboa, Portugal"
+        ]
+      },
       { type: "phone", value: "+351 213 420 572" },
       { type: "email", value: "reservas@tablegroup.pt" },
     ],

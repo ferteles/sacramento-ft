@@ -129,9 +129,8 @@ function Header({
         <motion.div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(${
-              imgSrc || bgHeader
-            })`,
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(${imgSrc || bgHeader
+              })`,
             backgroundSize: "cover",
             backgroundPosition: backgroundPosition, // Usa o valor da prop
           }}

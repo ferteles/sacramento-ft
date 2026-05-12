@@ -247,9 +247,8 @@ function OndeAHistoria() {
 
           {/* Navbar */}
           <div
-            className={`flex items-center justify-between lg:justify-evenly w-full px-5 lg:px-20 py-4 shadow-md${
-              scrolled ? "bg-[#E4D9CD] shadow-md" : "bg-transparent"
-            } transition-all duration-500`}
+            className={`flex items-center justify-between lg:justify-evenly w-full px-5 lg:px-20 py-4 shadow-md${scrolled ? "bg-[#E4D9CD] shadow-md" : "bg-transparent"
+              } transition-all duration-500`}
           >
             <div className="hidden lg:flex gap-6 text-sm">
               <NavLinks

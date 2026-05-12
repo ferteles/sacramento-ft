@@ -1,9 +1,21 @@
+import { useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import Card from "./Card";
 import imgForm from "../assets/imgForm.webp";
 
 function Form() {
   const { language } = useLanguage();
+
+  useEffect(() => {
+    const existingScript = document.querySelector('script[src*="easytable.com"]');
+    if (!existingScript) {
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.async = true;
+      script.src = "//book.easytable.com/book/widget/v3/book.js";
+      document.body.appendChild(script);
+    }
+  }, []);
 
   const texts = {
     title:
@@ -39,21 +51,24 @@ function Form() {
           {texts.paragraph}
         </p>
 
-        <a
-          href="https://reserve.dish.co/258346"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-[#441F0E] text-white px-8 py-4 rounded-xl text-lg font-bold uppercase tracking-widest hover:bg-[#6B5B50] transition-colors duration-300"
-          tabIndex={0}
+        <div
+          key={language}
+          className="BookingBox"
+          data-place="76f08"
+          data-lang={language === "pt" ? "pt" : "en"}
         >
-          {language === "pt" ? "Reservar Mesa" : "Book a Table"}
-        </a>
-
-        <p className="text-xs text-[#6B5B50] mt-4">
-          {language === "pt"
-            ? "Ao fazer uma reserva, será redirecionado para o sistema externo Dish.co"
-            : "By making a reservation, you will be redirected to the external Dish.co system."}
-        </p>
+          <span>
+            In cooperation with{" "}
+            <a
+              href="http://easytable.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Restaurant reservation and booking system"
+            >
+              easyTable.com
+            </a>
+          </span>
+        </div>
       </div>
     </div>
   );
