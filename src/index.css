@@ -58,3 +58,21 @@ html {
     width: 100%;
   }
 }
+
+html, body {
+  font-family: "Catamaran", serif;
+  font-size: 1.125rem;
+}
+
+p {
+  font-family: "Catamaran", serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 1024px) {
+  p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+}

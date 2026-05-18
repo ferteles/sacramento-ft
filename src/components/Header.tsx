@@ -57,7 +57,7 @@ function Header({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
-        <div className="flex gap-4 text-black text-sm lg:text-base">
+        <div className="flex gap-4 text-black text-base lg:text-xl">
           <Link to="/restaurante" className="cursor-pointer hover:underline">
             {texts.restaurante}
           </Link>
@@ -86,7 +86,7 @@ function Header({
           </Link>
         </motion.div>
 
-        <div className="flex gap-4 text-black text-sm lg:text-base">
+        <div className="flex gap-4 text-black text-base lg:text-xl">
           <Link to="/jantar-tarde" className="cursor-pointer hover:underline">
             {texts.jantar}
           </Link>

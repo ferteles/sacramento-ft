@@ -12,7 +12,7 @@ function Form() {
       const script = document.createElement("script");
       script.type = "text/javascript";
       script.async = true;
-      script.src = "//book.easytable.com/book/widget/v3/book.js";
+      script.src = "https://book.easytable.com/book/widget/v3/book.js";
       document.body.appendChild(script);
     }
   }, []);
