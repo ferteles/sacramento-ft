@@ -47,7 +47,7 @@ function Form() {
           {texts.title}
         </h3>
 
-        <p className="font-catamaran text-base mt-3 mb-8">
+        <p id="reservar" className="font-catamaran text-base mt-3 mb-8">
           {texts.paragraph}
         </p>
 

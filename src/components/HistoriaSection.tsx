@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import Card from "./Card";
 import bg from "../assets/bg-pg1.webp";
@@ -60,12 +61,12 @@ function HistoriaSection() {
 
           <div className="mt-4">
             <div className="flex justify-center mt-10">
-              <a href="#form" className="flex flex-col lg:gap-5">
+              <Link to="/reservar" className="flex flex-col lg:gap-5">
                 <p className="font-bold font-caudex lg:text-4xl text-base">
                   {texts.cta.toUpperCase()}
                 </p>
                 <img src={arrowWhite} alt="Seta branca" className="lg:w-100" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

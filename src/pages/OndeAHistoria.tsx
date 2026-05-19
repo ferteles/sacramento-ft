@@ -306,14 +306,12 @@ function OndeAHistoria() {
                 transition={{ duration: 0.6 }}
                 className="mt-8"
               >
-                <a
-                  href="https://reserve.dish.co/258346"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/reservar"
                   className="border border-white px-5 py-3 text-sm uppercase tracking-widest text-white hover:bg-white hover:text-black transition duration-300 inline-block"
                 >
                   {texts.cta}
-                </a>
+                </Link>
               </motion.div>
             </div>
           )}
@@ -359,11 +357,13 @@ function OndeAHistoria() {
             <HistoriaSection />
             <div className="-mt-10 lg:-mt-50 w-full flex flex-col items-center gap-20 px-6">
               <GaleryFlex />
-              <Arrow title={texts.arrow} fontSize="text-5xl" />
-              <Form />
+              <Arrow title={texts.arrow} fontSize="text-5xl" to="/cocktails" />
             </div>
-            <Footer />
           </div>
+        </Suspense>
+        <Form />
+        <Suspense fallback={null}>
+          <Footer />
         </Suspense>
       </div>
     </>

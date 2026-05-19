@@ -24,7 +24,7 @@ function Footer() {
         { name: "History", path: "/" },
         { name: "Events", path: "/grupos" },
         { name: "Contact", path: "/club" },
-        { name: "Reservations", path: "/esplanada" },
+        { name: "Reservations", path: "/reservar" },
       ],
     hours: isPT
       ? ["Jantar: 18h00 às 01h00", "Esplanada: 16h00 às 23h00"]

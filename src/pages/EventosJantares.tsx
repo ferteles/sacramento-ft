@@ -121,7 +121,7 @@ function EventosJantares() {
               <p className="mt-4 text-justify">{t.p1}</p>
               <div className="mt-6 flex flex-row items-start">
                 <Suspense fallback={<div>Carregando botão...</div>}>
-                  <Arrow title={t.cta} />
+                  <Arrow title={t.cta} to="/cocktails" />
                 </Suspense>
               </div>
             </div>

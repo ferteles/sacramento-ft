@@ -34,6 +34,9 @@ const MelhorAlternativa = lazy(() =>
 const Ambiente = lazy(() =>
   withDelay(() => import("./pages/AmbienteInesquecivel"))
 );
+const Reservar = lazy(() =>
+  withDelay(() => import("./pages/Reservar"))
+);
 
 function AppRoutes() {
   const location = useLocation();
@@ -67,6 +70,7 @@ function AppRoutes() {
         <Route path="/jantar-tarde" element={<SaboreieNoite />} />
         <Route path="/esplanada" element={<MelhorAlternativa />} />
         <Route path="/club" element={<Ambiente />} />
+        <Route path="/reservar" element={<Reservar />} />
       </Routes>
     </Suspense>
   );
