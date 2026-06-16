@@ -7,7 +7,7 @@ import { LanguageProvider } from "./context/LanguageContext";
 import Manutencao from "./pages/Manutencao";
 
 // Mude para false para restaurar o site normalmente
-const MANUTENCAO = true;
+const MANUTENCAO = false;
 
 function App() {
   useEffect(() => {
